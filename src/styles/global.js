@@ -11,7 +11,7 @@ export const Container = styled.section`
 export const Section = styled.section`
   max-width: 800px;
   margin: 0 auto;
-  padding: 5em 20px;
+  padding: 0 20px;
 `;
 
 export const Title = styled.h1`

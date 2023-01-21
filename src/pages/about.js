@@ -6,18 +6,22 @@ import theme from "../styles/theme";
 
 const HeroInfo = styled.div`
   ${theme.mixin.centerd}
+  height: 61.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const HeroButton = styled.div`
   ${theme.mixin.centerd}
+  margin-top: 21vh;
+  padding: 1em;
 `;
 
 const HeroTitle = styled.h1`
   font-weight: 700;
   font-size: 29px;
   text-align: center;
-  margin-top: 0.2em;
-  margin-bottom: 0.4em;
   color: ${theme.colors.greenText};
 `;
 
