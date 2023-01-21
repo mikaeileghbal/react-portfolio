@@ -92,12 +92,6 @@ const TopMenuItem = styled.li`
   }
 `;
 
-/* 
-  <a data-section="contact" class="link--top" href="#">
-  contact
-</a>; 
-*/
-
 export default function Header() {
   const { pathname } = useLocation();
   console.log(pathname);

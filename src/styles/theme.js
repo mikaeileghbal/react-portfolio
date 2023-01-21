@@ -1,3 +1,5 @@
+import styled, { css } from "styled-components";
+
 const theme = {
   colors: {
     grayDark: "#6c838d",
@@ -6,6 +8,12 @@ const theme = {
     blueDark: "#222733",
     blueLight: "#2e3445",
     greenHover: "#73cca8",
+  },
+
+  mixin: {
+    centerd: css`
+      text-align: center;
+    `,
   },
 };
 
