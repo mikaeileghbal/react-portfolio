@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import theme from "./theme";
+
+const { colors } = theme;
 
 export const Container = styled.section`
   max-width: $container-max-width;
@@ -19,12 +22,10 @@ export const Title = styled.h1`
 `;
 
 export const Text = styled.p`
-  color: $gray-dark;
+  color: ${colors.grayDark};
   max-width: 800px;
   font-weight: 400;
   font-size: 16px;
-  margin: 0 auto;
-  opacity: 0;
   line-height: 1.6;
   margin-top: 8px;
 `;
