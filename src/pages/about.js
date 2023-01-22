@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../components";
-import { Section, Text } from "../styles/global";
+import Social from "../components/Social";
+import { Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
 const HeroInfo = styled.div`
@@ -24,6 +24,7 @@ const HeroTitle = styled.h1`
   text-align: center;
   color: ${theme.colors.greenText};
 `;
+console.log(theme.colors.greenHover);
 
 export default function About() {
   return (
@@ -44,8 +45,14 @@ export default function About() {
         <Text>Remotely or on-site available. mikaeileghbal@gmail.com</Text>
       </HeroInfo>
       <HeroButton>
-        <Button>take a look at my work</Button>
+        <StyledButton
+          textColor={theme.colors.blueDark}
+          backColor={theme.colors.greenHover}
+        >
+          take a look at my work
+        </StyledButton>
       </HeroButton>
+      <Social />
     </Section>
   );
 }
