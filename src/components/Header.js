@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const TopNav = styled.nav`
   height: 100%;
-  width: calc(min(75vw, 400px));
+  //width: calc(min(75vw, 400px));
   position: fixed;
   z-index: 1;
   top: 0;
@@ -31,18 +31,24 @@ const TopNav = styled.nav`
   align-items: center;
   overflow-x: hidden;
   transition: right 0.2s;
+  padding: 3px;
 
   //min tablet viewport
   position: static;
-  width: auto;
+  //width: auto;
   flex-direction: row;
-  padding: 0;
 `;
 
-const TopMenuList = styled.ul``;
+const TopMenuList = styled.ul`
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  padding: 2px;
+`;
 
 const TopMenuItem = styled.li`
-  display: inline-block;
+  //display: inline-block;
   position: relative;
   padding: 0 2px;
 `;
@@ -53,7 +59,7 @@ const StyledLink = styled(Link)`
   font-size: 18px;
   text-decoration: none;
   color: ${theme.colors.greenText};
-  transition: color 0.2s;
+  transition: color 200ms, transform 200ms;
   padding: 15px 16px;
   display: block;
 
@@ -61,13 +67,15 @@ const StyledLink = styled(Link)`
     color: ${theme.colors.greenHover};
   }
 
-  &:hover {
-    &::before {
+  &:hover:not(.active) {
+    transform: scale(1.2);
+
+    /* &::before {
       transform: scaleY(1);
-    }
+    } */
   }
 
-  &:before {
+  /* &:before {
     content: "";
     position: absolute;
     left: 0;
@@ -81,7 +89,7 @@ const StyledLink = styled(Link)`
     transition: 0.2s;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-  }
+  } */
 
   &.active {
     color: ${theme.colors.greenHover};

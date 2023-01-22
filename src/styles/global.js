@@ -14,7 +14,7 @@ export const Section = styled.section`
   padding: 0 20px;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h3`
   position: relative;
   font-weight: 700;
   font-size: 42px;
