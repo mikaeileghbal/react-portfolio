@@ -1,4 +1,7 @@
 import Header from "./Header";
 import Layout from "./Layout";
+import Social from "./Social";
 
-export { Header, Layout };
+import AnimatedLetters from "./AnimatedLetter/AnimatedLetters";
+
+export { Header, Layout, Social, AnimatedLetters };

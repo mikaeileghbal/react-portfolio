@@ -1,0 +1,25 @@
+.text-animate {
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn 0.8s;
+  animation-fill-mode: forwards;
+
+  &-hover {
+    display: inline-block;
+    transition: color 0.3s ease-out;
+    animation: rubberBand 1s;
+    animation-fill-mode: forwards;
+
+    &:hover {
+      //color: #ffd700;
+      color: #73cca8;
+    }
+  }
+}
+
+// 1-15 creates 1.5s delay for name
+@for $i from 1 to 41 {
+  .text-animate._#{$i} {
+    animation-delay: #{$i / 10}s;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Social from "../components/Social";
+import { AnimatedLetters, Social } from "../components";
 import { Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
@@ -27,13 +27,33 @@ const HeroTitle = styled.h1`
 console.log(theme.colors.greenHover);
 
 export default function About() {
+  const letterClass = "text-animate";
+
+  const saluLetters = [..."Hello, my name is Mikaeil Eghbal.".split("")];
+  const p1 = [
+    ..."I am a web developer and javascript specialist focused on the front-end.".split(
+      ""
+    ),
+  ];
+  console.log(saluLetters);
+  console.log(p1);
+
   return (
     <Section>
       <HeroInfo>
-        <HeroTitle>Hello, my name is Mikaeil Eghbal.</HeroTitle>
+        <HeroTitle>
+          <AnimatedLetters
+            className={letterClass}
+            letters={saluLetters}
+            initialIndex={1}
+          />
+        </HeroTitle>
         <Text>
-          I am a web developer and javascript specialist focused on the
-          front-end.
+          <AnimatedLetters
+            className={letterClass}
+            letters={p1}
+            initialIndex={34}
+          />
         </Text>
         <Text>
           I don't bother to work at the back-end and interact with databases
