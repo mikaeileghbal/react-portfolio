@@ -3,16 +3,13 @@ import theme from "./theme";
 
 const { colors } = theme;
 
-export const Container = styled.section`
-  max-width: $container-max-width;
-  margin: 0 auto;
-`;
-
-export const Section = styled.section`
+export const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 84px 20px;
 `;
+
+export const Section = styled.section``;
 
 export const Title = styled.h3`
   position: relative;
@@ -20,13 +17,19 @@ export const Title = styled.h3`
   font-size: 42px;
 `;
 
+export const SectionTitle = styled.h1`
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 10px;
+`;
+
 export const Text = styled.p`
   color: ${colors.grayDark};
   max-width: 800px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.6;
-  margin-top: 8px;
+  line-height: 2;
+  margin-top: 2px;
 `;
 
 export const StyledButton = styled.button`
@@ -83,4 +86,16 @@ export const InstagramkButton = styled(SocialButton)`
   color: white;
 `;
 
-export const TagButton = styled(SocialButton)``;
+export const TagButton = styled(StyledButton)`
+  background-color: ${colors.blueLight};
+  color: ${colors.grayDark};
+  //box-shadow: 0 3px 0 0 ${colors.greenGray}, 0 7px 0 0 black;
+  box-shadow: 0 3px 0 0 black;
+  padding: 8px 8px;
+
+  &:hover {
+    transform: translate3d(0, 1px, 0);
+    background-color: ${colors.blueLight};
+    box-shadow: 0 2px 0 0 black;
+  }
+`;

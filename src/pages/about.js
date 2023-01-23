@@ -6,15 +6,16 @@ import theme from "../styles/theme";
 
 const HeroInfo = styled.div`
   ${theme.mixin.centerd}
-  height: 61.5vh;
+  height: 62.5vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
 `;
 
 const HeroButton = styled.div`
   ${theme.mixin.centerd}
-  margin-top: 21vh;
+  margin-top: 20vh;
   padding: 1em;
 `;
 
@@ -23,8 +24,8 @@ const HeroTitle = styled.h1`
   font-size: 29px;
   text-align: center;
   color: ${theme.colors.greenText};
+  margin-bottom: 7px;
 `;
-console.log(theme.colors.greenHover);
 
 export default function About() {
   const letterClass = "text-animate";
