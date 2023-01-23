@@ -35,8 +35,25 @@ export default function About() {
       ""
     ),
   ];
+  const p2 = [
+    ..."I don't bother to work at the back-end and interact with databases like mongoDB and MySQL.".split(
+      ""
+    ),
+  ];
+  const p3 = [
+    ..."Feel free to take a look at my latest projects on the portfolio page.".split(
+      ""
+    ),
+  ];
+  const p4 = [
+    ..."Remotely or on-site available. mikaeileghbal@gmail.com".split(""),
+  ];
+
   console.log(saluLetters);
   console.log(p1);
+  console.log(p2);
+  console.log(p3);
+  console.log(p4);
 
   return (
     <Section>
@@ -56,13 +73,26 @@ export default function About() {
           />
         </Text>
         <Text>
-          I don't bother to work at the back-end and interact with databases
-          like mongoDB and MySQL.
+          <AnimatedLetters
+            className={letterClass}
+            letters={p2}
+            initialIndex={106}
+          />
         </Text>
         <Text>
-          Feel free to take a look at my latest projects on the portfolio page.
+          <AnimatedLetters
+            className={letterClass}
+            letters={p3}
+            initialIndex={196}
+          />
         </Text>
-        <Text>Remotely or on-site available. mikaeileghbal@gmail.com</Text>
+        <Text>
+          <AnimatedLetters
+            className={letterClass}
+            letters={p4}
+            initialIndex={265}
+          />
+        </Text>
       </HeroInfo>
       <HeroButton>
         <StyledButton

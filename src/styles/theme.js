@@ -2,7 +2,6 @@ import { css } from "styled-components";
 
 const theme = {
   colors: {
-    //grayDark: "#6c838d",
     grayDark: "#8b9188",
     greenGray: "#525e65",
     greenText: "#dbe8d4",

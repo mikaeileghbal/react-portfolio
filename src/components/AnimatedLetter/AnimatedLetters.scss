@@ -1,7 +1,7 @@
 .text-animate {
   display: inline-block;
   opacity: 0;
-  animation: bounceIn 0.8s;
+  animation: fadeIn 0.1s;
   animation-fill-mode: forwards;
 
   &-hover {
@@ -18,8 +18,8 @@
 }
 
 // 1-15 creates 1.5s delay for name
-@for $i from 1 to 41 {
+@for $i from 1 to 319 {
   .text-animate._#{$i} {
-    animation-delay: #{$i / 10}s;
+    animation-delay: #{$i / 100}s;
   }
 }

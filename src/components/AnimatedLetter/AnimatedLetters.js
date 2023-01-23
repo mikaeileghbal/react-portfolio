@@ -14,7 +14,7 @@ export default function AnimatedLetters({ className, letters, initialIndex }) {
   useEffect(() => {
     setTimeout(() => {
       setAnimateText("");
-    }, 4000);
+    }, 3500);
   }, []);
 
   return (
