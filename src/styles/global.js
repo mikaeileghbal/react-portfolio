@@ -87,7 +87,8 @@ export const InstagramkButton = styled(SocialButton)`
 `;
 
 export const TagButton = styled(StyledButton)`
-  background-color: ${colors.blueLight};
+  background-color: ${(props) =>
+    props.active ? colors.greenGray : colors.blueLight};
   color: ${colors.grayDark};
   //box-shadow: 0 3px 0 0 ${colors.greenGray}, 0 7px 0 0 black;
   box-shadow: 0 3px 0 0 black;
@@ -95,7 +96,8 @@ export const TagButton = styled(StyledButton)`
 
   &:hover {
     transform: translate3d(0, 1px, 0);
-    background-color: ${colors.blueLight};
+    background-color: ${(props) =>
+      props.active ? colors.greenGray : colors.blueLight};
     box-shadow: 0 2px 0 0 black;
   }
 `;

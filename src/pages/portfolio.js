@@ -14,7 +14,7 @@ const TagList = styled.ul`
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
-  row-gap: 0.5em;
+  row-gap: 1em;
   column-gap: 0.5em;
   margin-top: 1.3em;
   margin-bottom: 2em;
@@ -33,7 +33,7 @@ export default function Portfolio() {
         <div class="tags-container">
           <TagList>
             <li class="button tag__item">
-              <TagButton>show all</TagButton>
+              <TagButton active>show all</TagButton>
             </li>
             <li class="button tag__item">
               <TagButton>html</TagButton>
@@ -73,11 +73,78 @@ export default function Portfolio() {
             </li>
           </TagList>
         </div>
-        <p class="filter-status text">
+        <Text>
           Showing all projects. Use the filter to list them by skill or
           technology.
-        </p>
-        <div class="project__container"></div>
+        </Text>
+        <div class="project__container">
+          <figure class="item">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/calendar.png"
+                alt=""
+              />
+            </div>
+            <h3 id="title" class="item__title">
+              Calendar
+            </h3>
+            <figcaption class="item__header">
+              <p id="desc" class="item__desc">
+                Dynamic content manipulating with javascript. Get elements of
+                document, create template and clone copy from template to create
+                new elements.
+              </p>
+              <ul class="tags" id="tags">
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+              </ul>
+              <ul class="item__list--links" id="viewlinks">
+                <li>
+                  <a href="#">live</a>
+                </li>
+                <li>
+                  <a href="#">githup</a>
+                </li>
+              </ul>
+            </figcaption>
+          </figure>
+          <figure class="item">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/calendar.png"
+                alt=""
+              />
+            </div>
+            <h3 id="title" class="item__title">
+              Calendar
+            </h3>
+            <figcaption class="item__header">
+              <p id="desc" class="item__desc">
+                Dynamic content manipulating with javascript. Get elements of
+                document, create template and clone copy from template to create
+                new elements.
+              </p>
+              <ul class="tags" id="tags">
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+              </ul>
+              <ul class="item__list--links" id="viewlinks">
+                <li>
+                  <a href="#">live</a>
+                </li>
+                <li>
+                  <a href="#">githup</a>
+                </li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
       </Container>
     </Section>
   );
