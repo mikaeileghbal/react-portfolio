@@ -41,7 +41,7 @@ export default function Social() {
       <StyledList>
         <StyledItem>
           <GithubButton href="https://mikaeileghbal.github.com" target="blank">
-            <FaGithub size={32} />
+            <FaGithub size={33} />
           </GithubButton>
         </StyledItem>
         <StyledItem>

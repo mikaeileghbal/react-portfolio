@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AnimatedLetters, Social } from "../components";
 import { Section, StyledButton, Text } from "../styles/global";
@@ -19,84 +20,63 @@ const HeroButton = styled.div`
   padding: 1em;
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled.h3`
   font-weight: 700;
   font-size: 29px;
   text-align: center;
   color: ${theme.colors.greenText};
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 `;
 
 export default function About() {
-  const letterClass = "text-animate";
-
-  const saluLetters = [..."Hello, my name is Mikaeil Eghbal.".split("")];
+  const navigate = useNavigate();
+  const saluLetters = [
+    ..."Hello, my name is Mikaeil Eghbal.".replace(/\s/g, "-").split(""),
+  ];
   const p1 = [
-    ..."I am a web developer and javascript specialist focused on the front-end.".split(
-      ""
-    ),
+    ..."I am a web developer and javascript specialist focused on the front-end."
+      .replace(/\s/g, "-")
+      .split(""),
   ];
   const p2 = [
-    ..."I don't bother to work at the back-end and interact with databases like mongoDB and MySQL.".split(
-      ""
-    ),
+    ..."Check out my articles, React and React Native UI components at the code laboratory."
+      .replace(/\s/g, "-")
+      .split(""),
   ];
   const p3 = [
-    ..."Feel free to take a look at my latest projects on the portfolio page.".split(
-      ""
-    ),
+    ..."Feel free to take a look at my latest projects on the portfolio page."
+      .replace(/\s/g, "-")
+      .split(""),
   ];
   const p4 = [
-    ..."Remotely or on-site available. mikaeileghbal@gmail.com".split(""),
+    ..."Remotely or on-site available. mikaeileghbal@gmail.com"
+      .replace(/\s/g, "-")
+      .split(""),
   ];
 
-  console.log(saluLetters);
-  console.log(p1);
-  console.log(p2);
-  console.log(p3);
-  console.log(p4);
-
+  const gotoPortfolio = () => navigate("/portfolio");
   return (
     <Section>
       <HeroInfo>
         <HeroTitle>
-          <AnimatedLetters
-            className={letterClass}
-            letters={saluLetters}
-            initialIndex={1}
-          />
+          <AnimatedLetters letters={saluLetters} initialIndex={1} />
         </HeroTitle>
         <Text>
-          <AnimatedLetters
-            className={letterClass}
-            letters={p1}
-            initialIndex={34}
-          />
+          <AnimatedLetters letters={p1} initialIndex={34} />
         </Text>
         <Text>
-          <AnimatedLetters
-            className={letterClass}
-            letters={p2}
-            initialIndex={106}
-          />
+          <AnimatedLetters letters={p2} initialIndex={106} />
         </Text>
         <Text>
-          <AnimatedLetters
-            className={letterClass}
-            letters={p3}
-            initialIndex={196}
-          />
+          <AnimatedLetters letters={p3} initialIndex={196} />
         </Text>
         <Text>
-          <AnimatedLetters
-            className={letterClass}
-            letters={p4}
-            initialIndex={265}
-          />
+          <AnimatedLetters letters={p4} initialIndex={265} />
         </Text>
       </HeroInfo>
       <HeroButton>
         <StyledButton
+          onClick={gotoPortfolio}
           textColor={theme.colors.blueDark}
           backColor={theme.colors.greenHover}
         >

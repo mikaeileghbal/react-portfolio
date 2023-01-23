@@ -26,7 +26,7 @@ export const SectionTitle = styled.h1`
 export const Text = styled.p`
   color: ${colors.grayDark};
   max-width: 800px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 2;
   margin-top: 2px;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./AnimatedLetters.scss";
 
-export default function AnimatedLetters({ className, letters, initialIndex }) {
+export default function AnimatedLetters({ letters, initialIndex }) {
   const [animateText, setAnimateText] = useState("text-animate");
 
   const mouseEnter = (e) => {
@@ -14,7 +14,7 @@ export default function AnimatedLetters({ className, letters, initialIndex }) {
   useEffect(() => {
     setTimeout(() => {
       setAnimateText("");
-    }, 3500);
+    }, 7000);
   }, []);
 
   return (
@@ -22,7 +22,9 @@ export default function AnimatedLetters({ className, letters, initialIndex }) {
       {letters.map((char, i) => (
         <span
           key={char + i}
-          className={`${animateText} _${i + initialIndex}`}
+          className={`${animateText} _${i + initialIndex} ${
+            char === "-" ? "space" : ""
+          }`}
           onMouseEnter={mouseEnter}
         >
           {char}
