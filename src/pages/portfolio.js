@@ -23,10 +23,12 @@ const TagList = styled.ul`
   column-gap: 0.5em;
   margin-top: 1.3em;
   margin-bottom: 2em;
+  z-index: 4;
 `;
 
 const ItemTagList = styled(TagList)`
   row-gap: 0.5em;
+  justify-content: center;
 `;
 
 const ItemButtonList = styled(ItemTagList)`
@@ -55,25 +57,9 @@ const PortoItem = styled.figure`
   counter-increment: slide-number;
   transition: all 0.3s;
 
-  &::before {
-    display: none;
-    content: counter(slide-number);
-    position: absolute;
-    left: 8px;
-    top: -18px;
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.2);
-    z-index: 2;
-  }
-
-  &:hover {
-    //transform: translateY(-8px);
-  }
-
   &:hover .item__header {
     transform: translateY(0px);
     opacity: 1;
-    //background-color: rgba(10, 10, 10, 0.7);
   }
   &:hover .item__header > h3 {
     opacity: 0;
@@ -83,7 +69,7 @@ const PortoItem = styled.figure`
   }
   &:hover .item__list {
     opacity: 1;
-    transform: translateY(-20px);
+    transform: translateY(0px);
     transition: transform 0.225s cubic-bezier(0.65, 1.55, 0.5, 1.3) 0.3s,
       opacity 0.1s ease-out 0.3s;
   }
@@ -96,19 +82,34 @@ const PortoItem = styled.figure`
     margin-top: 1em;
     width: 100%;
     height: 100%;
-    padding: 1em;
+    padding: 1em 3em;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(10, 10, 10, 0.8);
     opacity: 0;
     text-align: center;
-    z-index: 2;
+    z-index: 3;
     transform: translateY(-100%);
     transform-style: flat;
     transition: opacity 0.15s ease-out,
       transform 0.25s cubic-bezier(0, 0.75, 0, 1);
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url(/images/${(props) => props.image});
+      background-color: rgba(10, 10, 10, 0.7);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-blend-mode: hue;
+      z-index: 4;
+    }
 
     p {
       opacity: 0;
@@ -161,6 +162,10 @@ const PortoItem = styled.figure`
     align-items: center;
     opacity: 1;
     transform: translateY(0px);
+  }
+  .item__list {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 `;
 
@@ -239,23 +244,18 @@ export default function Portfolio() {
           technology.
         </Text>
         <PortoContainer>
-          <PortoItem>
+          <PortoItem image="githubuser.png">
             <div class="item__image__wrapp">
               <img
                 id="image"
                 class="item__image"
-                src="./images/calendar.png"
+                src="./images/githubuser.png"
                 alt=""
               />
             </div>
             <ItemTitle>Calendar</ItemTitle>
             <figcaption class="item__header">
-              <p id="desc" class="item__desc">
-                Dynamic content manipulating with javascript. Get elements of
-                document, create template and clone copy from template to create
-                new elements.
-              </p>
-              <ItemTagList>
+              <ItemTagList className="item__list">
                 <li>
                   <TagButton>html</TagButton>
                 </li>
@@ -280,22 +280,152 @@ export default function Portfolio() {
               </ItemButtonList> */}
             </figcaption>
           </PortoItem>
-          <PortoItem>
+          <PortoItem image="dinomuz.png">
             <div class="item__image__wrapp">
               <img
                 id="image"
                 class="item__image"
-                src="./images/calendar.png"
+                src="./images/dinomuz.png"
                 alt=""
               />
             </div>
             <ItemTitle>Calendar</ItemTitle>
             <figcaption class="item__header">
-              <p id="desc" class="item__desc">
-                Dynamic content manipulating with javascript. Get elements of
-                document, create template and clone copy from template to create
-                new elements.
-              </p>
+              <ItemTagList className="item__list">
+                <li>
+                  <TagButton>html</TagButton>
+                </li>
+                <li>
+                  <TagButton>css</TagButton>
+                </li>
+                <li>
+                  <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
+                </li>
+              </ItemTagList>
+              {/* <ItemButtonList className="item__list">
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    live
+                  </StyledButton>
+                </li>
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    github
+                  </StyledButton>
+                </li>
+              </ItemButtonList> */}
+            </figcaption>
+          </PortoItem>
+          <PortoItem image="dinomuz.png">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/dinomuz.png"
+                alt=""
+              />
+            </div>
+            <ItemTitle>Calendar</ItemTitle>
+            <figcaption class="item__header">
+              <ItemTagList className="item__list">
+                <li>
+                  <TagButton>html</TagButton>
+                </li>
+                <li>
+                  <TagButton>css</TagButton>
+                </li>
+                <li>
+                  <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
+                </li>
+              </ItemTagList>
+              {/* <ItemButtonList className="item__list">
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    live
+                  </StyledButton>
+                </li>
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    github
+                  </StyledButton>
+                </li>
+              </ItemButtonList> */}
+            </figcaption>
+          </PortoItem>
+          <PortoItem image="dinomuz.png">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/dinomuz.png"
+                alt=""
+              />
+            </div>
+            <ItemTitle>Calendar</ItemTitle>
+            <figcaption class="item__header">
+              <ItemTagList className="item__list">
+                <li>
+                  <TagButton>html</TagButton>
+                </li>
+                <li>
+                  <TagButton>css</TagButton>
+                </li>
+                <li>
+                  <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
+                </li>
+              </ItemTagList>
+              {/* <ItemButtonList className="item__list">
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    live
+                  </StyledButton>
+                </li>
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    github
+                  </StyledButton>
+                </li>
+              </ItemButtonList> */}
+            </figcaption>
+          </PortoItem>
+          <PortoItem image="dinomuz.png">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/dinomuz.png"
+                alt=""
+              />
+            </div>
+            <ItemTitle>Calendar</ItemTitle>
+            <figcaption class="item__header">
               <ItemTagList>
                 <li>
                   <TagButton>html</TagButton>
@@ -305,6 +435,150 @@ export default function Portfolio() {
                 </li>
                 <li>
                   <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
+                </li>
+              </ItemTagList>
+              {/* <ItemButtonList className="item__list">
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    live
+                  </StyledButton>
+                </li>
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    github
+                  </StyledButton>
+                </li>
+              </ItemButtonList> */}
+            </figcaption>
+          </PortoItem>
+          <PortoItem image="dinomuz.png">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/dinomuz.png"
+                alt=""
+              />
+            </div>
+            <ItemTitle>Calendar</ItemTitle>
+            <figcaption class="item__header">
+              <ItemTagList>
+                <li>
+                  <TagButton>html</TagButton>
+                </li>
+                <li>
+                  <TagButton>css</TagButton>
+                </li>
+                <li>
+                  <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
+                </li>
+              </ItemTagList>
+              {/* <ItemButtonList className="item__list">
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    live
+                  </StyledButton>
+                </li>
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    github
+                  </StyledButton>
+                </li>
+              </ItemButtonList> */}
+            </figcaption>
+          </PortoItem>
+          <PortoItem image="dinomuz.png">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/dinomuz.png"
+                alt=""
+              />
+            </div>
+            <ItemTitle>Calendar</ItemTitle>
+            <figcaption class="item__header">
+              <ItemTagList>
+                <li>
+                  <TagButton>html</TagButton>
+                </li>
+                <li>
+                  <TagButton>css</TagButton>
+                </li>
+                <li>
+                  <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
+                </li>
+              </ItemTagList>
+              {/* <ItemButtonList className="item__list">
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    live
+                  </StyledButton>
+                </li>
+                <li>
+                  <StyledButton backColor={colors.greenHover}>
+                    github
+                  </StyledButton>
+                </li>
+              </ItemButtonList> */}
+            </figcaption>
+          </PortoItem>
+          <PortoItem image="dinomuz.png">
+            <div class="item__image__wrapp">
+              <img
+                id="image"
+                class="item__image"
+                src="./images/dinomuz.png"
+                alt=""
+              />
+            </div>
+            <ItemTitle>Calendar</ItemTitle>
+            <figcaption class="item__header">
+              <ItemTagList>
+                <li>
+                  <TagButton>html</TagButton>
+                </li>
+                <li>
+                  <TagButton>css</TagButton>
+                </li>
+                <li>
+                  <TagButton>javascript</TagButton>
+                </li>
+                <li>
+                  <TagButton>sass</TagButton>
+                </li>
+                <li>
+                  <TagButton>react</TagButton>
+                </li>
+                <li>
+                  <TagButton>redux</TagButton>
                 </li>
               </ItemTagList>
               {/* <ItemButtonList className="item__list">
