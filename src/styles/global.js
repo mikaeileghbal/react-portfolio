@@ -34,7 +34,7 @@ export const Text = styled.p`
 
 export const StyledButton = styled.button`
   text-decoration: none;
-  padding: 1.2em 3em;
+  padding: 1.1em 3em;
   font-weight: 800;
   font-size: 12px;
   text-transform: uppercase;
