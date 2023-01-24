@@ -84,6 +84,7 @@ const StyledMenu = styled.header`
       display: flex;
       align-items: center;
       text-align: center;
+      text-decoration: none;
       width: 90%;
       position: relative;
       max-width: 600px;
@@ -100,11 +101,14 @@ const StyledMenu = styled.header`
         text-align: center;
         font-size: 32px;
         font-weight: bold;
-        color: rgb(51, 51, 51);
+        color: ${colors.grayDark};
+        transition: 0.125s !important;
       }
+
       &:hover span {
-        color: #8a8a8a;
+        color: #a7ada3;
       }
+
       &::before {
         content: "";
         width: 100%;
@@ -114,19 +118,19 @@ const StyledMenu = styled.header`
         top: 0;
         left: 0;
         position: absolute;
-        background-color: rgb(45, 45, 45);
+        background-color: ${colors.blueDark};
         z-index: -1;
         transition: all 0.3s ease-in;
       }
       &::after {
         content: "";
-        background-color: rgb(44, 44, 44);
         width: 100%;
         transform-origin: right;
         transform: scaleX(0);
         bottom: 0;
         right: 0;
         height: 75%;
+        background-color: #212632;
         position: absolute;
         z-index: -2;
         transition: all 0.3s ease-in 125ms;
@@ -160,7 +164,7 @@ const StyledMenu = styled.header`
     }
     a {
       span {
-        color: #5a5a5a;
+        color: ${colors.grayDark};
         transition: all 2.5s ease-in-out;
       }
     }
@@ -170,6 +174,7 @@ const StyledMenu = styled.header`
 export default function Menu() {
   const [showMenu, setShowMenu] = useState(false);
   const menuNav = useRef();
+  const burger = useRef();
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
@@ -178,6 +183,7 @@ export default function Menu() {
   useEffect(() => {
     menuNav.current.classList.toggle("menu-show");
     menuNav.current.classList.toggle("menu-links");
+    burger.current.classList.toggle("burger");
   }, [showMenu]);
 
   return (
@@ -197,7 +203,7 @@ export default function Menu() {
         </a>
       </nav>
 
-      <div id="burger" class="burger" onClick={toggleMenu}>
+      <div id="burger" class="" ref={burger} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
