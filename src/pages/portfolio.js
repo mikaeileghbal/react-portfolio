@@ -10,7 +10,7 @@ import {
 
 import theme from "../styles/theme";
 import { tags, portfolio } from "../data/portfolio";
-import { Next } from "../components";
+import { Next, Previous } from "../components";
 
 const { colors } = theme;
 
@@ -228,6 +228,7 @@ export default function Portfolio() {
           ))}
         </PortoContainer>
         <Next to="/contact">conatct</Next>
+        <Previous to="/">about</Previous>
       </Container>
     </Section>
   );

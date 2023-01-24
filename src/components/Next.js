@@ -11,6 +11,7 @@ const PageControl = styled.div`
   width: 150px;
   right: 0;
   top: 25%;
+  //background-color: red;
 
   &:hover a > span {
     transform: translate3d(0px, 0, 0);
@@ -96,6 +97,42 @@ const Arrow = styled.em`
   }
 `;
 
+const PageControlPrev = styled(PageControl)`
+  left: 0;
+  right: unset;
+
+  &:hover a > em::before {
+    //transition: transform 0.16s ease-out;
+    transform: rotate(30deg);
+  }
+
+  &:hover a > em::after {
+    //transition: transform 0.16s ease-out;
+    transform: rotate(150deg);
+  }
+`;
+
+const StyledLinkPrev = styled(StyledLink)`
+  span {
+    right: unset;
+    left: calc(50% - 5px);
+    transform: translate3d(-30px, 0, 0);
+  }
+`;
+
+const ArrowPrev = styled(Arrow)`
+  left: unset;
+  right: calc(50% + 18px);
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(135deg);
+  }
+`;
+
 export default function Next({ to, children }) {
   return (
     <PageControl>
@@ -104,5 +141,16 @@ export default function Next({ to, children }) {
         <Arrow></Arrow>
       </StyledLink>
     </PageControl>
+  );
+}
+
+export function Previous({ to, children }) {
+  return (
+    <PageControlPrev>
+      <StyledLinkPrev to={to}>
+        <ArrowPrev></ArrowPrev>
+        <span>{children}</span>
+      </StyledLinkPrev>
+    </PageControlPrev>
   );
 }
