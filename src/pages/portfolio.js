@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   Container,
@@ -10,6 +10,7 @@ import {
 } from "../styles/global";
 
 import theme from "../styles/theme";
+import { tags } from "../data/portfolio";
 
 const { colors } = theme;
 
@@ -188,6 +189,13 @@ const ItemTitle = styled.h3`
 `;
 
 export default function Portfolio() {
+  const [currentTag, setCurrentTag] = useState("show all");
+
+  const handleTagSelection = (tag) => {
+    console.log(tag);
+    setCurrentTag(tag);
+  };
+
   return (
     <Section>
       <Container>
@@ -199,45 +207,15 @@ export default function Portfolio() {
         </Text>
         <div class="tags-container">
           <TagList>
-            <li class="button tag__item">
-              <TagButton active>show all</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>html</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>sass</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>javascript</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>reactjs</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>nextjs</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>redux</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>zustand</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>context</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>react router</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>react query</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>mongodb</TagButton>
-            </li>
-            <li class="button tag__item">
-              <TagButton>mysql</TagButton>
-            </li>
+            {tags.map((tag, i) => (
+              <TagItem
+                key={i}
+                active={tag === currentTag}
+                onSelect={handleTagSelection}
+              >
+                {tag}
+              </TagItem>
+            ))}
           </TagList>
         </div>
         <Text>
@@ -337,5 +315,15 @@ export default function Portfolio() {
         </PortoContainer>
       </Container>
     </Section>
+  );
+}
+
+function TagItem({ children, active, onSelect }) {
+  return (
+    <li class="button tag__item">
+      <TagButton active={active} onClick={() => onSelect(children)}>
+        {children}
+      </TagButton>
+    </li>
   );
 }
