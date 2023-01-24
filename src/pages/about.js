@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { AnimatedLetters, Social } from "../components";
+import { AnimatedLetters, Next, Social } from "../components";
 import { Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
@@ -34,7 +34,7 @@ export default function About() {
     ..."Hello, my name is Mikaeil Eghbal.".replace(/\s/g, "-").split(""),
   ];
   const p1 = [
-    ..."I am a web developer and javascript specialist focused on the front-end."
+    ..."I am a web developer and javascript specialist focused on the frontend."
       .replace(/\s/g, "-")
       .split(""),
   ];
@@ -84,6 +84,7 @@ export default function About() {
         </StyledButton>
       </HeroButton>
       <Social />
+      <Next to="/portfolio">portfolio</Next>
     </Section>
   );
 }
