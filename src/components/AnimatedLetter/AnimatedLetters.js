@@ -25,7 +25,7 @@ export default function AnimatedLetters({ letters, initialIndex }) {
           className={`${animateText} _${i + initialIndex} ${
             char === "-" ? "space" : ""
           }`}
-          onMouseEnter={mouseEnter}
+          // onMouseEnter={mouseEnter}
         >
           {char}
         </span>

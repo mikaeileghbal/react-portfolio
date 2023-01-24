@@ -7,7 +7,7 @@ import theme from "../styles/theme";
 
 const HeroInfo = styled.div`
   ${theme.mixin.centerd}
-  height: 62.5vh;
+  height: 62vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -16,7 +16,7 @@ const HeroInfo = styled.div`
 
 const HeroButton = styled.div`
   ${theme.mixin.centerd}
-  margin-top: 20vh;
+  margin-top: 20.5vh;
   padding: 1em;
 `;
 

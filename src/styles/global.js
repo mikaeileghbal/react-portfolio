@@ -28,7 +28,7 @@ export const Text = styled.p`
   max-width: 800px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 2;
+  line-height: 1.95;
   margin-top: 2px;
 `;
 
