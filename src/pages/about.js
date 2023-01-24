@@ -28,51 +28,48 @@ const HeroTitle = styled.h3`
   margin-bottom: 6px;
 `;
 
+const parafs = [
+  { text: "Hello, my name is Mikaeil Eghbal.", index: 1 },
+  {
+    text: "I am a web developer and javascript specialist focused on the frontend.",
+    index: 34,
+  },
+  {
+    text: "Check out my articles, React and React Native UI components at the code laboratory.",
+    index: 106,
+  },
+  {
+    text: "Feel free to take a look at my latest projects on the portfolio page.",
+    index: 196,
+  },
+  {
+    text: "Remotely or on-site available. mikaeileghbal@gmail.com",
+    index: 265,
+  },
+];
+
 export default function About() {
   const navigate = useNavigate();
-  const saluLetters = [
-    ..."Hello, my name is Mikaeil Eghbal.".replace(/\s/g, "-").split(""),
-  ];
-  const p1 = [
-    ..."I am a web developer and javascript specialist focused on the frontend."
-      .replace(/\s/g, "-")
-      .split(""),
-  ];
-  const p2 = [
-    ..."Check out my articles, React and React Native UI components at the code laboratory."
-      .replace(/\s/g, "-")
-      .split(""),
-  ];
-  const p3 = [
-    ..."Feel free to take a look at my latest projects on the portfolio page."
-      .replace(/\s/g, "-")
-      .split(""),
-  ];
-  const p4 = [
-    ..."Remotely or on-site available. mikaeileghbal@gmail.com"
-      .replace(/\s/g, "-")
-      .split(""),
-  ];
 
   const gotoPortfolio = () => navigate("/portfolio");
+
   return (
     <Section>
       <HeroInfo>
         <HeroTitle>
-          <AnimatedLetters letters={saluLetters} initialIndex={1} />
+          <AnimatedLetters
+            letters={parafs[0].text.replace(/\s/g, "-").split("")}
+            initialIndex={1}
+          />
         </HeroTitle>
-        <Text>
-          <AnimatedLetters letters={p1} initialIndex={34} />
-        </Text>
-        <Text>
-          <AnimatedLetters letters={p2} initialIndex={106} />
-        </Text>
-        <Text>
-          <AnimatedLetters letters={p3} initialIndex={196} />
-        </Text>
-        <Text>
-          <AnimatedLetters letters={p4} initialIndex={265} />
-        </Text>
+        {parafs.slice(1).map((paraf) => (
+          <AboutText
+            key={paraf.index}
+            text={paraf.text.replace(/\s/g, "-").split("")}
+            initialIndex={paraf.index}
+          />
+        ))}
+        <span></span>
       </HeroInfo>
       <HeroButton>
         <StyledButton
@@ -86,5 +83,13 @@ export default function About() {
       <Social />
       <Next to="/portfolio">portfolio</Next>
     </Section>
+  );
+}
+
+function AboutText({ text, initialIndex }) {
+  return (
+    <Text>
+      <AnimatedLetters letters={text} initialIndex={initialIndex} />
+    </Text>
   );
 }

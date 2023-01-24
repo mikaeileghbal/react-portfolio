@@ -31,25 +31,35 @@ const StyledMenu = styled.header`
       //transition: all 0.5s ease-out;
       transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5);
     }
-    &:hover > :first-child {
+    &:not(.burger):hover > :first-child {
       transform: translate(0, -4px);
       //transition: transform .45s cubic-bezier(.43,.77,.15,1.5);
     }
-    &:hover > :last-child {
+    &:not(.burger):hover > :last-child {
       transform: translate(0, 4px);
       //transition: transform .45s cubic-bezier(.43,.77,.15,1.5);
+    }
+    &.burger:hover > :first-child {
+      transform: translate(0px, 10px) scale(1.5) rotate(-45deg);
+    }
+    &.burger:hover > :last-child {
+      transform: translate(0px, -10px) scale(1.5) rotate(45deg);
     }
   }
 
   // burger menu STYLES
   //==============================================
   .burger > span:first-child {
-    transform: translate(0px, 10px) scale(1.5) rotate(-45deg);
+    transform: translate(0px, 10px) scale(1) rotate(-45deg);
     background-color: white;
   }
 
+  .burger > span:nth-child(2) {
+    transform: translate(0px, 10px) scale(0);
+  }
+
   .burger > span:last-child {
-    transform: translate(0px, -10px) scale(1.5) rotate(45deg);
+    transform: translate(0px, -10px) scale(1) rotate(45deg);
     background-color: white;
   }
 
