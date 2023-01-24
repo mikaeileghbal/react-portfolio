@@ -183,22 +183,18 @@ const StyledMenu = styled.header`
 
 export default function Menu() {
   const [showMenu, setShowMenu] = useState(false);
-  const menuNav = useRef();
-  const burger = useRef();
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
   };
 
-  useEffect(() => {
-    menuNav.current.classList.toggle("menu-show");
-    menuNav.current.classList.toggle("menu-links");
-    burger.current.classList.toggle("burger");
-  }, [showMenu]);
-
   return (
     <StyledMenu id="page-header" class="top-menu">
-      <nav id="menu-nav" class="top-menu-nav" ref={menuNav}>
+      <nav
+        id="menu-nav"
+        class={`top-menu-nav ${showMenu ? "menu-show" : ""}`}
+        //ref={menuNav}
+      >
         <a class="top-menu-link" href="#">
           <span>about</span>
         </a>
@@ -213,7 +209,12 @@ export default function Menu() {
         </a>
       </nav>
 
-      <div id="burger" class="" ref={burger} onClick={toggleMenu}>
+      <div
+        id="burger"
+        class={`${showMenu ? "burger" : ""}`}
+        //ref={burger}
+        onClick={toggleMenu}
+      >
         <span></span>
         <span></span>
         <span></span>

@@ -90,14 +90,18 @@ export const TagButton = styled(StyledButton)`
   background-color: ${(props) =>
     props.active ? colors.greenGray : colors.blueLight};
   color: ${colors.grayDark};
-  //box-shadow: 0 3px 0 0 ${colors.greenGray}, 0 7px 0 0 black;
-  box-shadow: 0 3px 0 0 black;
+  //box-shadow: 0 3px 0 0 black;
   padding: 8px 8px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  border-width: 1px 1px 2px 1px;
+  border-style: solid;
+  border-color: #222;
+  border-radius: 3px;
 
   &:hover {
     transform: translate3d(0, 1px, 0);
     background-color: ${(props) =>
-      props.active ? colors.greenGray : colors.blueLight};
-    box-shadow: 0 2px 0 0 black;
+      props.active ? colors.greenGray : colors.greenGray};
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
   }
 `;

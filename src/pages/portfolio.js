@@ -21,7 +21,7 @@ const TagList = styled.ul`
   align-items: flex-start;
   justify-content: flex-start;
   row-gap: 1em;
-  column-gap: 0.5em;
+  column-gap: 0.4em;
   margin-top: 1.3em;
   margin-bottom: 2em;
   z-index: 4;
