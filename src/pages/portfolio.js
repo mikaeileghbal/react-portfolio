@@ -4,13 +4,12 @@ import {
   Container,
   Section,
   SectionTitle,
-  StyledButton,
   TagButton,
   Text,
 } from "../styles/global";
 
 import theme from "../styles/theme";
-import { tags } from "../data/portfolio";
+import { tags, portfolio } from "../data/portfolio";
 
 const { colors } = theme;
 
@@ -223,95 +222,9 @@ export default function Portfolio() {
           technology.
         </Text>
         <PortoContainer>
-          <li>
-            <a href="#">
-              <PortoItem image="githubuser.png">
-                <div class="item__image__wrapp">
-                  <img
-                    id="image"
-                    class="item__image"
-                    src="./images/githubuser.png"
-                    alt=""
-                  />
-                </div>
-                <ItemTitle>Calendar</ItemTitle>
-                <figcaption class="item__header">
-                  <ItemTagList className="item__list">
-                    <li>
-                      <TagButton>html</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>css</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>javascript</TagButton>
-                    </li>
-                  </ItemTagList>
-                  {/* <ItemButtonList className="item__list">
-                <li>
-                <StyledButton backColor={colors.greenHover}>
-                live
-                </StyledButton>
-                </li>
-                <li>
-                <StyledButton backColor={colors.greenHover}>
-                github
-                </StyledButton>
-                </li>
-              </ItemButtonList> */}
-                </figcaption>
-              </PortoItem>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <PortoItem image="dinomuz.png">
-                <div class="item__image__wrapp">
-                  <img
-                    id="image"
-                    class="item__image"
-                    src="./images/dinomuz.png"
-                    alt=""
-                  />
-                </div>
-                <ItemTitle>Calendar</ItemTitle>
-                <figcaption class="item__header">
-                  <ItemTagList className="item__list">
-                    <li>
-                      <TagButton>html</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>css</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>javascript</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>sass</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>react</TagButton>
-                    </li>
-                    <li>
-                      <TagButton>redux</TagButton>
-                    </li>
-                  </ItemTagList>
-                  {/* <ItemButtonList className="item__list">
-                <li>
-                <StyledButton backColor={colors.greenHover}>
-                live
-                </StyledButton>
-                </li>
-                <li>
-                <StyledButton backColor={colors.greenHover}>
-                github
-                </StyledButton>
-                </li>
-              </ItemButtonList> */}
-                </figcaption>
-              </PortoItem>
-            </a>
-          </li>
+          {portfolio.map((item) => (
+            <PortfoItem key={item.key} item={item} />
+          ))}
         </PortoContainer>
       </Container>
     </Section>
@@ -324,6 +237,52 @@ function TagItem({ children, active, onSelect }) {
       <TagButton active={active} onClick={() => onSelect(children)}>
         {children}
       </TagButton>
+    </li>
+  );
+}
+
+function PortfoItem({ item }) {
+  const { title, image, tags } = item;
+  return (
+    <li>
+      <a href="#">
+        <PortoItem image={image}>
+          <div class="item__image__wrapp">
+            <img
+              id="image"
+              class="item__image"
+              src={`./images/${image}`}
+              alt={image}
+            />
+          </div>
+          <ItemTitle>{title}</ItemTitle>
+          <figcaption class="item__header">
+            <ItemTagList className="item__list">
+              <li>
+                <TagButton>html</TagButton>
+              </li>
+              <li>
+                <TagButton>css</TagButton>
+              </li>
+              <li>
+                <TagButton>javascript</TagButton>
+              </li>
+            </ItemTagList>
+            {/* <ItemButtonList className="item__list">
+                <li>
+                <StyledButton backColor={colors.greenHover}>
+                live
+                </StyledButton>
+                </li>
+                <li>
+                <StyledButton backColor={colors.greenHover}>
+                github
+                </StyledButton>
+                </li>
+              </ItemButtonList> */}
+          </figcaption>
+        </PortoItem>
+      </a>
     </li>
   );
 }
