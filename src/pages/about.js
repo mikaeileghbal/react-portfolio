@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { AnimatedLetters, Next, Social } from "../components";
-import { Section, StyledButton, Text } from "../styles/global";
+import { CustomLink, Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
 const HeroInfo = styled.div`
@@ -26,6 +26,30 @@ const HeroTitle = styled.h3`
   text-align: center;
   color: ${theme.colors.greenText};
   margin-bottom: 6px;
+`;
+
+const CustomLinkAbout = styled(CustomLink)`
+  font-size: 14px;
+`;
+
+const BlinkAnimation = keyframes`
+  0%{opacity:0}
+  50%{opacity:1}
+  100%{opacity:0}
+
+`;
+
+const Blink = styled.span`
+  //display: inline-block;
+  width: 8px;
+  height: 2px;
+  background-color: ${theme.colors.grayDark};
+  animation-name: ${BlinkAnimation};
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-timing-function: ease;
 `;
 
 const parafs = [
@@ -69,7 +93,10 @@ export default function About() {
             initialIndex={paraf.index}
           />
         ))}
-        <span></span>
+        <Blink></Blink>
+        <CustomLinkAbout href="#">
+          <span>mikaeileghbal@yaho.com</span>
+        </CustomLinkAbout>
       </HeroInfo>
       <HeroButton>
         <StyledButton

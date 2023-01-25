@@ -12,7 +12,7 @@ const StyledRibbon = styled.div`
   z-index: 10;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   position: absolute;
   display: block;
   width: 200%;
@@ -42,8 +42,8 @@ export default function Ribbon() {
   return (
     <StyledRibbon>
       <StyledLink
-        to="https://github.com/mikaeileghbal"
-        target="_blanck"
+        href="https://github.com/mikaeileghbal"
+        target="_blank"
         title="Follow on Github"
       >
         follow on github

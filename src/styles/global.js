@@ -105,3 +105,72 @@ export const TagButton = styled(StyledButton)`
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
   }
 `;
+
+export const CustomLink = styled.a`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  /* width: 90%;
+  max-width: 600px; */
+  //margin: 0 auto;
+  //height: calc(100% / 4);
+  //font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.02);
+  color: white;
+  z-index: 1;
+  transition: color 0.4s ease-in;
+  overflow: hidden;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 2;
+
+  span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: ${colors.grayDark};
+    transition: 0.125s !important;
+  }
+
+  &:hover span {
+    color: #a7ada3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    top: 0;
+    left: 0;
+    background-color: ${colors.blueMenu};
+    z-index: -1;
+    transform-origin: left;
+    transform: translate3d(-100%, 0, 0); //scaleX(0);
+    transition: transform 0.325s cubic-bezier(0.65, 0.2, 0, 1);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    height: 75%;
+    background-color: ${colors.blueMenu};
+    z-index: -2;
+    transform-origin: right;
+    transform: translate3d(100%, 0, 0); // scaleX(0);
+    transition: transform 0.325s cubic-bezier(0.65, 0.2, 0, 1) 0.1s;
+  }
+
+  &:hover::before {
+    z-index: -1;
+    transform: translate3d(0, 0, 0); // scaleX(1);
+  }
+  &:hover::after {
+    z-index: -2;
+    transform: translate3d(0, 0, 0); // scaleX(1);
+  }
+`;
