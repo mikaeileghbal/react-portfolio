@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const TopNav = styled.nav`
   height: 100%;
-  width: calc(min(75vw, 400px));
+  //width: calc(min(75vw, 400px));
   position: fixed;
   z-index: 1;
   top: 0;
@@ -31,63 +31,70 @@ const TopNav = styled.nav`
   align-items: center;
   overflow-x: hidden;
   transition: right 0.2s;
+  padding: 3px;
 
   //min tablet viewport
   position: static;
-  width: auto;
+  //width: auto;
   flex-direction: row;
-  padding: 0;
 `;
 
-const TopMenuList = styled.ul``;
+const TopMenuList = styled.ul`
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  padding: 2px;
+`;
 
 const TopMenuItem = styled.li`
-  display: inline-block;
+  //display: inline-block;
   position: relative;
   padding: 0 2px;
+`;
 
-  a {
-    position: relative;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    color: ${theme.colors.greenText};
-    transition: color 0.2s;
-    padding: 15px 16px;
-    display: block;
-    text-transform: capitalize;
+const StyledLink = styled(Link)`
+  position: relative;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: ${theme.colors.greenText};
+  transition: color 200ms, transform 200ms;
+  padding: 15px 16px;
+  display: block;
 
-    &:hover {
-      color: ${theme.colors.greenHover};
-    }
+  &:hover {
+    color: ${theme.colors.greenHover};
+  }
 
-    &:hover {
-      &::before {
-        transform: scaleY(1);
-      }
-    }
+  &:hover:not(.active) {
+    transform: scale(1.2);
 
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0px;
-      width: 100%;
-      height: 4px;
-      background-color: ${theme.colors.greenHover};
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: 0.2s;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-    }
+    /* &::before {
+      transform: scaleY(1);
+    } */
+  }
 
-    &.active {
-      color: ${theme.colors.greenHover};
-      &::before {
-        transform: scaleY(1);
-      }
+  /* &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 4px;
+    background-color: ${theme.colors.greenHover};
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: 0.2s;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  } */
+
+  &.active {
+    color: ${theme.colors.greenHover};
+    &::before {
+      transform: scaleY(1);
     }
   }
 `;
@@ -96,7 +103,7 @@ export default function Header() {
   const { pathname } = useLocation();
   console.log(pathname);
 
-  const getLinkClassName = (path) => {
+  const getClassName = (path) => {
     return `${pathname === path ? "active" : ""}`;
   };
 
@@ -106,24 +113,27 @@ export default function Header() {
         <TopNav>
           <TopMenuList>
             <TopMenuItem>
-              <Link to="/" className={getLinkClassName("/")}>
+              <StyledLink to="/" className={getClassName("/")}>
                 about
-              </Link>
+              </StyledLink>
             </TopMenuItem>
             <TopMenuItem>
-              <Link to="/portfolio" className={getLinkClassName("/portfolio")}>
+              <StyledLink
+                to="/portfolio"
+                className={getClassName("/portfolio")}
+              >
                 portfolio
-              </Link>
+              </StyledLink>
             </TopMenuItem>
             <TopMenuItem>
-              <Link to="/contact" className={getLinkClassName("/contact")}>
+              <StyledLink to="/contact" className={getClassName("/contact")}>
                 contact
-              </Link>
+              </StyledLink>
             </TopMenuItem>
             <TopMenuItem>
-              <Link to="/resume" className={getLinkClassName("/resume")}>
+              <StyledLink to="/resume" className={getClassName("/resume")}>
                 resume
-              </Link>
+              </StyledLink>
             </TopMenuItem>
           </TopMenuList>
         </TopNav>
