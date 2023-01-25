@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import theme from "../styles/theme";
@@ -115,14 +115,14 @@ const PageControlPrev = styled(PageControl)`
 const StyledLinkPrev = styled(StyledLink)`
   span {
     right: unset;
-    left: calc(50% - 5px);
+    left: calc(50% + 5px);
     transform: translate3d(-30px, 0, 0);
   }
 `;
 
 const ArrowPrev = styled(Arrow)`
   left: unset;
-  right: calc(50% + 18px);
+  right: calc(50% + 16px);
 
   &::before {
     transform: rotate(45deg);
