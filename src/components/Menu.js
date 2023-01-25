@@ -102,13 +102,14 @@ const CustomLinkMenu = styled(CustomLink)`
   margin: 0 auto;
   height: calc(100% / 4);
   font-size: 2em;
+  color: ${(props) => (props.active ? "#999999" : "#5a5a5a")};
   background-color: rgba(0, 0, 0, 0.02);
   transform: translate3d(0, -110px, 0);
   transition: transform 0.55s cubic-bezier(0, 0.35, 0, 1),
     color 0.15s ease-out 0.1s;
 
-  span {
-    color: ${(props) => (props.active ? "#afb3ab" : "#646961")};
+  &:hover {
+    color: #999999;
   }
 
   &::before {

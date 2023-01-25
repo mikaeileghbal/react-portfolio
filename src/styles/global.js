@@ -123,24 +123,23 @@ export const CustomLink = styled.a`
   //height: calc(100% / 4);
   //font-size: 2em;
   background-color: rgba(0, 0, 0, 0.02);
-  color: white;
+  color: ${colors.grayDark};
   z-index: 1;
-  transition: color 0.4s ease-in;
   overflow: hidden;
   font-size: 32px;
   font-weight: bold;
   line-height: 2;
+  transition: color 0.15s ease-out 0.1s;
 
   span {
+    color: inherit;
     display: inline-block;
     width: 100%;
     text-align: center;
-    color: ${colors.grayDark};
-    transition: 0.125s !important;
   }
 
-  &:hover span {
-    color: #afb3ab;
+  &:hover {
+    color: #999999;
   }
 
   &::before {
