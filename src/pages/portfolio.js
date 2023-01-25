@@ -248,7 +248,7 @@ function PortfoItem({ item }) {
   const { title, image, tags } = item;
   return (
     <li>
-      <a href="#">
+      <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
         <PortoItem image={image}>
           <div class="item__image__wrapp">
             <img
