@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Layout } from "./components";
-import { About, Portfolio, Contact, Resume } from "./pages";
+import { About, Portfolio, Contact, Resume, Project } from "./pages";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<About />} />
           <Route exact path="/portfolio" element={<Portfolio />} />
+          <Route exact path="/portfolio/:title" element={<Project />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/resume" element={<Resume />} />
         </Route>
