@@ -140,7 +140,7 @@ export const CustomLink = styled.a`
   }
 
   &:hover span {
-    color: #a7ada3;
+    color: #afb3ab;
   }
 
   &::before {

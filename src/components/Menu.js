@@ -82,6 +82,19 @@ const CustomNav = styled.nav`
   &.menu-show {
     transform: translate3d(0, 0, 0);
   }
+  &.menu-show a {
+    transform: translate3d(0, 0, 0);
+  }
+
+  a:nth-child(1) {
+    transition-delay: 0.36s;
+  }
+  a:nth-child(2) {
+    transition-delay: 0.24s;
+  }
+  a:nth-child(3) {
+    transition-delay: 0.12s;
+  }
 `;
 
 const CustomLinkMenu = styled(CustomLink)`
@@ -89,7 +102,14 @@ const CustomLinkMenu = styled(CustomLink)`
   margin: 0 auto;
   height: calc(100% / 4);
   font-size: 2em;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.02);
+  transform: translate3d(0, -110px, 0);
+  transition: transform 0.55s cubic-bezier(0, 0.35, 0, 1),
+    color 0.15s ease-out 0.1s;
+
+  span {
+    color: ${(props) => (props.active ? "#afb3ab" : "#646961")};
+  }
 
   &::before {
     background-color: ${colors.blueDark};
@@ -109,7 +129,7 @@ export default function Menu() {
   return (
     <StyledMenu id="page-header" class="top-menu">
       <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
-        <CustomLinkMenu href="#">
+        <CustomLinkMenu href="#" active={true}>
           <span>about</span>
         </CustomLinkMenu>
         <CustomLinkMenu class="top-menu-link" href="#">
