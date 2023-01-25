@@ -6,6 +6,7 @@ import {
   SectionTitle,
   TagButton,
   Text,
+  TextSmall,
 } from "../styles/global";
 
 import theme from "../styles/theme";
@@ -23,7 +24,7 @@ const TagList = styled.ul`
   row-gap: 1em;
   column-gap: 0.4em;
   margin-top: 1.3em;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   z-index: 4;
 `;
 
@@ -38,7 +39,7 @@ const ItemButtonList = styled(ItemTagList)`
 
 const PortoContainer = styled.ul`
   list-style: none;
-  margin: 2em auto;
+  margin: 1.2em auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
@@ -218,10 +219,10 @@ export default function Portfolio() {
             ))}
           </TagList>
         </div>
-        <Text>
+        <TextSmall>
           Showing all projects. Use the filter to list them by skill or
           technology.
-        </Text>
+        </TextSmall>
         <PortoContainer>
           {portfolio.map((item) => (
             <PortfoItem key={item.key} item={item} />
@@ -248,7 +249,7 @@ function PortfoItem({ item }) {
   const { title, image, tags } = item;
   return (
     <li>
-      <a href="#">
+      <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
         <PortoItem image={image}>
           <div class="item__image__wrapp">
             <img

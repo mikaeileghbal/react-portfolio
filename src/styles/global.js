@@ -32,6 +32,11 @@ export const Text = styled.p`
   margin-top: 2px;
 `;
 
+export const TextSmall = styled(Text)`
+  font-size: 14px;
+  font-weight: 400;
+`;
+
 export const StyledButton = styled.button`
   text-decoration: none;
   padding: 1.1em 3em;
