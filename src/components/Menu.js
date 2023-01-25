@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
 
 const { colors } = theme;
@@ -91,69 +92,69 @@ const StyledMenu = styled.header`
     transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
 
     a {
-      display: flex;
+      /* display: flex;
       align-items: center;
       text-align: center;
-      text-decoration: none;
-      width: 90%;
-      position: relative;
+      text-decoration: none; */
+      //width: 90%;
+      /* position: relative; */
       max-width: 600px;
       margin: 0 auto;
       height: calc(100% / 4);
       font-size: 2em;
-      background-color: rgba(0, 0, 0, 0.02);
-      z-index: 1;
-      transition: color 0.4s ease-in;
+      background-color: rgba(0, 0, 0, 0.04);
+      //z-index: 1;
+      //transition: color 0.4s ease-in;
 
       span {
-        display: block;
+        /* display: block;
         width: 100%;
         text-align: center;
         font-size: 32px;
         font-weight: bold;
         color: ${colors.grayDark};
-        transition: 0.125s !important;
+        transition: 0.125s !important; */
       }
 
       &:hover span {
-        color: #a7ada3;
+        //color: #a7ada3;
       }
 
       &::before {
-        content: "";
-        width: 100%;
+        //content: "";
+        /* width: 100%;
         transform-origin: left;
         transform: scaleX(0);
         height: 75%;
         top: 0;
         left: 0;
-        position: absolute;
+        position: absolute; */
         background-color: ${colors.blueDark};
-        z-index: -1;
-        transition: all 0.3s ease-in;
+        /* z-index: -1;
+        transition: all 0.3s ease-in; */
       }
       &::after {
-        content: "";
+        /* content: "";
         width: 100%;
         transform-origin: right;
         transform: scaleX(0);
         bottom: 0;
         right: 0;
-        height: 75%;
+        height: 75%; */
         background-color: #212632;
-        position: absolute;
+        /* position: absolute;
         z-index: -2;
-        transition: all 0.3s ease-in 125ms;
+        transition: all 0.3s ease-in 125ms; */
       }
       &:hover::before {
-        z-index: -1;
+        /* z-index: -1;
         transform: scaleX(1);
-        transition: transform 0.2s ease-in; //cubic-bezier(0.6,0.15,0,1);
+        transition: transform 0.2s ease-in; //cubic-bezier(0.6,0.15,0,1); */
       }
       &:hover::after {
-        z-index: -2;
+        /* z-index: -2;
         transform: scaleX(1);
-        transition: transform 0.2 ease-in; //cubic-bezier(0.6,0.15,0,1) 125ms;
+        transition: transform 0.2 ease-in; //cubic-bezier(0.6,0.15,0,1) 125ms; */
       }
     }
   }
@@ -195,18 +196,18 @@ export default function Menu() {
         class={`top-menu-nav ${showMenu ? "menu-show" : ""}`}
         //ref={menuNav}
       >
-        <a class="top-menu-link" href="#">
+        <CustomLink href="#">
           <span>about</span>
-        </a>
-        <a class="top-menu-link" href="#">
+        </CustomLink>
+        <CustomLink class="top-menu-link" href="#">
           <span>portfolio</span>
-        </a>
-        <a class="top-menu-link" href="#">
+        </CustomLink>
+        <CustomLink class="top-menu-link" href="#">
           <span>contact</span>
-        </a>
-        <a class="top-menu-link" href="#">
+        </CustomLink>
+        <CustomLink class="top-menu-link" href="#">
           <span>resume</span>
-        </a>
+        </CustomLink>
       </nav>
 
       <div
