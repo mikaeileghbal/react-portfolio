@@ -10,61 +10,8 @@ const StyledMenu = styled.header`
   width: 100%;
   display: block;
   z-index: 100;
-  background-color: red;
 
-  div#burger {
-    position: fixed;
-    top: 40px;
-    z-index: 9999;
-    cursor: pointer;
-    background-color: transparent;
-    right: 42px;
-    text-align: center;
-
-    span {
-      display: block;
-      position: relative;
-      width: 42px;
-      height: 2px;
-      margin: 8px;
-      background-color: ${colors.grayDark}; // #7a7a7a;
-      z-index: 1000;
-      //transition: all 0.5s ease-out;
-      transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5);
-    }
-    &:not(.burger):hover > :first-child {
-      transform: translate(0, -4px);
-      //transition: transform .45s cubic-bezier(.43,.77,.15,1.5);
-    }
-    &:not(.burger):hover > :last-child {
-      transform: translate(0, 4px);
-      //transition: transform .45s cubic-bezier(.43,.77,.15,1.5);
-    }
-    &.burger:hover > :first-child {
-      transform: translate(0px, 10px) scale(1.5) rotate(-45deg);
-    }
-    &.burger:hover > :last-child {
-      transform: translate(0px, -10px) scale(1.5) rotate(45deg);
-    }
-  }
-
-  // burger menu STYLES
-  //==============================================
-  .burger > span:first-child {
-    transform: translate(0px, 10px) scale(1) rotate(-45deg);
-    background-color: white;
-  }
-
-  .burger > span:nth-child(2) {
-    transform: translate(0px, 10px) scale(0);
-  }
-
-  .burger > span:last-child {
-    transform: translate(0px, -10px) scale(1) rotate(45deg);
-    background-color: white;
-  }
-
-  .top-menu-nav:before {
+  /* .top-menu-nav:before {
     content: "for a quick search just start typing ..";
     position: absolute;
     bottom: 5%;
@@ -73,112 +20,82 @@ const StyledMenu = styled.header`
     color: rgb(51, 51, 51);
     text-align: center;
     font-size: 13px;
-  }
+  } */
+`;
 
-  // top nav STYLES
-  //==============================================
-  .top-menu-nav {
+const CustomBurger = styled.div`
+  position: fixed;
+  top: 40px;
+  z-index: 9999;
+  cursor: pointer;
+  background-color: transparent;
+  right: 42px;
+  text-align: center;
+
+  span {
     display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    transform-origin: top;
-    transform: translate3d(0, -100%, 0);
-    left: 0;
-    top: 0;
-    background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
-    z-index: 100;
-    padding: 10% 0;
-    transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
-
-    a {
-      /* display: flex;
-      align-items: center;
-      text-align: center;
-      text-decoration: none; */
-      //width: 90%;
-      /* position: relative; */
-      max-width: 600px;
-      margin: 0 auto;
-      height: calc(100% / 4);
-      font-size: 2em;
-      background-color: rgba(0, 0, 0, 0.04);
-      //z-index: 1;
-      //transition: color 0.4s ease-in;
-
-      span {
-        /* display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 32px;
-        font-weight: bold;
-        color: ${colors.grayDark};
-        transition: 0.125s !important; */
-      }
-
-      &:hover span {
-        //color: #a7ada3;
-      }
-
-      &::before {
-        //content: "";
-        /* width: 100%;
-        transform-origin: left;
-        transform: scaleX(0);
-        height: 75%;
-        top: 0;
-        left: 0;
-        position: absolute; */
-        background-color: ${colors.blueDark};
-        /* z-index: -1;
-        transition: all 0.3s ease-in; */
-      }
-      &::after {
-        /* content: "";
-        width: 100%;
-        transform-origin: right;
-        transform: scaleX(0);
-        bottom: 0;
-        right: 0;
-        height: 75%; */
-        background-color: #212632;
-        /* position: absolute;
-        z-index: -2;
-        transition: all 0.3s ease-in 125ms; */
-      }
-      &:hover::before {
-        /* z-index: -1;
-        transform: scaleX(1);
-        transition: transform 0.2s ease-in; //cubic-bezier(0.6,0.15,0,1); */
-      }
-      &:hover::after {
-        /* z-index: -2;
-        transform: scaleX(1);
-        transition: transform 0.2 ease-in; //cubic-bezier(0.6,0.15,0,1) 125ms; */
-      }
-    }
+    position: relative;
+    width: 42px;
+    height: 2px;
+    margin: 8px;
+    background-color: ${colors.grayDark}; // #7a7a7a;
+    z-index: 1000;
+    transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5);
   }
+  &:not(.open):hover > :first-child {
+    transform: translate(0, -4px);
+  }
+  &:not(.open):hover > :last-child {
+    transform: translate(0, 4px);
+  }
+  &.open:hover > :first-child {
+    transform: translate(0px, 10px) scale(1.5) rotate(-45deg);
+  }
+  &.open:hover > :last-child {
+    transform: translate(0px, -10px) scale(1.5) rotate(45deg);
+  }
+  &.open > span:first-child {
+    transform: translate(0px, 10px) scale(1) rotate(-45deg);
+  }
+  &.open > span:nth-child(2) {
+    transform: translate(0px, 10px) scale(0);
+  }
+  &.open > span:last-child {
+    transform: translate(0px, -10px) scale(1) rotate(45deg);
+  }
+`;
 
-  // toggle top menu Show and Hide STYLES
-  //==============================================
-  .menu-show {
+const CustomNav = styled.nav`
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transform-origin: top;
+  transform: translate3d(0, -100%, 0);
+  left: 0;
+  top: 0;
+  background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
+  z-index: 100;
+  padding: 10% 0;
+  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
+
+  &.menu-show {
     transform: translate3d(0, 0, 0);
-    //transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1);
-    //transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
   }
+`;
 
-  .menu-links {
-    &::before {
-      color: #8a8a8a;
-      left: calc(50% - 150px);
-      transition: all 2.5s ease;
-    }
-    a {
-      span {
-        color: ${colors.grayDark};
-        transition: all 2.5s ease-in-out;
-      }
-    }
+const CustomLinkMenu = styled(CustomLink)`
+  max-width: 600px;
+  margin: 0 auto;
+  height: calc(100% / 4);
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.04);
+
+  &::before {
+    background-color: ${colors.blueDark};
+  }
+  &::after {
+    background-color: #212632;
   }
 `;
 
@@ -191,35 +108,29 @@ export default function Menu() {
 
   return (
     <StyledMenu id="page-header" class="top-menu">
-      <nav
-        id="menu-nav"
-        class={`top-menu-nav ${showMenu ? "menu-show" : ""}`}
-        //ref={menuNav}
-      >
-        <CustomLink href="#">
+      <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
+        <CustomLinkMenu href="#">
           <span>about</span>
-        </CustomLink>
-        <CustomLink class="top-menu-link" href="#">
+        </CustomLinkMenu>
+        <CustomLinkMenu class="top-menu-link" href="#">
           <span>portfolio</span>
-        </CustomLink>
-        <CustomLink class="top-menu-link" href="#">
+        </CustomLinkMenu>
+        <CustomLinkMenu class="top-menu-link" href="#">
           <span>contact</span>
-        </CustomLink>
-        <CustomLink class="top-menu-link" href="#">
+        </CustomLinkMenu>
+        <CustomLinkMenu class="top-menu-link" href="#">
           <span>resume</span>
-        </CustomLink>
-      </nav>
+        </CustomLinkMenu>
+      </CustomNav>
 
-      <div
-        id="burger"
-        class={`${showMenu ? "burger" : ""}`}
-        //ref={burger}
+      <CustomBurger
+        className={`${showMenu ? "open" : ""}`}
         onClick={toggleMenu}
       >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </CustomBurger>
     </StyledMenu>
   );
 }
