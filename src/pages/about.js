@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { AnimatedLetters, Next, Social } from "../components";
+import Fade from "../components/Fade";
 import { CustomLink, Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
@@ -89,6 +90,8 @@ const parafs = [
 ];
 
 export default function About() {
+  const [show, setShow] = useState(false);
+
   const navigate = useNavigate();
 
   const gotoPortfolio = () => navigate("/portfolio");
@@ -127,6 +130,12 @@ export default function About() {
       </HeroButton>
       <Social />
       <Next to="/portfolio">portfolio</Next>
+      <button onClick={() => setShow((show) => !show)}>
+        {show ? "Hide" : "Show"}
+      </button>
+      <Fade show={show}>
+        <p>Fade in and Fade out paraf</p>
+      </Fade>
     </Section>
   );
 }
