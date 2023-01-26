@@ -32,24 +32,40 @@ const CustomLinkAbout = styled(CustomLink)`
   font-size: 14px;
 `;
 
-const BlinkAnimation = keyframes`
+const blinkAnimation = keyframes`
   0%{opacity:0}
   50%{opacity:1}
   100%{opacity:0}
 
 `;
 
+const fadeAnimation = keyframes`
+  from{opacity:0}
+  to{opacity:1}
+`;
+
 const Blink = styled.span`
   //display: inline-block;
-  width: 8px;
-  height: 2px;
-  background-color: ${theme.colors.grayDark};
-  animation-name: ${BlinkAnimation};
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
+  position: absolute;
+  transform: translateY(-4px);
+  left: calc(50% + 202px);
+  opacity: 0;
+  animation-name: ${fadeAnimation};
+  animation-delay: 7.5s;
   animation-fill-mode: forwards;
-  animation-direction: normal;
-  animation-timing-function: ease;
+
+  span {
+    display: inline-block;
+    height: 2px;
+    width: 8px;
+    background-color: ${theme.colors.grayDark};
+    animation-name: ${blinkAnimation};
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-timing-function: ease;
+  }
 `;
 
 const parafs = [
@@ -93,10 +109,12 @@ export default function About() {
             initialIndex={paraf.index}
           />
         ))}
-        <Blink></Blink>
-        <CustomLinkAbout href="#">
+        <Blink>
+          <span></span>
+        </Blink>
+        {/* <CustomLinkAbout href="#">
           <span>mikaeileghbal@yaho.com</span>
-        </CustomLinkAbout>
+        </CustomLinkAbout> */}
       </HeroInfo>
       <HeroButton>
         <StyledButton
