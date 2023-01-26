@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Carousel } from "../components";
 import { portfolio } from "../data/portfolio";
 import {
   Container,
@@ -14,6 +15,7 @@ import theme from "../styles/theme";
 export default function Project() {
   const [project, setProject] = useState({});
   const { title } = useParams();
+  const images = ["githubuser.png", "dinomuz.png", "calendar.png"];
 
   useEffect(() => {
     setProject(
@@ -35,8 +37,20 @@ export default function Project() {
             visit the website{" "}
           </StyledButton>
         </div>
-        <div>
-          <h2>Carousel of images</h2>
+        <div
+          style={{
+            backgroundColor: "white",
+            margin: "2em 0 3em",
+            boxShadow:
+              "8px 10px 0px rgba(2, 12, 27, 0.4), inset 8px 10px 10px rgba(2, 12, 27, 0.4)",
+          }}
+        >
+          <Carousel
+            items={images}
+            render={render}
+            groupSize={1}
+            header="project snapshots"
+          />
         </div>
         <SectionSubTitle>About this project</SectionSubTitle>
         <Text>
@@ -74,5 +88,13 @@ export default function Project() {
         </ul>
       </Container>
     </Section>
+  );
+}
+
+function render(item) {
+  return (
+    <div>
+      <img src={`/images/${item}`} alt="item" />
+    </div>
   );
 }
