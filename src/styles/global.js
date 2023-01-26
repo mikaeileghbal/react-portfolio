@@ -23,6 +23,12 @@ export const SectionTitle = styled.h1`
   margin-bottom: 10px;
 `;
 
+export const SectionSubTitle = styled.h2`
+  position: relative;
+  font-weight: 700;
+  font-size: 32px;
+`;
+
 export const Text = styled.p`
   color: ${colors.grayDark};
   max-width: 800px;
@@ -40,7 +46,7 @@ export const TextSmall = styled(Text)`
 export const StyledButton = styled.button`
   text-decoration: none;
   padding: 1.1em 3em;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
   color: ${(props) => props.textColor};
@@ -49,12 +55,12 @@ export const StyledButton = styled.button`
   border: none;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 3px 0 0 #2c7a5a, 0 7px 0 0 black;
+  box-shadow: 0 3px 0 0 ${colors.greenShadow}, 0 7px 0 0 black;
 
   &:hover {
     transform: translate3d(0, 1px, 0);
-    background-color: #73cca8;
-    box-shadow: 0 2px 0 0 #2c7a5a, 0 5px 0 0 black;
+    background-color: ${colors.greenHover};
+    box-shadow: 0 2px 0 0 ${colors.greenShadow}, 0 5px 0 0 black;
   }
 `;
 

@@ -119,8 +119,8 @@ export default function About() {
       <HeroButton>
         <StyledButton
           onClick={gotoPortfolio}
-          textColor={theme.colors.blueDark}
-          backColor={theme.colors.greenHover}
+          textColor="white"
+          backColor={theme.colors.green}
         >
           take a look at my work
         </StyledButton>
