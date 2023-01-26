@@ -9,10 +9,12 @@ const theme = {
     //blueLight: "#2e3445",
     blueLight: "#2b303c",
     blueMenu: "#2b303c",
-    greenHover: "#73cca8",
     linkedin: "#0079b1",
     facebook: "#3d6aa9",
     github: "#4f4f4f",
+    green: "#009688",
+    greenHover: "#00897b",
+    greenShadow: "#00796b",
   },
 
   mixin: {
