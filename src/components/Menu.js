@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
@@ -122,6 +123,8 @@ const CustomLinkMenu = styled(CustomLink)`
 
 export default function Menu() {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
@@ -130,16 +133,31 @@ export default function Menu() {
   return (
     <StyledMenu id="page-header" class="top-menu">
       <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
-        <CustomLinkMenu href="#" active={true}>
+        <CustomLinkMenu
+          href="/"
+          active={location.pathname === "/" ? true : false}
+        >
           <span>about</span>
         </CustomLinkMenu>
-        <CustomLinkMenu class="top-menu-link" href="#">
+        <CustomLinkMenu
+          class="top-menu-link"
+          href="/portfolio"
+          active={location.pathname === "/portfolio" ? true : false}
+        >
           <span>portfolio</span>
         </CustomLinkMenu>
-        <CustomLinkMenu class="top-menu-link" href="#">
+        <CustomLinkMenu
+          class="top-menu-link"
+          href="contact"
+          active={location.pathname === "/contact" ? true : false}
+        >
           <span>contact</span>
         </CustomLinkMenu>
-        <CustomLinkMenu class="top-menu-link" href="#">
+        <CustomLinkMenu
+          class="top-menu-link"
+          href="resume"
+          active={location.pathname === "/resume" ? true : false}
+        >
           <span>resume</span>
         </CustomLinkMenu>
       </CustomNav>
