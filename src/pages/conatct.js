@@ -5,8 +5,8 @@ export default function Contact() {
   return (
     <div>
       Conatct
-      <Next to="/resume">resume</Next>
-      <Previous to="/portfolio">portfolio</Previous>
+      {/* <Next to="/resume">resume</Next>
+      <Previous to="/portfolio">portfolio</Previous> */}
     </div>
   );
 }

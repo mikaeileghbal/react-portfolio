@@ -228,8 +228,8 @@ export default function Portfolio() {
             <PortfoItem key={item.key} item={item} />
           ))}
         </PortoContainer>
-        <Next to="/contact">conatct</Next>
-        <Previous to="/">about</Previous>
+        {/* <Next to="/contact">conatct</Next>
+        <Previous to="/">about</Previous> */}
       </Container>
     </Section>
   );

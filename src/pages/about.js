@@ -129,7 +129,7 @@ export default function About() {
         </StyledButton>
       </HeroButton>
       <Social />
-      <Next to="/portfolio">portfolio</Next>
+      {/* <Next to="/portfolio">portfolio</Next> */}
       <button onClick={() => setShow((show) => !show)}>
         {show ? "Hide" : "Show"}
       </button>
