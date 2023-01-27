@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import theme from "../styles/theme";
+import Animate from "./Animate";
 
 const { colors } = theme;
 
@@ -11,7 +12,6 @@ const PageControl = styled.div`
   width: 150px;
   right: 0;
   top: 25%;
-  //background-color: red;
 
   &:hover a > span {
     transform: translate3d(0px, 0, 0);
@@ -31,7 +31,6 @@ const PageControl = styled.div`
 
 const StyledLink = styled(Link)`
   position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
   font-weight: 700;
@@ -133,18 +132,26 @@ const ArrowPrev = styled(Arrow)`
   }
 `;
 
-export default function Next({ to, children }) {
+export default function Next({ to, children, show }) {
   return (
     <PageControl>
-      <StyledLink to={to}>
-        <span>{children}</span>
-        <Arrow></Arrow>
-      </StyledLink>
+      <Animate
+        show={show}
+        enter="enterNext"
+        exit="exitNext"
+        classname="next"
+        delay="1.4s"
+      >
+        <StyledLink to={to}>
+          <span>{children}</span>
+          <Arrow></Arrow>
+        </StyledLink>
+      </Animate>
     </PageControl>
   );
 }
 
-export function Previous({ to, children }) {
+export function Previous({ to, children, show }) {
   return (
     <PageControlPrev>
       <StyledLinkPrev to={to}>

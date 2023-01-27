@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Menu from "./Menu";
 import Next, { Previous } from "./Next";
@@ -19,6 +19,10 @@ export default function Layout() {
 
   useEffect(() => {
     setCurrentPage(pathname);
+    setShow(false);
+    setTimeout(() => {
+      setShow(true);
+    }, 100);
   }, [pathname]);
 
   useEffect(() => {
@@ -28,13 +32,13 @@ export default function Layout() {
   return (
     <>
       {/* <Header /> */}
-      <Menu />
-      <Ribbon />
+      <Menu show={show} />
+      <Ribbon show={show} />
       <main>
         <Outlet />
       </main>
       {pages[currentPage].nextPage && (
-        <Next to={`/${pages[currentPage].nextPage}`}>
+        <Next to={`/${pages[currentPage].nextPage}`} show={show}>
           {pages[currentPage].nextPage}
         </Next>
       )}
@@ -45,6 +49,7 @@ export default function Layout() {
               ? ""
               : pages[currentPage].prevPage
           }`}
+          show={show}
         >
           {pages[currentPage].prevPage === "-"
             ? "about"
