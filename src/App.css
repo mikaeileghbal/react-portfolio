@@ -1,17 +1,143 @@
-@keyframes fadeIn {
+.animated {
+  max-width: 200px;
+  opacity: 0;
+}
+
+.enter {
+  animation-name: enter;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(1, 0.2, 0.8, 1.2);
+  animation-duration: 0.425s;
+  animation-delay: 7s;
+}
+
+.exit {
+  animation-name: exit;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-duration: 0.425s;
+}
+
+@keyframes enter {
   0% {
     opacity: 0;
+    transform: translate3d(250px, 0, 0);
   }
   100% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes fadeOut {
+@keyframes exit {
   0% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
   100% {
     opacity: 0;
+    transform: translate3d(250px, 0, 0);
+  }
+}
+
+.social {
+  opacity: 0;
+}
+
+.enterSocial {
+  animation-name: enterLeft;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.05, 0.65, 0.18, 1);
+  animation-duration: 425ms;
+  animation-delay: 1.7s;
+}
+
+.exitSocial {
+  animation-name: exitLeft;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.05, 0.65, 0.18, 1);
+  animation-duration: 0.425s;
+}
+
+@keyframes enterLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes exitLeft {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.next {
+  opacity: 0;
+  height: 100%;
+}
+
+.menu {
+  position: fixed;
+  top: 0px;
+  width: 100px;
+  opacity: 0;
+  right: 0px;
+  z-index: 99;
+  background-color: green;
+}
+
+.ribbon {
+  position: fixed;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+  z-index: 9;
+}
+
+.enterNext {
+  animation-name: enterNext;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.05, 0.65, 0.18, 1);
+  animation-duration: 425ms;
+}
+
+.exitNext {
+  animation-name: exitNext;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.05, 0.65, 0.18, 1);
+  animation-duration: 0.425s;
+}
+
+@keyframes enterNext {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes exitNext {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
   }
 }

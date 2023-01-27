@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
+import Animate from "./Animate";
 
 const { colors } = theme;
 
@@ -27,9 +28,8 @@ const StyledMenu = styled.header`
 const CustomBurger = styled.div`
   position: fixed;
   top: 40px;
-  z-index: 9999;
+  z-index: 99;
   cursor: pointer;
-  background-color: transparent;
   right: 42px;
   text-align: center;
 
@@ -76,7 +76,7 @@ const CustomNav = styled.nav`
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
-  z-index: 100;
+  z-index: 9;
   padding: 10% 0;
   transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
 
@@ -121,7 +121,7 @@ const CustomLinkMenu = styled(CustomLink)`
   }
 `;
 
-export default function Menu() {
+export default function Menu({ show }) {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -162,14 +162,22 @@ export default function Menu() {
         </CustomLinkMenu>
       </CustomNav>
 
-      <CustomBurger
-        className={`${showMenu ? "open" : ""}`}
-        onClick={toggleMenu}
+      <Animate
+        show={show}
+        enter="enterNext"
+        exit="exitNext"
+        classname="menu"
+        delay="1.6s"
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </CustomBurger>
+        <CustomBurger
+          className={`${showMenu ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </CustomBurger>
+      </Animate>
     </StyledMenu>
   );
 }

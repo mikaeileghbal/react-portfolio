@@ -10,10 +10,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<About />} />
           <Route exact path="/portfolio" element={<Portfolio />} />
-          <Route exact path="/portfolio/:title" element={<Project />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/resume" element={<Resume />} />
         </Route>
+        <Route exact path="/portfolio/:title" element={<Project />} />
       </Routes>
     </BrowserRouter>
   );

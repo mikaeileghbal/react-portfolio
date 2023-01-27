@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { AnimatedLetters, Next, Social } from "../components";
-import Fade from "../components/Fade";
+import Animate from "../components/Animate";
 import { CustomLink, Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
@@ -90,7 +90,7 @@ const parafs = [
 ];
 
 export default function About() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const navigate = useNavigate();
 
@@ -128,14 +128,14 @@ export default function About() {
           take a look at my work
         </StyledButton>
       </HeroButton>
+      {/* <Animate
+        show={show}
+        enter="enterSocial"
+        exit="exitSocial"
+        classname="social"
+      > */}
       <Social />
-      <Next to="/portfolio">portfolio</Next>
-      <button onClick={() => setShow((show) => !show)}>
-        {show ? "Hide" : "Show"}
-      </button>
-      <Fade show={show}>
-        <p>Fade in and Fade out paraf</p>
-      </Fade>
+      {/* </Animate> */}
     </Section>
   );
 }
