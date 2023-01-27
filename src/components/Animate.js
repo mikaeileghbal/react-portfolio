@@ -1,6 +1,13 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
-export default function Fade({ show, children }) {
+export default function Animate({
+  show,
+  enter,
+  exit,
+  classname,
+  delay,
+  children,
+}) {
   const [shouldRender, setShouldRender] = useState(show);
 
   const onAnimationEnd = () => {
@@ -15,7 +22,8 @@ export default function Fade({ show, children }) {
 
   return (
     <div
-      className={`animated ${show ? "enter" : "exit"}`}
+      className={`${classname} ${show ? enter : exit}`}
+      style={{ animationDelay: delay }}
       onAnimationEnd={onAnimationEnd}
     >
       {children}

@@ -12,6 +12,7 @@ const pages = {
   "/resume": { nextPage: null, prevPage: "contact" },
 };
 export default function Layout() {
+  const [show, setShow] = useState(true);
   const location = useLocation();
   const { pathname } = location;
   const [currentPage, setCurrentPage] = useState(pathname);
