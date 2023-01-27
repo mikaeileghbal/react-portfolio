@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 export default function Fade({ show, children }) {
   const [shouldRender, setShouldRender] = useState(show);
@@ -7,18 +7,18 @@ export default function Fade({ show, children }) {
     if (!show) setShouldRender(false);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (show) setShouldRender(true);
   }, [show]);
 
+  if (!shouldRender) return null;
+
   return (
-    shouldRender && (
-      <div
-        style={{ animation: `${show ? "fadeIn" : "fadeOut"} 1s` }}
-        onAnimationEnd={onAnimationEnd}
-      >
-        {children}
-      </div>
-    )
+    <div
+      className={`animated ${show ? "enter" : "exit"}`}
+      onAnimationEnd={onAnimationEnd}
+    >
+      {children}
+    </div>
   );
 }
