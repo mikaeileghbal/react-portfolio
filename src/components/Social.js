@@ -49,7 +49,7 @@ export default function Social() {
             enter="enterSocial"
             exit="exitSocial"
             classname="social"
-            delay="1.8s"
+            delay="1.9s"
           >
             <GithubButton
               href="https://mikaeileghbal.github.com"
@@ -65,7 +65,7 @@ export default function Social() {
             enter="enterSocial"
             exit="exitSocial"
             classname="social"
-            delay="1.9s"
+            delay="2s"
           >
             <LinkedinButton
               href="https://mikaeileghbal.github.com"
@@ -83,7 +83,7 @@ export default function Social() {
             enter="enterSocial"
             exit="exitSocial"
             classname="social"
-            delay="2s"
+            delay="2.1s"
           >
             <InstagramkButton
               href="https://mikaeileghbal.github.com"

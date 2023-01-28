@@ -47,7 +47,7 @@ export default function Ribbon({ show }) {
         enter="enterNext"
         exit="exitNext"
         classname="ribbon"
-        delay="2.3s"
+        delay="2.4s"
       >
         <StyledLink
           href="https://github.com/mikaeileghbal"
