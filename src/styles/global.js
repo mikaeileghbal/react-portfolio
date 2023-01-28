@@ -141,6 +141,7 @@ export const TagButton = styled(StyledButton)`
   color: ${colors.grayDark};
   //box-shadow: 0 3px 0 0 black;
   padding: 8px 8px;
+  text-decoration: none;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
   border-width: 1px 1px 2px 1px;
   border-style: solid;
