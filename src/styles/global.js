@@ -67,6 +67,8 @@ export const Space = styled.span`
 `;
 
 export const StyledButton = styled.button`
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   padding: 1.1em 3em;
   font-weight: 700;
@@ -82,8 +84,12 @@ export const StyledButton = styled.button`
 
   &:hover {
     transform: translate3d(0, 1px, 0);
-    background-color: ${colors.greenHover};
+    background-color: ${(props) => props.backcolo};
     box-shadow: 0 2px 0 0 ${colors.greenShadow}, 0 5px 0 0 black;
+  }
+
+  span {
+    margin-left: 0.5em;
   }
 `;
 
@@ -95,6 +101,15 @@ const SocialButton = styled.a`
   height: 55px;
   padding-left: 20px;
   cursor: pointer;
+
+  span {
+    display: inline-block;
+  }
+`;
+
+export const FacebookButton = styled(SocialButton)`
+  background-color: ${colors.facebook};
+  color: white;
 `;
 
 export const LinkedinButton = styled(SocialButton)`
