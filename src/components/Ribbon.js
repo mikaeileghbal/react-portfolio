@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Animate from "./Animate";
 
@@ -40,6 +40,10 @@ const StyledLink = styled.a`
 `;
 
 export default function Ribbon({ show }) {
+  const location = useLocation();
+
+  if (location.pathname === "/contact") return null;
+
   return (
     <StyledRibbon>
       <Animate
