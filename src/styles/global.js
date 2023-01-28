@@ -27,6 +27,7 @@ export const SectionSubTitle = styled.h2`
   position: relative;
   font-weight: 700;
   font-size: 32px;
+  margin-bottom: 12px;
 `;
 
 export const Text = styled.p`
@@ -41,6 +42,28 @@ export const Text = styled.p`
 export const TextSmall = styled(Text)`
   font-size: 14px;
   font-weight: 400;
+`;
+
+export const TextGroup = styled.div`
+  margin-bottom: 3em;
+`;
+
+export const UList = styled.ul`
+  margin-bottom: 0.6em;
+  padding: 0 1.4em;
+  list-style: circle;
+
+  li {
+    margin-bottom: 3px;
+    line-height: 1.65;
+    font-size: 16px;
+    color: ${colors.grayDark};
+  }
+`;
+
+export const Space = styled.span`
+  display: inline-block;
+  margin: 0 0.3em;
 `;
 
 export const StyledButton = styled.button`
@@ -118,11 +141,12 @@ export const TagButton = styled(StyledButton)`
 `;
 
 export const CustomLink = styled.a`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   text-align: center;
   text-decoration: none;
   position: relative;
+  cursor: pointer;
   /* width: 90%;
   max-width: 600px; */
   //margin: 0 auto;
@@ -132,8 +156,8 @@ export const CustomLink = styled.a`
   color: ${colors.grayDark};
   z-index: 1;
   overflow: hidden;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: inherit;
+  font-weight: inherit;
   line-height: 2;
   transition: color 0.15s ease-out 0.1s;
 
