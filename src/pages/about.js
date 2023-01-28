@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { AnimatedLetters, Next, Social } from "../components";
+import Animate from "../components/Animate";
 import { CustomLink, Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
@@ -89,6 +90,8 @@ const parafs = [
 ];
 
 export default function About() {
+  const [show, setShow] = useState(true);
+
   const navigate = useNavigate();
 
   const gotoPortfolio = () => navigate("/portfolio");
@@ -119,14 +122,20 @@ export default function About() {
       <HeroButton>
         <StyledButton
           onClick={gotoPortfolio}
-          textColor={theme.colors.blueDark}
-          backColor={theme.colors.greenHover}
+          textColor="white"
+          backColor={theme.colors.green}
         >
           take a look at my work
         </StyledButton>
       </HeroButton>
+      {/* <Animate
+        show={show}
+        enter="enterSocial"
+        exit="exitSocial"
+        classname="social"
+      > */}
       <Social />
-      <Next to="/portfolio">portfolio</Next>
+      {/* </Animate> */}
     </Section>
   );
 }

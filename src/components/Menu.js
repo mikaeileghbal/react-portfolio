@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
+import Animate from "./Animate";
 
 const { colors } = theme;
 
@@ -26,9 +28,8 @@ const StyledMenu = styled.header`
 const CustomBurger = styled.div`
   position: fixed;
   top: 40px;
-  z-index: 9999;
+  z-index: 99;
   cursor: pointer;
-  background-color: transparent;
   right: 42px;
   text-align: center;
 
@@ -75,7 +76,7 @@ const CustomNav = styled.nav`
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
-  z-index: 100;
+  z-index: 9;
   padding: 10% 0;
   transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
 
@@ -98,10 +99,13 @@ const CustomNav = styled.nav`
 `;
 
 const CustomLinkMenu = styled(CustomLink)`
+  display: flex;
   max-width: 600px;
   margin: 0 auto;
   height: calc(100% / 4);
   font-size: 2em;
+  font-weight: 700;
+
   color: ${(props) => (props.active ? "#999999" : "#5a5a5a")};
   background-color: rgba(0, 0, 0, 0.02);
   transform: translate3d(0, -110px, 0);
@@ -120,8 +124,10 @@ const CustomLinkMenu = styled(CustomLink)`
   }
 `;
 
-export default function Menu() {
+export default function Menu({ show }) {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
@@ -130,28 +136,51 @@ export default function Menu() {
   return (
     <StyledMenu id="page-header" class="top-menu">
       <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
-        <CustomLinkMenu href="#" active={true}>
+        <CustomLinkMenu
+          href="/"
+          active={location.pathname === "/" ? true : false}
+        >
           <span>about</span>
         </CustomLinkMenu>
-        <CustomLinkMenu class="top-menu-link" href="#">
+        <CustomLinkMenu
+          class="top-menu-link"
+          href="/portfolio"
+          active={location.pathname === "/portfolio" ? true : false}
+        >
           <span>portfolio</span>
         </CustomLinkMenu>
-        <CustomLinkMenu class="top-menu-link" href="#">
+        <CustomLinkMenu
+          class="top-menu-link"
+          href="contact"
+          active={location.pathname === "/contact" ? true : false}
+        >
           <span>contact</span>
         </CustomLinkMenu>
-        <CustomLinkMenu class="top-menu-link" href="#">
+        <CustomLinkMenu
+          class="top-menu-link"
+          href="resume"
+          active={location.pathname === "/resume" ? true : false}
+        >
           <span>resume</span>
         </CustomLinkMenu>
       </CustomNav>
 
-      <CustomBurger
-        className={`${showMenu ? "open" : ""}`}
-        onClick={toggleMenu}
+      <Animate
+        show={show}
+        enter="enterNext"
+        exit="exitNext"
+        classname="menu"
+        delay="1.6s"
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </CustomBurger>
+        <CustomBurger
+          className={`${showMenu ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </CustomBurger>
+      </Animate>
     </StyledMenu>
   );
 }

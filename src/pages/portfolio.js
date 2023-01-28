@@ -11,7 +11,7 @@ import {
 
 import theme from "../styles/theme";
 import { tags, portfolio } from "../data/portfolio";
-import { Next, Previous } from "../components";
+import { Footer, Next, Previous } from "../components";
 
 const { colors } = theme;
 
@@ -210,7 +210,7 @@ export default function Portfolio() {
           <TagList>
             {tags.map((tag, i) => (
               <TagItem
-                key={i}
+                key={tag}
                 active={tag === currentTag}
                 onSelect={handleTagSelection}
               >
@@ -225,11 +225,12 @@ export default function Portfolio() {
         </TextSmall>
         <PortoContainer>
           {portfolio.map((item) => (
-            <PortfoItem key={item.key} item={item} />
+            <PortfoItem key={item.id} item={item} />
           ))}
         </PortoContainer>
-        <Next to="/contact">conatct</Next>
-        <Previous to="/">about</Previous>
+        <Footer />
+        {/* <Next to="/contact">conatct</Next>
+        <Previous to="/">about</Previous> */}
       </Container>
     </Section>
   );

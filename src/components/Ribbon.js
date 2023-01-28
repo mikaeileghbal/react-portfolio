@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import Animate from "./Animate";
 
 const StyledRibbon = styled.div`
   display: block;
@@ -9,7 +10,7 @@ const StyledRibbon = styled.div`
   top: 0;
   width: 200px;
   height: 200px;
-  z-index: 10;
+  z-index: 9;
 `;
 
 const StyledLink = styled.a`
@@ -38,16 +39,28 @@ const StyledLink = styled.a`
     transform 0.7s cubic-bezier(0.7, 0, 0.25, 1) 1s, opacity 0.2s ease-out 1s;
 `;
 
-export default function Ribbon() {
+export default function Ribbon({ show }) {
+  const location = useLocation();
+
+  if (location.pathname === "/contact") return null;
+
   return (
     <StyledRibbon>
-      <StyledLink
-        href="https://github.com/mikaeileghbal"
-        target="_blank"
-        title="Follow on Github"
+      <Animate
+        show={show}
+        enter="enterNext"
+        exit="exitNext"
+        classname="ribbon"
+        delay="2.4s"
       >
-        follow on github
-      </StyledLink>
+        <StyledLink
+          href="https://github.com/mikaeileghbal"
+          target="_blank"
+          title="Follow on Github"
+        >
+          follow on github
+        </StyledLink>
+      </Animate>
     </StyledRibbon>
   );
 }
