@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
-import { Carousel } from "../components";
+
+import { Carousel, Footer } from "../components";
 import { portfolio } from "../data/portfolio";
 import {
   Container,
@@ -35,7 +36,7 @@ const Divider = styled.hr`
 `;
 
 const CustomLinkProject = styled(CustomLink)`
-  font-size: 18px;
+  //font-size: 18px;
   font-weight: 700;
   color: ${colors.greenText};
 
@@ -133,6 +134,7 @@ export default function Project() {
             </Space>
           </li>
         </UList>
+        <Footer />
       </Container>
     </Section>
   );

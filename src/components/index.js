@@ -6,6 +6,7 @@ import AnimatedLetters from "./AnimatedLetter/AnimatedLetters";
 import Menu from "./Menu";
 import Ribbon from "./Ribbon";
 import Carousel from "./Carousel/Carousel";
+import Footer from "./Footer";
 
 export {
   Header,
@@ -17,4 +18,5 @@ export {
   Menu,
   Ribbon,
   Carousel,
+  Footer,
 };

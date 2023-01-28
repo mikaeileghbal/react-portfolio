@@ -11,7 +11,7 @@ import {
 
 import theme from "../styles/theme";
 import { tags, portfolio } from "../data/portfolio";
-import { Next, Previous } from "../components";
+import { Footer, Next, Previous } from "../components";
 
 const { colors } = theme;
 
@@ -228,6 +228,7 @@ export default function Portfolio() {
             <PortfoItem key={item.id} item={item} />
           ))}
         </PortoContainer>
+        <Footer />
         {/* <Next to="/contact">conatct</Next>
         <Previous to="/">about</Previous> */}
       </Container>

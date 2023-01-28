@@ -55,7 +55,7 @@ export const UList = styled.ul`
 
   li {
     margin-bottom: 3px;
-    line-height: 1.65;
+    line-height: 2;
     font-size: 16px;
     color: ${colors.grayDark};
   }
@@ -147,6 +147,7 @@ export const CustomLink = styled.a`
   text-decoration: none;
   position: relative;
   cursor: pointer;
+
   /* width: 90%;
   max-width: 600px; */
   //margin: 0 auto;

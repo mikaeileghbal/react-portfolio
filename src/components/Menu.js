@@ -99,10 +99,13 @@ const CustomNav = styled.nav`
 `;
 
 const CustomLinkMenu = styled(CustomLink)`
+  display: flex;
   max-width: 600px;
   margin: 0 auto;
   height: calc(100% / 4);
   font-size: 2em;
+  font-weight: 700;
+
   color: ${(props) => (props.active ? "#999999" : "#5a5a5a")};
   background-color: rgba(0, 0, 0, 0.02);
   transform: translate3d(0, -110px, 0);
