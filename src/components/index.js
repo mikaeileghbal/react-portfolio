@@ -7,6 +7,7 @@ import Menu from "./Menu";
 import Ribbon from "./Ribbon";
 import Carousel from "./Carousel/Carousel";
 import Footer from "./Footer";
+import ContactForm from "./ContactForm";
 
 export {
   Header,
@@ -19,4 +20,5 @@ export {
   Ribbon,
   Carousel,
   Footer,
+  ContactForm,
 };
