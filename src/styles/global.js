@@ -224,3 +224,27 @@ export const CustomLink = styled.a`
     transform: translate3d(0, 0, 0); // scaleX(1);
   }
 `;
+
+export const CustomLabel = styled.label`
+  display: none;
+`;
+
+export const CustomInput = styled.input`
+  border: 1px solid red;
+  background-color: transparent;
+  width: 80%;
+  height: 100%;
+  padding: 8px 14px 12px 36px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #797979;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #797979;
+  outline: none;
+  line-height: 100;
+`;
+
+export const FormGroup = styled.div`
+  padding: 0.5em 0;
+`;
