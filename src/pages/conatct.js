@@ -1,7 +1,9 @@
 import React from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
+
 import { ContactForm } from "../components";
+
 import {
   Container,
   CustomLink,
@@ -16,7 +18,9 @@ import theme from "../styles/theme";
 const ButtonWrap = styled.div`
   display: flex;
   gap: 0.5em;
+
   margin: 1em 0 0;
+
 `;
 const CustomLinkContact = styled(CustomLink)`
   font-weight: 800;
@@ -32,6 +36,7 @@ const SubTitle = styled.h4`
   letter-spacing: 0;
   font-size: 22px;
   color: ${theme.colors.grayDark};
+
   margin-bottom: 6px;
 `;
 
@@ -70,7 +75,9 @@ export default function Contact() {
           </Space>
           and ~let's talk.
         </Text>
+
         <ContactForm />
+          
         <SubTitle>Let's get social</SubTitle>
         <Text>
           Follow my online fan page on Facebook and profiles on Twitter, GitHub
