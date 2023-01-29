@@ -68,24 +68,56 @@ const PortoItem = styled.figure`
   transition: all 0.3s;
 
   &:hover .item__header {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
   &:hover .item__header > h3 {
     opacity: 0;
   }
   &:hover p {
-    transform: translate(0, -28px);
+    transform: translate3d(0, -28px, 0);
   }
-  &:hover ul .tag {
-    transform: translate(0, 0);
-    opacity: 1;
-    transition: transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5),
-      opacity 0.1s ease-out;
+  &:hover {
+    .item__tag {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transition: opacity 0.1s ease-out,
+        transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5);
+
+      &:nth-child(1) {
+        transition-delay: 0.45s;
+      }
+      &:nth-child(2) {
+        transition-delay: 0.49s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.53s;
+      }
+      &:nth-child(4) {
+        transition-delay: 0.57s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.61s;
+      }
+      &:nth-child(6) {
+        transition-delay: 0.65s;
+      }
+      &:nth-child(7) {
+        transition-delay: 0.69s;
+      }
+      &:nth-child(8) {
+        transition-delay: 0.73s;
+      }
+      &:nth-child(9) {
+        transition-delay: 0.77s;
+      }
+      &:nth-child(10) {
+        transition-delay: 0.92s;
+      }
+    }
   }
 
   &:hover .item__list {
-    opacity: 1;
   }
 
   &:hover .item__image {
@@ -96,7 +128,7 @@ const PortoItem = styled.figure`
     position: absolute;
     margin-top: 1em;
     width: 100%;
-    height: 100%;
+    height: 94%;
     padding: 1em 3em;
     display: flex;
     flex-flow: column;
@@ -105,10 +137,15 @@ const PortoItem = styled.figure`
     opacity: 0;
     text-align: center;
     z-index: 3;
-    transform: translateY(-100%);
-    transform-style: flat;
+    transform: translate3d(0, -100%, 0);
+    //transform-style: flat;
     transition: opacity 0.15s ease-out,
       transform 0.25s cubic-bezier(0, 0.75, 0, 1);
+
+    background-image: url(/images/${(props) => props.image});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
     &::before {
       content: "";
@@ -117,13 +154,8 @@ const PortoItem = styled.figure`
       position: absolute;
       top: 0;
       left: 0;
-      background-image: url(/images/${(props) => props.image});
       background-color: rgba(10, 10, 10, 0.7);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-blend-mode: hue;
-      z-index: 4;
+      background-blend-mode: luminosity;
     }
 
     p {
@@ -132,7 +164,7 @@ const PortoItem = styled.figure`
 
       text-transform: capitalize;
       user-select: none;
-      transform: translateY(0px);
+      transform: translate3d(0, 0, 0);
       transition: opacity 0.3s $transition-func, transform 0.2s $transition-func;
     }
   }
@@ -155,7 +187,7 @@ const PortoItem = styled.figure`
       z-index: 2;
       //background-color: red;
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.75) inset;
-      background-color: rgb(10, 10, 10, 0.2);
+      background-color: rgb(10, 10, 10, 0);
       background-blend-mode: luminosity;
     }
   }
@@ -176,15 +208,14 @@ const PortoItem = styled.figure`
     justify-content: flex-start;
     align-items: center;
     opacity: 1;
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   .item__list {
-    opacity: 0;
   }
 
-  ul .tag {
+  .item__tag {
     opacity: 0.2;
-    transform: translateY(-10px);
+    transform: translate3d(0, -10px, 0);
   }
 `;
 
@@ -297,11 +328,11 @@ function PortfoItem({ item }) {
             <ItemTagList className="item__list">
               {tags.map((tag, i) => (
                 <li
-                  className="tag"
+                  className="item__tag"
                   key={tag}
-                  style={{
-                    transitionDelay: `${0.45 + i / 30}s`,
-                  }}
+                  // style={{
+                  //   transitionDelay: `${0.45 + i / 30}s`,
+                  // }}
                 >
                   <TagButton>{tag}</TagButton>
                 </li>
