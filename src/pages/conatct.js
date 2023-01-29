@@ -20,7 +20,6 @@ const ButtonWrap = styled.div`
   gap: 0.5em;
 
   margin: 1em 0 0;
-
 `;
 const CustomLinkContact = styled(CustomLink)`
   font-weight: 800;
@@ -77,7 +76,7 @@ export default function Contact() {
         </Text>
 
         <ContactForm />
-          
+
         <SubTitle>Let's get social</SubTitle>
         <Text>
           Follow my online fan page on Facebook and profiles on Twitter, GitHub

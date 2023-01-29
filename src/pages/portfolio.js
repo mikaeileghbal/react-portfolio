@@ -11,9 +11,15 @@ import {
 
 import theme from "../styles/theme";
 import { tags, portfolio } from "../data/portfolio";
-import { Footer, Next, Previous } from "../components";
+import { Footer } from "../components";
 
 const { colors } = theme;
+
+const StyledItem = styled.li`
+  a {
+    text-decoration: none;
+  }
+`;
 
 const TagList = styled.ul`
   list-style: none;
@@ -249,7 +255,7 @@ function TagItem({ children, active, onSelect }) {
 function PortfoItem({ item }) {
   const { title, image, tags } = item;
   return (
-    <li>
+    <StyledItem>
       <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
         <PortoItem image={image}>
           <div class="item__image__wrapp">
@@ -288,6 +294,6 @@ function PortfoItem({ item }) {
           </figcaption>
         </PortoItem>
       </a>
-    </li>
+    </StyledItem>
   );
 }
