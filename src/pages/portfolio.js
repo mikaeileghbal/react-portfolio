@@ -71,6 +71,9 @@ const PortoItem = styled.figure`
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
+  &:hover .item__header .img img {
+    display: block;
+  }
   &:hover .item__header > h3 {
     opacity: 0;
   }
@@ -138,24 +141,40 @@ const PortoItem = styled.figure`
     text-align: center;
     z-index: 3;
     transform: translate3d(0, -100%, 0);
-    //transform-style: flat;
+    transform-style: flat;
     transition: opacity 0.15s ease-out,
       transform 0.25s cubic-bezier(0, 0.75, 0, 1);
 
-    background-image: url(/images/${(props) => props.image});
+    /* background-image: url(/images/${(props) => props.image});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    */
 
-    &::before {
-      content: "";
+    .img {
+      position: absolute;
       width: 100%;
       height: 100%;
-      position: absolute;
       top: 0;
       left: 0;
-      background-color: rgba(10, 10, 10, 0.7);
-      background-blend-mode: luminosity;
+      //transition: opacity 0.15 ease-out;
+
+      img {
+        display: none;
+        width: 100%;
+      }
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(10, 10, 10, 0.7);
+        background-blend-mode: luminosity;
+        z-index: 2;
+      }
     }
 
     p {
@@ -214,7 +233,7 @@ const PortoItem = styled.figure`
   }
 
   .item__tag {
-    opacity: 0.2;
+    opacity: 0;
     transform: translate3d(0, -10px, 0);
   }
 `;
@@ -325,6 +344,14 @@ function PortfoItem({ item }) {
             <ItemTitle>{title}</ItemTitle>
           </ItemHeader>
           <figcaption class="item__header">
+            <div className="img">
+              <img
+                id="image"
+                class="item__image"
+                src={`./images/${image2}`}
+                alt={image}
+              />
+            </div>
             <ItemTagList className="item__list">
               {tags.map((tag, i) => (
                 <li
