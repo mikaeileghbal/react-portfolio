@@ -205,12 +205,6 @@ export const CustomLink = styled.a`
   text-decoration: none;
   position: relative;
   cursor: pointer;
-
-  /* width: 90%;
-  max-width: 600px; */
-  //margin: 0 auto;
-  //height: calc(100% / 4);
-  //font-size: 2em;
   background-color: rgba(0, 0, 0, 0.02);
   color: ${colors.grayDark};
   z-index: 1;
@@ -290,4 +284,13 @@ export const CustomInput = styled.input`
 
 export const FormGroup = styled.div`
   padding: 0.5em 0;
+`;
+
+export const Dot = styled.span`
+  display: inline-block;
+  margin: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${(props) => props.backColor};
 `;

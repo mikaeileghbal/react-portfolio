@@ -18,7 +18,7 @@ const portfolio = [
     id: "1",
     title: "github user profile",
     image: "githubuser.png",
-    tags: ["html", "css", "javascript"],
+    tags: ["html", "css", "javascript", "react", "react query"],
   },
   {
     id: "2",
@@ -42,13 +42,13 @@ const portfolio = [
     id: "5",
     title: "color rating",
     image: "colorrating.png",
-    tags: ["html", "css", "javascript"],
+    tags: ["html", "css", "javascript", "zustand", "react"],
   },
   {
     id: "6",
     title: "form validate",
     image: "formvalidate.png",
-    tags: ["html", "css", "javascript"],
+    tags: ["html", "css", "javascript", "react router"],
   },
 ];
 
