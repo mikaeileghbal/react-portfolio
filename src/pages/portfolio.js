@@ -77,7 +77,7 @@ const PortoItem = styled.figure`
   &:hover p {
     transform: translate(0, -28px);
   }
-  &:hover .tag {
+  &:hover ul .tag {
     transform: translate(0, 0);
     opacity: 1;
     transition: transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5),
@@ -85,10 +85,7 @@ const PortoItem = styled.figure`
   }
 
   &:hover .item__list {
-    /* opacity: 1;
-    transform: translateY(0px);
-    transition: transform 0.225s cubic-bezier(0.65, 1.55, 0.5, 1.3) 0.3s,
-      opacity 0.1s ease-out 0.3s; */
+    opacity: 1;
   }
 
   &:hover .item__image {
@@ -182,10 +179,11 @@ const PortoItem = styled.figure`
     transform: translateY(0px);
   }
   .item__list {
+    opacity: 0;
   }
 
-  .tag {
-    opacity: 0;
+  ul .tag {
+    opacity: 0.2;
     transform: translateY(-10px);
   }
 `;
@@ -276,11 +274,11 @@ function TagItem({ children, active, onSelect }) {
 }
 
 function PortfoItem({ item }) {
-  const { title, image, tags } = item;
+  const { title, image, tags, image2 } = item;
   return (
     <StyledItem>
       <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
-        <PortoItem image={image}>
+        <PortoItem image={image2}>
           <div class="item__image__wrapp">
             <img
               id="image"
