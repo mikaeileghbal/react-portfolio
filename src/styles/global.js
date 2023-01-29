@@ -136,23 +136,65 @@ export const InstagramkButton = styled(SocialButton)`
 `;
 
 export const TagButton = styled(StyledButton)`
-  background-color: ${(props) =>
-    props.active ? colors.greenGray : colors.blueLight};
-  color: ${colors.grayDark};
-  //box-shadow: 0 3px 0 0 black;
+  position: relative;
   padding: 8px 8px;
-  text-decoration: none;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
   border-width: 1px 1px 2px 1px;
   border-style: solid;
   border-color: #222;
   border-radius: 3px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  background-color: ${colors.blueLight};
+  color: ${colors.grayDark};
+  overflow: hidden;
+  z-index: 0;
 
   &:hover {
-    transform: translate3d(0, 1px, 0);
-    background-color: ${(props) =>
-      props.active ? colors.greenGray : colors.greenGray};
+    transform: none;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transform-origin: left;
+    transform: translate3d(
+      ${(props) => (props.active ? "0" : "-105%")},
+      0,
+      0
+    ); //scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -2;
+    transform-origin: right;
+    transform: translate3d(
+      ${(props) => (props.active ? "0" : "105%")},
+      0,
+      0
+    ); // scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1);
+  }
+
+  &:hover::before {
+    z-index: -1;
+    transform: translate3d(0, 0, 0); // scaleX(1);
+  }
+  &:hover::after {
+    z-index: -2;
+    transform: translate3d(0, 0, 0); // scaleX(1);
   }
 `;
 
