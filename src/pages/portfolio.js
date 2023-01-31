@@ -207,7 +207,7 @@ const PortoItem = styled.figure`
       //background-color: red;
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.75) inset;
       background-color: rgb(10, 10, 10, 0);
-      background-blend-mode: luminosity;
+      //background-blend-mode: luminosity;
     }
   }
 

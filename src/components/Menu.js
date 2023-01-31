@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
 import Animate from "./Animate";
@@ -25,6 +25,17 @@ const StyledMenu = styled.header`
   } */
 `;
 
+const burgerRotate = keyframes`
+from{
+  
+  transform: rotate(180deg);
+}
+to{
+
+  transform:rotate(0deg);
+}
+`;
+
 const CustomBurger = styled.div`
   position: fixed;
   top: 40px;
@@ -32,6 +43,13 @@ const CustomBurger = styled.div`
   cursor: pointer;
   right: 42px;
   text-align: center;
+
+  &.clicked {
+    animation-name: ${burgerRotate};
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
 
   span {
     display: block;
@@ -126,11 +144,14 @@ const CustomLinkMenu = styled(CustomLink)`
 
 export default function Menu({ show }) {
   const [showMenu, setShowMenu] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
 
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
     setShowMenu((prev) => !prev);
+  };
+
+  const onAnimationEnd = (e) => {
+    e.target.classList.remove("clicked");
   };
 
   return (
@@ -173,8 +194,9 @@ export default function Menu({ show }) {
         delay="1.6s"
       >
         <CustomBurger
-          className={`${showMenu ? "open" : ""}`}
+          className={`${showMenu ? "open clicked" : "clicked"}`}
           onClick={toggleMenu}
+          onAnimationEnd={onAnimationEnd}
         >
           <span></span>
           <span></span>

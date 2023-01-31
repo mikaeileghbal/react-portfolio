@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { GoLinkExternal } from "react-icons/go";
 import { useParams } from "react-router";
 import styled from "styled-components";
 
@@ -48,7 +49,7 @@ const CustomLinkProject = styled(CustomLink)`
 export default function Project() {
   const [project, setProject] = useState({});
   const { title } = useParams();
-  const images = ["githubuser.png", "dinomuz.png", "calendar.png"];
+  const images = ["githubuser-1.png", "githubuser-2.png", "calendar.png"];
 
   useEffect(() => {
     setProject(
@@ -66,8 +67,13 @@ export default function Project() {
           software development portfolio projects.
         </Text>
         <ButtonWrap>
-          <StyledButton textColor="white" backColor={theme.colors.green}>
-            visit the website
+          <StyledButton
+            textColor="white"
+            backColor={theme.colors.green}
+            style={{ padding: "0.8em 1.5em" }}
+          >
+            <GoLinkExternal size={22} />
+            <span>visit the website</span>
           </StyledButton>
         </ButtonWrap>
         <div

@@ -154,10 +154,18 @@ export default function Next({ to, children, show }) {
 export function Previous({ to, children, show }) {
   return (
     <PageControlPrev>
-      <StyledLinkPrev to={to}>
-        <ArrowPrev></ArrowPrev>
-        <span>{children}</span>
-      </StyledLinkPrev>
+      <Animate
+        show={show}
+        enter="enterLeft"
+        exit="exitLeft"
+        classname="next"
+        delay="1.6s"
+      >
+        <StyledLinkPrev to={to}>
+          <ArrowPrev></ArrowPrev>
+          <span>{children}</span>
+        </StyledLinkPrev>
+      </Animate>
     </PageControlPrev>
   );
 }
