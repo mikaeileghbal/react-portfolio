@@ -81,14 +81,12 @@ const portfolio = [
   {
     id: "3",
     title: "github user profile",
-    brief:
-      "Web application created with next.js. demonstrates CRUD operations on a MongoDB database with Mongoose. It includes authentication with next-auth",
+    brief: "Github user profile call github api to get user information.",
     description: [
-      "Fixer is a web application to track Issues reported with users.",
-      "This Next.js application uses next-auth credentials provider to authenticate users. Users can sign up and report an issue that other users can give feedback to every isuue. There is a profile page for users where they can update their profile info and picture.",
+      "In this project I created a Fetch component that accepts a url and fetches that url. ",
+      "Showing loader  This Next.js application uses next-auth credentials provider to authenticate users. Users can sign up and report an issue that other users can give feedback to every isuue. There is a profile page for users where they can update their profile info and picture.",
     ],
-    image: "githubuser-1.png",
-    image2: "githubuser-2.png",
+    images: ["githubuser-1.png", "githubuser-2.png"],
     tech: [
       "HTML5",
       "CSS3",

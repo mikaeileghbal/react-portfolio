@@ -3,7 +3,7 @@ import { GoLinkExternal } from "react-icons/go";
 import { useParams } from "react-router";
 import styled from "styled-components";
 
-import { Carousel, Footer } from "../components";
+import { Carousel, Footer, Next, Previous } from "../components";
 import { portfolio } from "../data/portfolio";
 import {
   Container,
@@ -129,6 +129,12 @@ export default function Project() {
             </Space>
           </li>
         </UList>
+        <Next to="/portfolio/music-store" show={true}>
+          music store
+        </Next>
+        <Previous to="/portfolio" show={true}>
+          portfolio
+        </Previous>
         <Footer />
       </Container>
     </Section>

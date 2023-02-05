@@ -12,7 +12,7 @@ import {
 
 import theme from "../styles/theme";
 import { tags, portfolio } from "../data/portfolio";
-import { Footer } from "../components";
+import { Footer, Next, Previous } from "../components";
 
 const { colors } = theme;
 
@@ -267,6 +267,7 @@ const ItemTitle = styled.h3`
 `;
 
 export default function Portfolio() {
+  const [show, setShow] = useState(true);
   const [currentTag, setCurrentTag] = useState("show all");
 
   const handleTagSelection = (tag) => {
@@ -306,8 +307,13 @@ export default function Portfolio() {
           ))}
         </PortoContainer>
         <Footer />
-        {/* <Next to="/contact">conatct</Next>
-        <Previous to="/">about</Previous> */}
+
+        <Next to="/contact" show={show}>
+          contact
+        </Next>
+        <Previous to="/" show={show}>
+          about
+        </Previous>
       </Container>
     </Section>
   );

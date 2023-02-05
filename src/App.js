@@ -12,8 +12,8 @@ function App() {
           <Route exact path="/portfolio" element={<Portfolio />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/resume" element={<Resume />} />
+          <Route exact path="/portfolio/:title" element={<Project />} />
         </Route>
-        <Route exact path="/portfolio/:title" element={<Project />} />
       </Routes>
     </BrowserRouter>
   );
