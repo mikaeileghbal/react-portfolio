@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { GoLinkExternal } from "react-icons/go";
 import { useParams } from "react-router";
 import styled from "styled-components";
 
@@ -48,7 +49,7 @@ const CustomLinkProject = styled(CustomLink)`
 export default function Project() {
   const [project, setProject] = useState({});
   const { title } = useParams();
-  const images = ["githubuser.png", "dinomuz.png", "calendar.png"];
+  //const images = ["githubuser-1.png", "githubuser-2.png", "calendar.png"];
 
   useEffect(() => {
     setProject(
@@ -56,18 +57,20 @@ export default function Project() {
     );
   }, [title]);
 
+  console.log("project ", project);
   return (
     <Section>
       <Container>
         <SectionTitle>{project.title}</SectionTitle>
-        <Text>
-          From Html, CSS and Web Components to React.JS, Next.JS, Redux,
-          Suztand, React Qury, MongoDB and MySQL. Check out my latest web
-          software development portfolio projects.
-        </Text>
+        <Text>{project.brief}</Text>
         <ButtonWrap>
-          <StyledButton textColor="white" backColor={theme.colors.green}>
-            visit the website
+          <StyledButton
+            textColor="white"
+            backColor={theme.colors.green}
+            style={{ padding: "0.8em 1.5em" }}
+          >
+            <GoLinkExternal size={22} />
+            <span>visit the website</span>
           </StyledButton>
         </ButtonWrap>
         <div
@@ -78,29 +81,21 @@ export default function Project() {
               "8px 10px 0px rgba(2, 12, 27, 0.4), inset 8px 10px 10px rgba(2, 12, 27, 0.4)",
           }}
         >
-          <Carousel
-            items={images}
-            render={render}
-            groupSize={1}
-            header="project snapshots"
-          />
+          {project.images && (
+            <Carousel
+              items={project.images}
+              render={render}
+              groupSize={1}
+              header="project snapshots"
+            />
+          )}
         </div>
         <SectionSubTitle>About this project</SectionSubTitle>
         <Divider />
         <TextGroup>
-          <Text>
-            From Html, CSS and Web Components to React.JS, Next.JS, Redux,
-            Suztand, React Qury, MongoDB and MySQL. Check out my latest web
-            software development portfolio projects. From Html, CSS and Web
-            Components to React.JS, Next.JS, Redux, Suztand, React Qury, MongoDB
-            and MySQL. Check out my latest web software development portfolio
-            projects.
-          </Text>
-          <Text style={{ marginTop: "1em" }}>
-            From Html, CSS and Web Components to React.JS, Next.JS, Redux,
-            Suztand, React Qury, MongoDB and MySQL. Check out my latest web
-            software development portfolio projects.
-          </Text>
+          {project.description?.map((text, i) => (
+            <Text key={i}>{text}</Text>
+          ))}
         </TextGroup>
         <SectionSubTitle>Technical Sheet</SectionSubTitle>
         <Text>
@@ -109,13 +104,9 @@ export default function Project() {
         <Divider />
         <TextGroup>
           <UList>
-            <li>UI/UX Design UI/UX Architecture</li>
-            <li>UI/UX Animations</li>
-            <li>HTML5 – semantic, audio, video, canvas</li>
-            <li>CSS3 – preprocessed with LESS + LESSHAT</li>
-            <li>Meteor.js</li>
-            <li>Blaze</li>
-            <li>MongoDB</li>
+            {project.tech?.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </UList>
         </TextGroup>
         <SectionSubTitle>Resources</SectionSubTitle>
@@ -124,13 +115,17 @@ export default function Project() {
           <li>
             The project is online at
             <Space>
-              <CustomLinkProject>HTTPS://ROCKET.CHAT</CustomLinkProject>
+              <CustomLinkProject href={project.resource?.[0]} target="_blank">
+                {project.resource?.[0].toUpperCase()}
+              </CustomLinkProject>
             </Space>
           </li>
           <li>
             Access the project's source on
             <Space>
-              <CustomLinkProject>GITHUB</CustomLinkProject>
+              <CustomLinkProject href={project.resource?.[1]} target="_blank">
+                GITHUB
+              </CustomLinkProject>
             </Space>
           </li>
         </UList>

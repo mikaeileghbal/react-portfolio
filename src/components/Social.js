@@ -46,8 +46,8 @@ export default function Social() {
         <StyledItem>
           <Animate
             show={show}
-            enter="enterSocial"
-            exit="exitSocial"
+            enter="enterLeft"
+            exit="exitLeft"
             classname="social"
             delay="1.9s"
           >
@@ -62,8 +62,8 @@ export default function Social() {
         <StyledItem>
           <Animate
             show={show}
-            enter="enterSocial"
-            exit="exitSocial"
+            enter="enterLeft"
+            exit="exitLeft"
             classname="social"
             delay="2s"
           >
@@ -80,8 +80,8 @@ export default function Social() {
         <StyledItem>
           <Animate
             show={show}
-            enter="enterSocial"
-            exit="exitSocial"
+            enter="enterLeft"
+            exit="exitLeft"
             classname="social"
             delay="2.1s"
           >
