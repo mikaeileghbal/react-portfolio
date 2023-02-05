@@ -8,6 +8,7 @@ import { portfolio } from "../data/portfolio";
 import {
   Container,
   CustomLink,
+  PortoButton,
   Section,
   SectionSubTitle,
   SectionTitle,
@@ -157,6 +158,17 @@ export default function Project() {
           </Previous>
         )}
 
+        <PortoButton href="/portfolio" title="Back to portfolio">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </PortoButton>
         <Footer />
       </Container>
     </Section>
