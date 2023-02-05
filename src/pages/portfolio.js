@@ -324,17 +324,17 @@ function TagItem({ children, active, onSelect }) {
 }
 
 function PortfoItem({ item }) {
-  const { title, image, tags, image2 } = item;
+  const { title, images, tags } = item;
   return (
     <StyledItem>
       <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
-        <PortoItem image={image2}>
+        <PortoItem image={images?.[0]}>
           <div class="item__image__wrapp">
             <img
               id="image"
               class="item__image"
-              src={`./images/${image}`}
-              alt={image}
+              src={`./images/${images?.[0]}`}
+              alt={title}
             />
           </div>
           <ItemHeader>
@@ -348,8 +348,8 @@ function PortfoItem({ item }) {
               <img
                 id="image"
                 class="item__image"
-                src={`./images/${image2}`}
-                alt={image}
+                src={`./images/${images?.[1]}`}
+                alt={title}
               />
             </div>
             <ItemTagList className="item__list">

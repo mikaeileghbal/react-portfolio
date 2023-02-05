@@ -46,6 +46,10 @@ export const TextSmall = styled(Text)`
 
 export const TextGroup = styled.div`
   margin-bottom: 3em;
+
+  p + p {
+    margin-top: 1em;
+  }
 `;
 
 export const UList = styled.ul`
@@ -215,6 +219,7 @@ export const CustomLink = styled.a`
   transition: color 0.15s ease-out 0.1s;
 
   span {
+    color: ${colors.grayDark};
     color: inherit;
     display: inline-block;
     width: 100%;
@@ -223,6 +228,9 @@ export const CustomLink = styled.a`
 
   &:hover {
     color: #999999;
+    span {
+      color: #999999;
+    }
   }
 
   &::before {
