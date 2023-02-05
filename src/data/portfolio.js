@@ -1,6 +1,7 @@
 const tags = [
   "show all",
   "html",
+  "css",
   "scss",
   "javascript",
   "reactjs",
@@ -46,7 +47,7 @@ const portfolio = [
       "css",
       "javascript",
       "nextjs",
-      "Mongodb",
+      "mongodb",
       "mongoose",
       "nextauth",
     ],
