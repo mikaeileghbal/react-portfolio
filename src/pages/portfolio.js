@@ -337,6 +337,13 @@ function TagItem({ children, active, onSelect }) {
 
 function PortfoItem({ item }) {
   const { title, images, tags } = item;
+
+  const handleTagClick = (e, tag) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(tag);
+  };
+
   return (
     <StyledItem>
       <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
@@ -373,7 +380,9 @@ function PortfoItem({ item }) {
                   //   transitionDelay: `${0.45 + i / 30}s`,
                   // }}
                 >
-                  <TagButton>{tag}</TagButton>
+                  <TagButton onClick={(e) => handleTagClick(e, tag)}>
+                    {tag}
+                  </TagButton>
                 </li>
               ))}
             </ItemTagList>
