@@ -7,7 +7,6 @@ export default function Carousel({ items, groupSize, render, header }) {
   const groupCount = Math.ceil(items.length / groupSize);
 
   const groupItems = (items, groupSize) => {
-    console.log(groupSize, items);
     let rows = items
       .map(function (item) {
         return render(item);
