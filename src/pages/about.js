@@ -136,6 +136,9 @@ export default function About() {
       > */}
       <Social />
       {/* </Animate> */}
+      <Next to="/portfolio" show={show}>
+        portfolio
+      </Next>
     </Section>
   );
 }

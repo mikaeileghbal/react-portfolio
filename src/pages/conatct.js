@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
 
-import { ContactForm } from "../components";
+import { ContactForm, Previous } from "../components";
 
 import {
   Container,
@@ -62,6 +62,7 @@ const StyledGithub = styled(StyledButton)`
 `;
 
 export default function Contact() {
+  const [show, setShow] = useState(true);
   return (
     <Section>
       <Container>
@@ -96,6 +97,9 @@ export default function Contact() {
             <span>github</span>
           </StyledGithub>
         </ButtonWrap>
+        <Previous to="/portfolio" show={show}>
+          portfolio
+        </Previous>
       </Container>
     </Section>
   );

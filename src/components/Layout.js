@@ -37,25 +37,6 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      {pages[currentPage].nextPage && (
-        <Next to={`/${pages[currentPage].nextPage}`} show={show}>
-          {pages[currentPage].nextPage}
-        </Next>
-      )}
-      {pages[currentPage].prevPage && (
-        <Previous
-          to={`/${
-            pages[currentPage].prevPage === "-"
-              ? ""
-              : pages[currentPage].prevPage
-          }`}
-          show={show}
-        >
-          {pages[currentPage].prevPage === "-"
-            ? "about"
-            : pages[currentPage].prevPage}
-        </Previous>
-      )}
     </>
   );
 }
