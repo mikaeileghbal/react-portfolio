@@ -8,6 +8,7 @@ import Ribbon from "./Ribbon";
 import Carousel from "./Carousel/Carousel";
 import Footer from "./Footer";
 import ContactForm from "./ContactForm";
+import CustomRoute from "./CustomRoute";
 
 export {
   Header,
@@ -21,4 +22,5 @@ export {
   Carousel,
   Footer,
   ContactForm,
+  CustomRoute,
 };
