@@ -5,15 +5,16 @@ import styled, { keyframes } from "styled-components";
 
 const ProgressAnim = keyframes`
   0%{
+    opacity: 1;
     transform-origin: left;
     transform: translate3d(-100%,0,0);
   }
   50%{
-    
+    opacity: 0.5;
     transform: translate3d(0,0,0)
   }
   100%{
-    
+    opacity: 0;
     transform: translate3d(100%,0,0)
   }
 `;
