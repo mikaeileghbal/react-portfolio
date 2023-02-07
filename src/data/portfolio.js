@@ -74,7 +74,7 @@ const portfolio = [
       "Mongoose",
     ],
     resource: [
-      "https://mikaeileghbal.github.io/musicstore",
+      "https://mikaeileghbal.github.io/music-store",
       "https://github.com/mikaeileghbal/music-store",
     ],
     tags: ["html", "css", "scss", "reactjs", "redux", "react query"],
