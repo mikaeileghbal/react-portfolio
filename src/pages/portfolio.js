@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   Container,
@@ -48,7 +48,7 @@ const PortoContainer = styled.ul`
   list-style: none;
   margin: 1.2em auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 359px));
   justify-content: center;
   row-gap: 2.6em;
   column-gap: 2.6em;
@@ -269,11 +269,17 @@ const ItemTitle = styled.h3`
 export default function Portfolio() {
   const [show, setShow] = useState(true);
   const [currentTag, setCurrentTag] = useState("show all");
+  const [filter, setFilter] = useState("show all");
 
   const handleTagSelection = (tag) => {
-    console.log(tag);
     setCurrentTag(tag);
+    setFilter(tag);
   };
+
+  const filterdPortfolio = portfolio.filter((item) => {
+    if (filter === "show all") return item;
+    return item.tags.includes(filter.toLowerCase());
+  });
 
   return (
     <Section>
@@ -302,7 +308,7 @@ export default function Portfolio() {
           technology.
         </TextSmall>
         <PortoContainer>
-          {portfolio.map((item) => (
+          {filterdPortfolio.map((item) => (
             <PortfoItem key={item.id} item={item} />
           ))}
         </PortoContainer>
@@ -331,6 +337,13 @@ function TagItem({ children, active, onSelect }) {
 
 function PortfoItem({ item }) {
   const { title, images, tags } = item;
+
+  const handleTagClick = (e, tag) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(tag);
+  };
+
   return (
     <StyledItem>
       <a href={`/portfolio/${title.replace(/\s/g, "-")}`}>
@@ -367,7 +380,9 @@ function PortfoItem({ item }) {
                   //   transitionDelay: `${0.45 + i / 30}s`,
                   // }}
                 >
-                  <TagButton>{tag}</TagButton>
+                  <TagButton onClick={(e) => handleTagClick(e, tag)}>
+                    {tag}
+                  </TagButton>
                 </li>
               ))}
             </ItemTagList>

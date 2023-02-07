@@ -8,6 +8,7 @@ import { portfolio } from "../data/portfolio";
 import {
   Container,
   CustomLink,
+  PortoButton,
   Section,
   SectionSubTitle,
   SectionTitle,
@@ -49,15 +50,15 @@ const CustomLinkProject = styled(CustomLink)`
 export default function Project() {
   const [project, setProject] = useState({});
   const { title } = useParams();
-  //const images = ["githubuser-1.png", "githubuser-2.png", "calendar.png"];
 
   useEffect(() => {
-    setProject(
-      portfolio.filter((item) => item.title === title.replace(/-/g, " "))[0]
-    );
+    const current = portfolio.filter(
+      (item) => item.title === title.replace(/-/g, " ")
+    )[0];
+
+    setProject(current);
   }, [title]);
 
-  console.log("project ", project);
   return (
     <Section>
       <Container>
@@ -129,12 +130,45 @@ export default function Project() {
             </Space>
           </li>
         </UList>
-        <Next to="/portfolio/music-store" show={true}>
-          music store
-        </Next>
-        <Previous to="/portfolio" show={true}>
-          portfolio
-        </Previous>
+        {project.id < portfolio.length && (
+          <Next
+            to={`/portfolio/${portfolio[project.id]?.title.replace(
+              /\s/g,
+              "-"
+            )}`}
+            show={true}
+          >
+            {portfolio[project.id]?.title}
+          </Next>
+        )}
+
+        {project.id > 1 ? (
+          <Previous
+            to={`/portfolio/${portfolio[project.id - 2]?.title.replace(
+              /\s/g,
+              "-"
+            )}`}
+            show={true}
+          >
+            {portfolio[project.id - 2]?.title}
+          </Previous>
+        ) : (
+          <Previous to="/portfolio" show={true}>
+            portfolio
+          </Previous>
+        )}
+
+        <PortoButton href="/portfolio" title="Back to portfolio">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </PortoButton>
         <Footer />
       </Container>
     </Section>

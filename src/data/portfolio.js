@@ -1,6 +1,7 @@
 const tags = [
   "show all",
   "html",
+  "css",
   "scss",
   "javascript",
   "reactjs",
@@ -46,7 +47,7 @@ const portfolio = [
       "css",
       "javascript",
       "nextjs",
-      "Mongodb",
+      "mongodb",
       "mongoose",
       "nextauth",
     ],
@@ -109,8 +110,7 @@ const portfolio = [
       "Fixer is a web application to track Issues reported with users.",
       "This Next.js application uses next-auth credentials provider to authenticate users. Users can sign up and report an issue that other users can give feedback to every isuue. There is a profile page for users where they can update their profile info and picture.",
     ],
-    image: "calendar.png",
-    image2: "githubuser-2.png",
+    images: ["calendar.png", "githubuser-2.png"],
     tech: [
       "HTML5",
       "CSS3",
@@ -133,8 +133,7 @@ const portfolio = [
       "Fixer is a web application to track Issues reported with users.",
       "This Next.js application uses next-auth credentials provider to authenticate users. Users can sign up and report an issue that other users can give feedback to every isuue. There is a profile page for users where they can update their profile info and picture.",
     ],
-    image: "colorrating.png",
-    image2: "githubuser-2.png",
+    images: ["colorrating.png", "githubuser-2.png"],
     tech: [
       "HTML5",
       "CSS3",
@@ -157,8 +156,7 @@ const portfolio = [
       "Fixer is a web application to track Issues reported with users.",
       "This Next.js application uses next-auth credentials provider to authenticate users. Users can sign up and report an issue that other users can give feedback to every isuue. There is a profile page for users where they can update their profile info and picture.",
     ],
-    image: "formvalidate.png",
-    image2: "githubuser-2.png",
+    images: ["formvalidate.png", "githubuser-2.png"],
     tech: [
       "HTML5",
       "CSS3",
