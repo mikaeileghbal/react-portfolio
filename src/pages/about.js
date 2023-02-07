@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { AnimatedLetters, Next, Social } from "../components";
+import Animate from "../components/Animate";
 import { CustomLink, Section, StyledButton, Text } from "../styles/global";
 import theme from "../styles/theme";
 
@@ -32,24 +33,40 @@ const CustomLinkAbout = styled(CustomLink)`
   font-size: 14px;
 `;
 
-const BlinkAnimation = keyframes`
+const blinkAnimation = keyframes`
   0%{opacity:0}
   50%{opacity:1}
   100%{opacity:0}
 
 `;
 
+const fadeAnimation = keyframes`
+  from{opacity:0}
+  to{opacity:1}
+`;
+
 const Blink = styled.span`
   //display: inline-block;
-  width: 8px;
-  height: 2px;
-  background-color: ${theme.colors.grayDark};
-  animation-name: ${BlinkAnimation};
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
+  position: absolute;
+  transform: translateY(-4px);
+  left: calc(50% + 202px);
+  opacity: 0;
+  animation-name: ${fadeAnimation};
+  animation-delay: 7.5s;
   animation-fill-mode: forwards;
-  animation-direction: normal;
-  animation-timing-function: ease;
+
+  span {
+    display: inline-block;
+    height: 2px;
+    width: 8px;
+    background-color: ${theme.colors.grayDark};
+    animation-name: ${blinkAnimation};
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-timing-function: ease;
+  }
 `;
 
 const parafs = [
@@ -73,6 +90,8 @@ const parafs = [
 ];
 
 export default function About() {
+  const [show, setShow] = useState(true);
+
   const navigate = useNavigate();
 
   const gotoPortfolio = () => navigate("/portfolio");
@@ -93,22 +112,33 @@ export default function About() {
             initialIndex={paraf.index}
           />
         ))}
-        <Blink></Blink>
-        <CustomLinkAbout href="#">
+        <Blink>
+          <span></span>
+        </Blink>
+        {/* <CustomLinkAbout href="#">
           <span>mikaeileghbal@yaho.com</span>
-        </CustomLinkAbout>
+        </CustomLinkAbout> */}
       </HeroInfo>
       <HeroButton>
         <StyledButton
           onClick={gotoPortfolio}
-          textColor={theme.colors.blueDark}
-          backColor={theme.colors.greenHover}
+          textColor="white"
+          backColor={theme.colors.green}
         >
           take a look at my work
         </StyledButton>
       </HeroButton>
+      {/* <Animate
+        show={show}
+        enter="enterSocial"
+        exit="exitSocial"
+        classname="social"
+      > */}
       <Social />
-      <Next to="/portfolio">portfolio</Next>
+      {/* </Animate> */}
+      <Next to="/portfolio" show={show}>
+        portfolio
+      </Next>
     </Section>
   );
 }

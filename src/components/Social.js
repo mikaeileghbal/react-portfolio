@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
 import {
@@ -7,12 +7,14 @@ import {
   InstagramkButton,
 } from "../styles/global";
 import theme from "../styles/theme";
+import Animate from "./Animate";
 
 const Follow = styled.div`
   position: fixed;
   left: 0;
   top: calc(50% - 165px / 2);
   width: 55px;
+
   //transform: translateY(calc(-50% + 1px));
 `;
 
@@ -36,31 +38,60 @@ const StyledItem = styled.li`
 `;
 
 export default function Social() {
+  const [show, setShow] = useState(true);
+
   return (
     <Follow>
       <StyledList>
         <StyledItem>
-          <GithubButton href="https://mikaeileghbal.github.com" target="blank">
-            <FaGithub size={33} />
-          </GithubButton>
+          <Animate
+            show={show}
+            enter="enterLeft"
+            exit="exitLeft"
+            classname="social"
+            delay="1.9s"
+          >
+            <GithubButton
+              href="https://mikaeileghbal.github.com"
+              target="blank"
+            >
+              <FaGithub size={33} />
+            </GithubButton>
+          </Animate>
         </StyledItem>
         <StyledItem>
-          <LinkedinButton
-            href="https://mikaeileghbal.github.com"
-            target="blank"
-            textColor={theme.colors.blueLight}
-            backColor={theme.colors.blueDark}
+          <Animate
+            show={show}
+            enter="enterLeft"
+            exit="exitLeft"
+            classname="social"
+            delay="2s"
           >
-            <FaLinkedinIn size={28} />
-          </LinkedinButton>
+            <LinkedinButton
+              href="https://mikaeileghbal.github.com"
+              target="blank"
+              textColor={theme.colors.blueLight}
+              backColor={theme.colors.blueDark}
+            >
+              <FaLinkedinIn size={28} />
+            </LinkedinButton>
+          </Animate>
         </StyledItem>
         <StyledItem>
-          <InstagramkButton
-            href="https://mikaeileghbal.github.com"
-            target="blank"
+          <Animate
+            show={show}
+            enter="enterLeft"
+            exit="exitLeft"
+            classname="social"
+            delay="2.1s"
           >
-            <FaInstagram size={33} />
-          </InstagramkButton>
+            <InstagramkButton
+              href="https://mikaeileghbal.github.com"
+              target="blank"
+            >
+              <FaInstagram size={33} />
+            </InstagramkButton>
+          </Animate>
         </StyledItem>
       </StyledList>
     </Follow>
