@@ -1,7 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import theme from "./theme";
 
 const { colors } = theme;
+
+const spinAnim = keyframes`
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+`;
 
 export const Container = styled.div`
   max-width: 800px;
@@ -72,6 +81,7 @@ export const Space = styled.span`
 
 export const StyledButton = styled.button`
   display: inline-flex;
+  position: relative;
   align-items: center;
   text-decoration: none;
   padding: 1.1em 3em;
@@ -90,6 +100,27 @@ export const StyledButton = styled.button`
     transform: translate3d(0, 1px, 0);
     background-color: ${(props) => props.backcolo};
     box-shadow: 0 2px 0 0 ${colors.greenShadow}, 0 5px 0 0 black;
+  }
+
+  &:disabled {
+    cursor: default;
+    color: silver;
+    box-shadow: 0 2px 0 0 #666;
+    background-color: ${colors.grayDark};
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: calc(50% - 8px);
+      left: 10px;
+      border-radius: 50%;
+      border-width: 2px 2px 2px 2px;
+      border-style: solid;
+      border-color: white white white transparent;
+      animation: ${spinAnim} 2s linear infinite;
+    }
   }
 
   span {
@@ -288,6 +319,22 @@ export const CustomInput = styled.input`
   border-color: #797979;
   outline: none;
   line-height: 100;
+`;
+
+export const CustomTextArea = styled.textarea`
+  border: 1px solid red;
+  background-color: transparent;
+  width: 80%;
+  padding: 8px 14px 12px 36px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #797979;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #797979;
+  outline: none;
+  //line-height: 100;
 `;
 
 export const FormGroup = styled.div`

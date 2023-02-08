@@ -66,7 +66,9 @@ export default function Carousel({ items, groupSize, render, header }) {
         <div
           className="inner"
           style={{
-            transform: `translateX(-${currentIndex * (100 / groupCount)}%)`,
+            transform: `translate3d(-${
+              currentIndex * (100 / groupCount)
+            }%,0,0)`,
             width: `calc(100% * ${groupCount})`,
             gridTemplateColumns: `repeat(${groupCount},1fr)`,
           }}
