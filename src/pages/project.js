@@ -84,7 +84,7 @@ export default function Project() {
         >
           {project.images && (
             <Carousel
-              items={project.images}
+              items={project.images.slice(2)}
               render={render}
               groupSize={1}
               header="project snapshots"

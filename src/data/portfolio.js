@@ -27,13 +27,19 @@ const portfolio = [
       "Fixer is a web application to track Issues reported with users.",
       "This Next.js application uses next-auth credentials provider to authenticate users. Users can sign up and report an issue that other users can give feedback to every isuue. There is a profile page for users where they can update their profile info and picture.",
     ],
-    images: ["fixer-1.png", "fixer-2.png"],
+    images: [
+      "fixer-1.png",
+      "fixer-2.png",
+      "fixer-3.png",
+      "fixer-4.png",
+      "fixer-5.png",
+    ],
 
     tech: [
       "HTML5",
       "CSS3",
       "SCSS",
-      "styled components",
+      "Styled Components",
       "Next.js",
       "Next-Auth",
       "MongoDB",
@@ -62,7 +68,14 @@ const portfolio = [
       "Music Store is an online music records selling web application created with react.",
       "This application uses redux to manage state. A lot of reusable components are created. In this project I created a side selection menu to filter results. it uses context to keep track of state so it can be moved to any project without worring about it's functionality. ",
     ],
-    images: ["musicstore-1.png", "musicstore-2.png"],
+    images: [
+      "musicstore-1.png",
+      "musicstore-2.png",
+      "musicstore-3.png",
+      "musicstore-4.png",
+      "musicstore-5.png",
+      "musicstore-6.png",
+    ],
 
     tech: [
       "HTML5",
