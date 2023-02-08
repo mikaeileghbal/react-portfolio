@@ -159,28 +159,28 @@ export default function Menu({ show }) {
       <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
         <CustomLinkMenu
           href="/"
-          active={location.pathname === "/" ? true : false}
+          active={location.pathname === "./" ? true : false}
         >
           <span>about</span>
         </CustomLinkMenu>
         <CustomLinkMenu
           class="top-menu-link"
           href="/portfolio"
-          active={location.pathname === "/portfolio" ? true : false}
+          active={location.pathname === "./portfolio" ? true : false}
         >
           <span>portfolio</span>
         </CustomLinkMenu>
         <CustomLinkMenu
           class="top-menu-link"
-          href="contact"
-          active={location.pathname === "/contact" ? true : false}
+          href="/contact"
+          active={location.pathname === "./contact" ? true : false}
         >
           <span>contact</span>
         </CustomLinkMenu>
         <CustomLinkMenu
           class="top-menu-link"
-          href="resume"
-          active={location.pathname === "/resume" ? true : false}
+          href="/resume"
+          active={location.pathname === "./resume" ? true : false}
         >
           <span>resume</span>
         </CustomLinkMenu>
