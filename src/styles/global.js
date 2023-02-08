@@ -96,7 +96,7 @@ export const StyledButton = styled.button`
   transition: all 0.2s;
   box-shadow: 0 3px 0 0 ${colors.greenShadow}, 0 7px 0 0 black;
 
-  &:hover:not(:disabled) {
+  &:hover {
     transform: translate3d(0, 1px, 0);
     background-color: ${(props) => props.backcolo};
     box-shadow: 0 2px 0 0 ${colors.greenShadow}, 0 5px 0 0 black;
@@ -107,9 +107,7 @@ export const StyledButton = styled.button`
     color: silver;
     box-shadow: 0 2px 0 0 #666;
     background-color: ${colors.grayDark};
-  }
 
-  &:disabled {
     &::before {
       content: "";
       position: absolute;
