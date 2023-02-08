@@ -290,6 +290,21 @@ export const CustomInput = styled.input`
   line-height: 100;
 `;
 
+export const CustomTextArea = styled.textarea`
+  border: 1px solid red;
+  background-color: transparent;
+  width: 80%;
+  padding: 8px 14px 12px 36px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #797979;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #797979;
+  outline: none;
+  //line-height: 100;
+`;
+
 export const FormGroup = styled.div`
   padding: 0.5em 0;
 `;

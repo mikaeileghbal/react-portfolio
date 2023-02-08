@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {
   CustomInput,
   CustomLabel,
+  CustomTextArea,
   FormGroup,
   StyledButton,
 } from "../styles/global";
@@ -80,12 +81,13 @@ export default function ContactForm() {
         <FormIcon>
           <FaFile />
         </FormIcon>
-        <textarea
+        <CustomTextArea
           placeholder="Message"
           id="message"
           name="message"
+          rows={5}
           onChange={handleInputChange}
-        ></textarea>
+        ></CustomTextArea>
       </FormGroup>
 
       <FormGroup>
