@@ -80,13 +80,12 @@ export default function ContactForm() {
         <FormIcon>
           <FaFile />
         </FormIcon>
-        <CustomInput
-          type="text"
+        <textarea
           placeholder="Message"
           id="message"
-          name="user_message"
+          name="message"
           onChange={handleInputChange}
-        ></CustomInput>
+        ></textarea>
       </FormGroup>
 
       <FormGroup>
