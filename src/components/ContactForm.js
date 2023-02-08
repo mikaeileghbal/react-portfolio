@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {
   CustomInput,
   CustomLabel,
+  CustomTextArea,
   FormGroup,
   StyledButton,
 } from "../styles/global";
@@ -28,23 +29,31 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [isSending, setIsSending] = useState(false);
+
   const handleInputChange = (e) => {
     setFields({ ...fields, [e.target.name]: e.target.value });
   };
+
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log(e.target);
-    console.log(fields);
+
+    setIsSending(true);
+
     emailjs
       .send("service_tiby54a", "template_0lvio71", fields, "Q5c0s3j1idF2o4AsP")
       .then(
         (result) => {
           console.log(result.text);
+          setIsSending(false);
         },
         (error) => {
           console.log(error.text);
+          setIsSending(false);
         }
       );
+
+    e.target.reset();
   };
 
   return (
@@ -60,6 +69,7 @@ export default function ContactForm() {
           id="name"
           name="user_name"
           onChange={handleInputChange}
+          autoComplete="off"
         ></CustomInput>
       </FormGroup>
       <FormGroup>
@@ -73,6 +83,7 @@ export default function ContactForm() {
           id="email"
           name="user_email"
           onChange={handleInputChange}
+          autoComplete="off"
         ></CustomInput>
       </FormGroup>
       <FormGroup>
@@ -80,18 +91,23 @@ export default function ContactForm() {
         <FormIcon>
           <FaFile />
         </FormIcon>
-        <CustomInput
-          type="text"
+        <CustomTextArea
           placeholder="Message"
           id="message"
-          name="user_message"
+          name="message"
+          rows={5}
           onChange={handleInputChange}
-        ></CustomInput>
+          autoComplete="off"
+        ></CustomTextArea>
       </FormGroup>
 
       <FormGroup>
-        <StyledButton textColor="white" backColor={theme.colors.green}>
-          Submit your message
+        <StyledButton
+          disabled={isSending}
+          textColor="white"
+          backColor={theme.colors.green}
+        >
+          {isSending ? "wait for it..." : "Submit your message"}
         </StyledButton>
       </FormGroup>
     </CustomForm>
