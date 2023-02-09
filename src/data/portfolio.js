@@ -17,7 +17,6 @@ const tags = [
   "nextauth",
   "mysql",
   "nodejs",
-  "express",
 ];
 const portfolio = [
   {
@@ -41,12 +40,13 @@ const portfolio = [
     tech: [
       "HTML5",
       "CSS3",
-      "SCSS",
-      "Styled Components",
+      "JavaScript",
+      "scss",
       "Next.js",
       "Next-Auth",
       "MongoDB",
       "Mongoose",
+      "RESTFull API",
     ],
     resource: [
       "https://fixer.vercel.com",
@@ -56,6 +56,7 @@ const portfolio = [
       "html",
       "css",
       "javascript",
+      "restapi",
       "nextjs",
       "mongodb",
       "mongoose",
@@ -84,17 +85,24 @@ const portfolio = [
       "HTML5",
       "CSS3",
       "SCSS",
-      "styled components",
-      "Next.js",
-      "Next-Auth",
-      "MongoDB",
-      "Mongoose",
+      "JavaScript",
+      "React.js",
+      "React Router",
+      "Redux",
     ],
     resource: [
       "https://mikaeileghbal.github.io/music-store",
       "https://github.com/mikaeileghbal/music-store",
     ],
-    tags: ["html", "css", "scss", "reactjs", "redux", "react query"],
+    tags: [
+      "html",
+      "css",
+      "scss",
+      "javascript",
+      "reactjs",
+      "react router",
+      "redux",
+    ],
   },
   {
     id: "3",
@@ -169,6 +177,7 @@ const portfolio = [
       "mysql",
       "nodejs",
       "express",
+      "restapi",
     ],
   },
   {
@@ -192,6 +201,29 @@ const portfolio = [
       "https://github.com/mikaeileghbal/form-validation",
     ],
     tags: ["html", "css", "javascript"],
+  },
+  {
+    id: "6",
+    title: "personal portfolio",
+    brief:
+      "Web application created with React.js. Based on caferati.me portfolio design.",
+    description: [
+      "This web application shows my personal information and works.",
+      "This application uses React.js, React router and Styled components.",
+    ],
+    images: [
+      "portfolio.png",
+      "portfolio-1.png",
+      "portfolio-2.png",
+      "portfolio-3.png",
+      "portfolio-4.png",
+    ],
+    tech: ["HTML5", "CSS3", "JavaScript", "React.js", "React Router"],
+    resource: [
+      "https://mikaeileghbal.github.io",
+      "https://github.com/mikaeileghbal/react-portfolio",
+    ],
+    tags: ["html", "css", "javascript", "reactjs", "react router"],
   },
 ];
 
