@@ -115,7 +115,13 @@ const PortoItem = styled.figure`
         transition-delay: 0.77s;
       }
       &:nth-child(10) {
-        transition-delay: 0.92s;
+        transition-delay: 0.91s;
+      }
+      &:nth-child(11) {
+        transition-delay: 0.95s;
+      }
+      &:nth-child(12) {
+        transition-delay: 0.99s;
       }
     }
   }
