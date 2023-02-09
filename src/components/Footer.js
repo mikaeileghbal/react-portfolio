@@ -35,7 +35,7 @@ export default function Footer() {
         <br />
         Feel free to contact me via email at
         <Space>
-          <CustomLinkFooter href="mail:mikaeileghbal@gmail.com">
+          <CustomLinkFooter href="mailto:mikaeileghbal@gmail.com">
             mikaeileghbal@gmail.com
           </CustomLinkFooter>
         </Space>
