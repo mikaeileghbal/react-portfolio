@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
 
-import { ContactForm, Previous } from "../components";
+import { ContactForm, Next, Previous } from "../components";
 
 import {
   Container,
@@ -97,6 +97,9 @@ export default function Contact() {
             <span>github</span>
           </StyledGithub>
         </ButtonWrap>
+        <Next to="/resume" show={show}>
+          resume
+        </Next>
         <Previous to="/portfolio" show={show}>
           portfolio
         </Previous>
