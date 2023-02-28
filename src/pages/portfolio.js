@@ -28,7 +28,7 @@ const TagList = styled.ul`
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
-  row-gap: 1em;
+  row-gap: 0.4em;
   column-gap: 0.4em;
   margin-top: 1.3em;
   margin-bottom: 1.5em;
