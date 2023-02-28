@@ -21,7 +21,7 @@ import theme from "../styles/theme";
 
 const Row = styled.div`
   display: flex;
-  gap: 2em;
+  gap: 1.5em;
 `;
 
 const Column = styled.div``;
