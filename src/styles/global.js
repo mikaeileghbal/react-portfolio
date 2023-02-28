@@ -25,7 +25,6 @@ export const Title = styled.h3`
   font-weight: 700;
   font-size: 42px;
 `;
-
 export const SectionTitle = styled.h1`
   font-weight: 700;
   font-size: 42px;
@@ -38,6 +37,18 @@ export const SectionSubTitle = styled.h2`
   font-size: 32px;
   margin-bottom: 12px;
   margin-top: 32px;
+`;
+
+export const SubTitle = styled(SectionSubTitle)`
+  font-size: 16px;
+  letter-spacing: -0.5px;
+`;
+
+export const SubTitleMinor = styled(SectionSubTitle)`
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -0.5em;
+  letter-spacing: 0;
 `;
 
 export const Text = styled.p`
@@ -64,7 +75,7 @@ export const TextGroup = styled.div`
 
 export const UList = styled.ul`
   margin-bottom: 0.6em;
-  padding: 0 1.4em;
+  padding: 0 0 0 1.4em;
   list-style: circle;
 
   li {
