@@ -16,7 +16,7 @@ const tags = [
   "mongodb",
   "nextauth",
   "mysql",
-  "nodejs",
+  "material ui",
 ];
 const portfolio = [
   {
@@ -224,6 +224,37 @@ const portfolio = [
       "https://github.com/mikaeileghbal/react-portfolio",
     ],
     tags: ["html", "css", "javascript", "reactjs", "react router"],
+  },
+  {
+    id: "7",
+    title: "movies",
+    brief:
+      "Web application created with React.js React-Router and Material UI.",
+    description: [
+      "Fetching movies data from REST API and show in categories.",
+      "Material UI is used to style the application. Customized styles and theme for light and dark mode.",
+    ],
+    images: ["movies-1.png", "movies-1.png", "movies-1.png", "movies-1.png"],
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "React Router",
+      "MaterialUI",
+    ],
+    resource: [
+      "https://mikaeileghbal.github.io",
+      "https://github.com/mikaeileghbal/react-portfolio",
+    ],
+    tags: [
+      "html",
+      "css",
+      "javascript",
+      "reactjs",
+      "react router",
+      "material ui",
+    ],
   },
 ];
 
