@@ -244,8 +244,8 @@ const portfolio = [
       "MaterialUI",
     ],
     resource: [
-      "https://mikaeileghbal.github.io",
-      "https://github.com/mikaeileghbal/react-portfolio",
+      "https://mikaeileghbal.github.io/movies",
+      "https://github.com/mikaeileghbal/movies",
     ],
     tags: [
       "html",

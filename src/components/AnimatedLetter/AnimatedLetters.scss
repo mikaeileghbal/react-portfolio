@@ -35,7 +35,7 @@ p {
 }
 
 // 1-15 creates 1.5s delay for name
-@for $i from 1 to 319 {
+@for $i from 1 to 311 {
   .text-animate._#{$i} {
     animation-delay: calc(1s + #{$i / 50}s);
     user-select: none;

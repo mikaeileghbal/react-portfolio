@@ -76,16 +76,16 @@ const parafs = [
     index: 34,
   },
   {
-    text: "Check out my articles, React and React Native UI components at the code laboratory.",
-    index: 106,
+    text: "Send me a message using contact form or socila links available on the contact page.",
+    index: 105,
   },
   {
     text: "Feel free to take a look at my latest projects on the portfolio page.",
-    index: 196,
+    index: 188,
   },
   {
     text: "Remotely or on-site available. mikaeileghbal@gmail.com",
-    index: 265,
+    index: 257,
   },
 ];
 
