@@ -37,6 +37,7 @@ export const SectionSubTitle = styled.h2`
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 12px;
+  margin-top: 32px;
 `;
 
 export const Text = styled.p`
@@ -427,4 +428,21 @@ export const PortoButton = styled.a`
       }
     }
   }
+`;
+
+export const Divider = styled.hr`
+  display: block;
+  height: 1px;
+  width: 50%;
+  background-color: #484848;
+  position: relative;
+  border: 0;
+  margin: 0.5em 0 1em;
+`;
+
+export const ButtonWrap = styled.div`
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  display: flex;
+  gap: 0.5em;
 `;

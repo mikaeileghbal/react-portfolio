@@ -6,8 +6,10 @@ import styled from "styled-components";
 import { Carousel, Footer, Next, Previous } from "../components";
 import { portfolio } from "../data/portfolio";
 import {
+  ButtonWrap,
   Container,
   CustomLink,
+  Divider,
   PortoButton,
   Section,
   SectionSubTitle,
@@ -21,21 +23,6 @@ import {
 import theme from "../styles/theme";
 
 const { colors } = theme;
-
-const ButtonWrap = styled.div`
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-`;
-
-const Divider = styled.hr`
-  display: block;
-  height: 1px;
-  width: 50%;
-  background-color: #484848;
-  position: relative;
-  border: 0;
-  margin: 0.5em 0 1em;
-`;
 
 const CustomLinkProject = styled(CustomLink)`
   //font-size: 18px;
