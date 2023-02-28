@@ -13,6 +13,10 @@ const StyledMenu = styled.header`
   display: block;
   z-index: 100;
 
+  @media only print {
+    display: none;
+  }
+
   /* .top-menu-nav:before {
     content: "for a quick search just start typing ..";
     position: absolute;

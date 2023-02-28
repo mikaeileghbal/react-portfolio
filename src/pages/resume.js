@@ -26,6 +26,12 @@ const Row = styled.div`
 
 const Column = styled.div``;
 
+const ResumeButtonWrap = styled(ButtonWrap)`
+  @media only print {
+    display: none;
+  }
+`;
+
 export default function Resume() {
   const openPDF = () => {
     window.open("mikaeil-eghbal-resume.pdf", "_blank");
@@ -43,7 +49,7 @@ export default function Resume() {
           working with data specially interacting with databases such as MySQL
           and MongoDB.
         </Text>
-        <ButtonWrap>
+        <ResumeButtonWrap>
           <StyledButton
             onClick={() => window.print()}
             textColor="white"
@@ -62,7 +68,7 @@ export default function Resume() {
             <BsFilePdf size={22} />
             <span>pdf</span>
           </StyledButton>
-        </ButtonWrap>
+        </ResumeButtonWrap>
         <Row>
           <Column style={{ flex: "0 0 290px" }}>
             <SectionSubTitle>contact</SectionSubTitle>
