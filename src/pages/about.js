@@ -84,7 +84,7 @@ const parafs = [
     index: 188,
   },
   {
-    text: "Remotely or on-site available. mikaeileghbal@gmail.com",
+    text: "Remotely or on site available. mikaeileghbal@gmail.com",
     index: 257,
   },
 ];

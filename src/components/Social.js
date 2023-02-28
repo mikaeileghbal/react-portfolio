@@ -52,8 +52,8 @@ export default function Social() {
             delay="1.9s"
           >
             <GithubButton
-              href="https://mikaeileghbal.github.com"
-              target="blank"
+              href="https://github.com/mikaeileghbal"
+              target="_blank"
             >
               <FaGithub size={33} />
             </GithubButton>
@@ -68,8 +68,8 @@ export default function Social() {
             delay="2s"
           >
             <LinkedinButton
-              href="https://mikaeileghbal.github.com"
-              target="blank"
+              href="https://linkedin.com/in/mikaeil-eghbal"
+              target="_blank"
               textColor={theme.colors.blueLight}
               backColor={theme.colors.blueDark}
             >
@@ -86,8 +86,8 @@ export default function Social() {
             delay="2.1s"
           >
             <InstagramkButton
-              href="https://mikaeileghbal.github.com"
-              target="blank"
+              href="https://instagram.com/mikaeil.e"
+              target="_blank"
             >
               <FaInstagram size={33} />
             </InstagramkButton>
