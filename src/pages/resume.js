@@ -21,10 +21,16 @@ import theme from "../styles/theme";
 
 const Row = styled.div`
   display: flex;
-  gap: 2em;
+  gap: 1.5em;
 `;
 
 const Column = styled.div``;
+
+const ResumeButtonWrap = styled(ButtonWrap)`
+  @media only print {
+    display: none;
+  }
+`;
 
 export default function Resume() {
   const openPDF = () => {
@@ -43,7 +49,7 @@ export default function Resume() {
           working with data specially interacting with databases such as MySQL
           and MongoDB.
         </Text>
-        <ButtonWrap>
+        <ResumeButtonWrap>
           <StyledButton
             onClick={() => window.print()}
             textColor="white"
@@ -62,9 +68,9 @@ export default function Resume() {
             <BsFilePdf size={22} />
             <span>pdf</span>
           </StyledButton>
-        </ButtonWrap>
+        </ResumeButtonWrap>
         <Row>
-          <Column style={{ flex: "0 0 290px" }}>
+          <Column style={{ flex: "0 0 37%" }}>
             <SectionSubTitle>contact</SectionSubTitle>
             <Divider />
 
@@ -130,7 +136,7 @@ export default function Resume() {
           <Column>
             <SectionSubTitle>experience</SectionSubTitle>
             <Divider />
-            <SubTitle>Front-End Developer, Freelance</SubTitle>
+            <SubTitle>Front-End Developer</SubTitle>
             <SubTitleMinor>Aug 2020 - Present</SubTitleMinor>
             <Text>
               Developed Interactive JavaScript applications. Used CSS with Sass

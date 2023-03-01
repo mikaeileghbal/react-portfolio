@@ -11,6 +11,10 @@ const StyledRibbon = styled.div`
   width: 200px;
   height: 200px;
   z-index: 9;
+
+  @media only print {
+    display: none;
+  }
 `;
 
 const StyledLink = styled.a`

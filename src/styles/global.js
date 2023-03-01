@@ -16,6 +16,10 @@ export const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 84px 20px;
+
+  @media only print {
+    padding: 1em 2em;
+  }
 `;
 
 export const Section = styled.section``;
@@ -24,11 +28,19 @@ export const Title = styled.h3`
   position: relative;
   font-weight: 700;
   font-size: 42px;
+
+  @media only print {
+    font-size: 24px;
+  }
 `;
 export const SectionTitle = styled.h1`
   font-weight: 700;
   font-size: 42px;
   margin-bottom: 10px;
+
+  @media only print {
+    font-size: 32px;
+  }
 `;
 
 export const SectionSubTitle = styled.h2`
@@ -37,11 +49,25 @@ export const SectionSubTitle = styled.h2`
   font-size: 32px;
   margin-bottom: 12px;
   margin-top: 32px;
+
+  @media only print {
+    font-size: 22px;
+    letter-spacing: -1px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+  }
 `;
 
 export const SubTitle = styled(SectionSubTitle)`
   font-size: 16px;
   letter-spacing: -0.5px;
+
+  @media only print {
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 `;
 
 export const SubTitleMinor = styled(SectionSubTitle)`
@@ -49,6 +75,11 @@ export const SubTitleMinor = styled(SectionSubTitle)`
   font-weight: 500;
   margin-top: -0.5em;
   letter-spacing: 0;
+
+  @media only print {
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
 `;
 
 export const Text = styled.p`
@@ -58,6 +89,13 @@ export const Text = styled.p`
   font-size: 16px;
   line-height: 1.95;
   margin-top: 2px;
+
+  @media only print {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
 `;
 
 export const TextSmall = styled(Text)`
@@ -83,6 +121,10 @@ export const UList = styled.ul`
     line-height: 2;
     font-size: 16px;
     color: ${colors.grayDark};
+
+    @media only print {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -260,6 +302,10 @@ export const CustomLink = styled.a`
   font-weight: inherit;
   line-height: 2;
   transition: color 0.15s ease-out 0.1s;
+
+  @media only print {
+    font-size: 12px;
+  }
 
   span {
     color: ${colors.grayDark};
@@ -449,6 +495,10 @@ export const Divider = styled.hr`
   position: relative;
   border: 0;
   margin: 0.5em 0 1em;
+
+  @media only print {
+    display: none;
+  }
 `;
 
 export const ButtonWrap = styled.div`
