@@ -27,6 +27,10 @@ const PageControl = styled.div`
     //transition: transform 0.16s ease-out;
     transform: rotate(-150deg);
   }
+
+  @media only print {
+    display: none;
+  }
 `;
 
 const StyledLink = styled(Link)`

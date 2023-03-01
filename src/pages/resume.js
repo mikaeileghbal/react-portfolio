@@ -70,7 +70,7 @@ export default function Resume() {
           </StyledButton>
         </ResumeButtonWrap>
         <Row>
-          <Column style={{ flex: "0 0 290px" }}>
+          <Column style={{ flex: "0 0 37%" }}>
             <SectionSubTitle>contact</SectionSubTitle>
             <Divider />
 
@@ -136,7 +136,7 @@ export default function Resume() {
           <Column>
             <SectionSubTitle>experience</SectionSubTitle>
             <Divider />
-            <SubTitle>Front-End Developer, Freelance</SubTitle>
+            <SubTitle>Front-End Developer</SubTitle>
             <SubTitleMinor>Aug 2020 - Present</SubTitleMinor>
             <Text>
               Developed Interactive JavaScript applications. Used CSS with Sass

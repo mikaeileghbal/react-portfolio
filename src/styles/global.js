@@ -18,7 +18,7 @@ export const Container = styled.div`
   padding: 84px 20px;
 
   @media only print {
-    padding: 0;
+    padding: 1em 2em;
   }
 `;
 
@@ -52,8 +52,10 @@ export const SectionSubTitle = styled.h2`
 
   @media only print {
     font-size: 22px;
+    letter-spacing: -1px;
     margin-top: 16px;
     margin-bottom: 8px;
+    text-transform: capitalize;
   }
 `;
 
@@ -62,7 +64,7 @@ export const SubTitle = styled(SectionSubTitle)`
   letter-spacing: -0.5px;
 
   @media only print {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 8px;
     margin-bottom: 8px;
   }
