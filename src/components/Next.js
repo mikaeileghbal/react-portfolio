@@ -28,6 +28,10 @@ const PageControl = styled.div`
     transform: rotate(-150deg);
   }
 
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+
   @media only print {
     display: none;
   }
