@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
@@ -18,17 +18,6 @@ const StyledMenu = styled.header`
   @media only print {
     display: none;
   }
-
-  /* .top-menu-nav:before {
-    content: "for a quick search just start typing ..";
-    position: absolute;
-    bottom: 5%;
-    left: calc(50%);
-    width: 300px;
-    color: rgb(51, 51, 51);
-    text-align: center;
-    font-size: 13px;
-  } */
 `;
 
 const burgerRotate = keyframes`
@@ -44,8 +33,8 @@ to{
 
 const CustomBurger = styled.div`
   position: fixed;
-  right: 13px;
-  top: 35px;
+  right: 28px;
+  top: 25px;
   z-index: 9999;
   text-align: center;
   cursor: pointer;
