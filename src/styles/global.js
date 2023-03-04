@@ -62,6 +62,7 @@ export const SectionSubTitle = styled.h2`
 export const SubTitle = styled(SectionSubTitle)`
   font-size: 16px;
   letter-spacing: -0.5px;
+  margin-top: 22px;
 
   @media only print {
     font-size: 14px;
@@ -77,7 +78,7 @@ export const SubTitleMinor = styled(SectionSubTitle)`
   letter-spacing: 0;
 
   @media only print {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-size: 12px;
   }
 `;
@@ -93,7 +94,7 @@ export const Text = styled.p`
   @media only print {
     font-weight: 300;
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.6;
     margin-top: 2px;
   }
 `;
