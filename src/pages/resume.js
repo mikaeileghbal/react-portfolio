@@ -45,9 +45,10 @@ export default function Resume() {
           front-end web developer
         </SectionSubTitle>
         <Text>
-          I'm a Frontend Web Developer working for more than 2 years. I like
-          working with data specially interacting with databases such as MySQL
-          and MongoDB.
+          Hi. I'm a Frontend Web Developer with more than 2 years of experience.
+          I learn fast and can analyze problems carefully and solve problems. I
+          like working with data specially interacting with databases such as
+          MySQL and MongoDB. I use GitHub and Git.
         </Text>
         <ResumeButtonWrap>
           <StyledButton

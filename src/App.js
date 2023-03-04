@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import { CustomRoute, Layout } from "./components";
 import { About, Portfolio, Contact, Resume, Project } from "./pages";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <CustomRoute>
         <Route path="/" element={<Layout />}>
           <Route index element={<About />} />
