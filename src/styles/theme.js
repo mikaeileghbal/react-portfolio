@@ -6,7 +6,6 @@ const theme = {
     greenGray: "#525e65",
     greenText: "#dbe8d4",
     blueDark: "#222733",
-    //blueLight: "#2e3445",
     blueLight: "#2b303c",
     blueMenu: "#2b303c",
     linkedin: "#0079b1",
@@ -16,11 +15,17 @@ const theme = {
     greenHover: "#00897b",
     greenShadow: "#00796b",
   },
-
   mixin: {
     centerd: css`
       text-align: center;
     `,
+  },
+  breakPoints: {
+    xs: 0,
+    sm: 600,
+    md: 720,
+    lg: 1200,
+    xl: 1536,
   },
 };
 
