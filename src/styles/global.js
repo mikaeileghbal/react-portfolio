@@ -91,6 +91,12 @@ export const Text = styled.p`
   line-height: 1.95;
   margin-top: 2px;
 
+  @media screen and (max-width: ${theme.breakPoints.sm}px) {
+    font-size: 1em;
+    line-height: 1.75em;
+    font-weight: 400;
+  }
+
   @media only print {
     font-weight: 300;
     font-size: 12px;
@@ -191,6 +197,13 @@ const SocialButton = styled.a`
   height: 55px;
   padding-left: 20px;
   cursor: pointer;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    height: 50px;
+    width: 50px;
+    padding-left: 0;
+    margin-left: 0;
+  }
 
   span {
     display: inline-block;

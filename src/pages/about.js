@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { AnimatedLetters, Next, Social } from "../components";
 import Animate from "../components/Animate";
-import { CustomLink, Section, StyledButton, Text } from "../styles/global";
+import {
+  CustomLink,
+  Section,
+  SectionCentered,
+  StyledButton,
+  Text,
+} from "../styles/global";
 import theme from "../styles/theme";
 
 const HeroInfo = styled.div`
@@ -13,12 +19,21 @@ const HeroInfo = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  padding: 0 1.2em;
+
+  @media screen and (max-width: ${theme.breakPoints.sm}px) {
+    margin-top: 3.5em;
+  }
 `;
 
 const HeroButton = styled.div`
   ${theme.mixin.centerd}
   margin-top: 20.5vh;
   padding: 1em;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    display: none;
+  }
 `;
 
 const HeroTitle = styled.h3`
@@ -27,10 +42,10 @@ const HeroTitle = styled.h3`
   text-align: center;
   color: ${theme.colors.greenText};
   margin-bottom: 6px;
-`;
 
-const CustomLinkAbout = styled(CustomLink)`
-  font-size: 14px;
+  @media screen and (max-width: ${theme.breakPoints.sm}px) {
+    font-size: 1.3em;
+  }
 `;
 
 const blinkAnimation = keyframes`
@@ -48,8 +63,7 @@ const fadeAnimation = keyframes`
 const Blink = styled.span`
   //display: inline-block;
   position: absolute;
-  transform: translateY(-4px);
-  left: calc(50% + 202px);
+
   opacity: 0;
   animation-name: ${fadeAnimation};
   animation-delay: 7.5s;
@@ -105,16 +119,15 @@ export default function About() {
             initialIndex={1}
           />
         </HeroTitle>
-        {parafs.slice(1).map((paraf) => (
+        {parafs.slice(1).map((paraf, index) => (
           <AboutText
             key={paraf.index}
             text={paraf.text.replace(/\s/g, "-").split("")}
             initialIndex={paraf.index}
+            blink={index === 3}
           />
         ))}
-        <Blink>
-          <span></span>
-        </Blink>
+
         {/* <CustomLinkAbout href="#">
           <span>mikaeileghbal@yaho.com</span>
         </CustomLinkAbout> */}
@@ -143,10 +156,15 @@ export default function About() {
   );
 }
 
-function AboutText({ text, initialIndex }) {
+function AboutText({ text, initialIndex, blink }) {
   return (
     <Text>
       <AnimatedLetters letters={text} initialIndex={initialIndex} />
+      {blink && (
+        <Blink>
+          <span></span>
+        </Blink>
+      )}
     </Text>
   );
 }
