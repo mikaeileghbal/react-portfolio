@@ -32,6 +32,14 @@ const CustomLinkProject = styled(CustomLink)`
   &:hover {
     color: ${colors.greenText};
   }
+
+  @media screen and (max-width: ${theme.breakPoints.lg}px) {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
 `;
 
 export default function Project() {
@@ -101,7 +109,7 @@ export default function Project() {
         <Divider />
         <UList>
           <li>
-            The project is online at
+            <span>The project is online at</span>
             <Space>
               <CustomLinkProject href={project.resource?.[0]} target="_blank">
                 {project.resource?.[0].toUpperCase()}
