@@ -44,10 +44,6 @@ const ItemTagList = styled(TagList)`
   }
 `;
 
-const ItemButtonList = styled(ItemTagList)`
-  opacity: 0;
-`;
-
 const PortoContainer = styled.ul`
   list-style: none;
   margin: 1.2em auto;

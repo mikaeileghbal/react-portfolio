@@ -45,7 +45,6 @@ export const Title = styled.h3`
 export const SectionTitle = styled.h1`
   font-weight: 700;
   font-size: 42px;
-
   margin-bottom: 10px;
 
   @media screen and (max-width: ${theme.breakPoints.sm}px) {
@@ -142,6 +141,11 @@ export const UList = styled.ul`
     line-height: 2;
     font-size: 16px;
     color: ${colors.grayDark};
+    display: flex;
+
+    @media screen and (max-width: ${theme.breakPoints.lg}px) {
+      flex-direction: column;
+    }
 
     @media only print {
       font-size: 12px;
@@ -444,7 +448,12 @@ export const PortoButton = styled.a`
   height: 55px;
   display: block;
   cursor: pointer;
+  z-index: 90;
   //transition: transform 0.25s ease-out 0.3s;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    left: 50%;
+  }
 
   i {
     display: block;
