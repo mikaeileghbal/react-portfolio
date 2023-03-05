@@ -22,6 +22,10 @@ import theme from "../styles/theme";
 const Row = styled.div`
   display: flex;
   gap: 1.5em;
+
+  @media screen and (max-width: ${theme.breakPoints.lg}px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const Column = styled.div``;
