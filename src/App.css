@@ -86,9 +86,7 @@
 }
 
 .menu {
-  position: relative;
   opacity: 0;
-  background-color: green;
 }
 
 .ribbon {

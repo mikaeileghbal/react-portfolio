@@ -11,7 +11,7 @@ const StyledRibbon = styled.div`
   top: 0;
   width: 200px;
   height: 200px;
-  z-index: 9;
+  z-index: 20;
 
   @media only print {
     display: none;
@@ -32,6 +32,7 @@ const StyledLink = styled.a`
   font-size: 13px;
   font-weight: 700;
   font-family: MontSerrat, Tahoma, Arial, sans-serif;
+  padding-left: 25px;
   line-height: inherit;
   text-decoration: none;
   text-align: center;
@@ -49,6 +50,7 @@ const StyledLink = styled.a`
     width: 200%;
     left: -4%;
     top: -37%;
+    padding-left: 0;
   } ;
 `;
 
