@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import theme from "./theme";
 
 const { colors } = theme;
@@ -187,19 +187,24 @@ export const StyledButton = styled.button`
     box-shadow: 0 2px 0 0 #666;
     background-color: ${colors.grayDark};
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      top: calc(50% - 8px);
-      left: 10px;
-      border-radius: 50%;
-      border-width: 2px 2px 2px 2px;
-      border-style: solid;
-      border-color: white white white transparent;
-      animation: ${spinAnim} 2s linear infinite;
-    }
+    ${(props) =>
+      props.sending
+        ? css`
+            &::before {
+              content: "";
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              top: calc(50% - 8px);
+              left: 10px;
+              border-radius: 50%;
+              border-width: 2px 2px 2px 2px;
+              border-style: solid;
+              border-color: white white white transparent;
+              animation: ${spinAnim} 2s linear infinite;
+            }
+          `
+        : ``}
   }
 
   span {
