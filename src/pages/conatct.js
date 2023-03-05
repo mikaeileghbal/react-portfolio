@@ -18,6 +18,7 @@ import theme from "../styles/theme";
 
 const ButtonWrap = styled.div`
   display: flex;
+  flex-flow: row wrap;
   gap: 0.5em;
 
   margin: 1em 0 0;
