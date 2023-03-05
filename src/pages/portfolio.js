@@ -28,7 +28,7 @@ const TagList = styled.ul`
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
-  row-gap: 1em;
+  row-gap: 0.8em;
   column-gap: 0.4em;
   margin-top: 1.3em;
   margin-bottom: 1.5em;
@@ -38,29 +38,35 @@ const TagList = styled.ul`
 const ItemTagList = styled(TagList)`
   row-gap: 0.5em;
   justify-content: center;
-`;
 
-const ItemButtonList = styled(ItemTagList)`
-  opacity: 0;
+  @media screen and (max-width: ${theme.breakPoints.ss}px) {
+    display: none;
+  }
 `;
 
 const PortoContainer = styled.ul`
   list-style: none;
   margin: 1.2em auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 359px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
   row-gap: 2.6em;
   column-gap: 2.6em;
   counter-reset: slide-number;
+
+  @media screen and (max-width: ${theme.breakPoints.mdl}px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 `;
 
 const PortoItem = styled.figure`
-  height: 242px;
+  //height: 242px;
   position: relative;
+  padding-top: 65%;
   overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
+
   background-color: ${colors.blueLight};
   box-shadow: 8px 10px 0px rgba(2, 12, 27, 0.4),
     inset 8px 10px 10px rgba(2, 12, 27, 0.4);
@@ -135,9 +141,10 @@ const PortoItem = styled.figure`
 
   .item__header {
     position: absolute;
-    margin-top: 1em;
+    top: 24px;
+    //margin-top: 1em;
     width: 100%;
-    height: 94%;
+    height: calc(100% - 24px);
     padding: 1em 3em;
     display: flex;
     flex-flow: column;
@@ -197,9 +204,10 @@ const PortoItem = styled.figure`
   .item__image__wrapp {
     position: absolute;
     left: 0;
-    top: 10%;
+    top: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
+
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.75) inset;
 
     &::before {
@@ -245,7 +253,7 @@ const PortoItem = styled.figure`
 `;
 
 const ItemHeader = styled.div`
-  position: relative;
+  position: absolute;
   background-color: aliceblue;
   top: 0;
   left: 0;

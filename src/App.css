@@ -86,13 +86,7 @@
 }
 
 .menu {
-  position: fixed;
-  top: 0px;
-  width: 100px;
   opacity: 0;
-  right: 0px;
-  z-index: 99;
-  background-color: green;
 }
 
 .ribbon {

@@ -27,6 +27,14 @@ const PageControl = styled.div`
     //transition: transform 0.16s ease-out;
     transform: rotate(-150deg);
   }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+
+  @media only print {
+    display: none;
+  }
 `;
 
 const StyledLink = styled(Link)`

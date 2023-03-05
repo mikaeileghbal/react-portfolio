@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
@@ -8,21 +8,21 @@ import Animate from "./Animate";
 const { colors } = theme;
 
 const StyledMenu = styled.header`
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  right: 38px;
+  top: 35px;
   display: block;
-  z-index: 100;
+  z-index: 99;
 
-  /* .top-menu-nav:before {
-    content: "for a quick search just start typing ..";
-    position: absolute;
-    bottom: 5%;
-    left: calc(50%);
-    width: 300px;
-    color: rgb(51, 51, 51);
-    text-align: center;
-    font-size: 13px;
-  } */
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    top: auto;
+    right: 10px;
+    bottom: 30px;
+  }
+
+  @media only print {
+    display: none;
+  }
 `;
 
 const burgerRotate = keyframes`
@@ -37,12 +37,23 @@ to{
 `;
 
 const CustomBurger = styled.div`
-  position: fixed;
-  top: 40px;
-  z-index: 99;
-  cursor: pointer;
-  right: 42px;
+  /* position: fixed;
+  right: 28px;
+  top: 25px; */
+  z-index: 9999;
   text-align: center;
+  cursor: pointer;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    //top: calc(100vh - 105px);
+    //right: 0px;
+    width: 59px;
+    height: 59px;
+    background-color: #111;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 3px rgb(0, 0, 0, 0.15);
+  }
 
   &.clicked {
     animation-name: ${burgerRotate};
@@ -60,6 +71,10 @@ const CustomBurger = styled.div`
     background-color: ${colors.grayDark}; // #7a7a7a;
     z-index: 1000;
     transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5);
+
+    @media screen and (max-width: ${theme.breakPoints.md}px) {
+      width: 24px;
+    }
   }
   &:not(.open):hover > :first-child {
     transform: translate(0, -4px);
@@ -94,7 +109,7 @@ const CustomNav = styled.nav`
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
-  z-index: 9;
+
   padding: 10% 0;
   transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
 
@@ -159,28 +174,28 @@ export default function Menu({ show }) {
       <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
         <CustomLinkMenu
           href="/"
-          active={location.pathname === "./" ? true : false}
+          active={location.pathname === "/" ? true : false}
         >
           <span>about</span>
         </CustomLinkMenu>
         <CustomLinkMenu
           class="top-menu-link"
           href="/portfolio"
-          active={location.pathname === "./portfolio" ? true : false}
+          active={location.pathname === "/portfolio" ? true : false}
         >
           <span>portfolio</span>
         </CustomLinkMenu>
         <CustomLinkMenu
           class="top-menu-link"
           href="/contact"
-          active={location.pathname === "./contact" ? true : false}
+          active={location.pathname === "/contact" ? true : false}
         >
           <span>contact</span>
         </CustomLinkMenu>
         <CustomLinkMenu
           class="top-menu-link"
           href="/resume"
-          active={location.pathname === "./resume" ? true : false}
+          active={location.pathname === "/resume" ? true : false}
         >
           <span>resume</span>
         </CustomLinkMenu>

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import theme from "./theme";
 
 const { colors } = theme;
@@ -16,6 +16,19 @@ export const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 84px 20px;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    padding: 42px 20px;
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: ${theme.breakPoints.ss}px) {
+    max-width: 600px;
+  }
+
+  @media only print {
+    padding: 1em 2em;
+  }
 `;
 
 export const Section = styled.section``;
@@ -24,12 +37,23 @@ export const Title = styled.h3`
   position: relative;
   font-weight: 700;
   font-size: 42px;
-`;
 
+  @media only print {
+    font-size: 24px;
+  }
+`;
 export const SectionTitle = styled.h1`
   font-weight: 700;
   font-size: 42px;
   margin-bottom: 10px;
+
+  @media screen and (max-width: ${theme.breakPoints.sm}px) {
+    line-height: 1;
+  }
+
+  @media only print {
+    font-size: 32px;
+  }
 `;
 
 export const SectionSubTitle = styled.h2`
@@ -37,6 +61,39 @@ export const SectionSubTitle = styled.h2`
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 12px;
+  margin-top: 32px;
+
+  @media only print {
+    font-size: 22px;
+    letter-spacing: -1px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+  }
+`;
+
+export const SubTitle = styled(SectionSubTitle)`
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  margin-top: 22px;
+
+  @media only print {
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+`;
+
+export const SubTitleMinor = styled(SectionSubTitle)`
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -0.5em;
+  letter-spacing: 0;
+
+  @media only print {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
 `;
 
 export const Text = styled.p`
@@ -46,6 +103,19 @@ export const Text = styled.p`
   font-size: 16px;
   line-height: 1.95;
   margin-top: 2px;
+
+  @media screen and (max-width: ${theme.breakPoints.sm}px) {
+    font-size: 1em;
+    line-height: 1.75em;
+    font-weight: 400;
+  }
+
+  @media only print {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 2px;
+  }
 `;
 
 export const TextSmall = styled(Text)`
@@ -63,7 +133,7 @@ export const TextGroup = styled.div`
 
 export const UList = styled.ul`
   margin-bottom: 0.6em;
-  padding: 0 1.4em;
+  padding: 0 0 0 1.4em;
   list-style: circle;
 
   li {
@@ -71,6 +141,15 @@ export const UList = styled.ul`
     line-height: 2;
     font-size: 16px;
     color: ${colors.grayDark};
+    display: flex;
+
+    @media screen and (max-width: ${theme.breakPoints.lg}px) {
+      flex-direction: column;
+    }
+
+    @media only print {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -108,19 +187,24 @@ export const StyledButton = styled.button`
     box-shadow: 0 2px 0 0 #666;
     background-color: ${colors.grayDark};
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      top: calc(50% - 8px);
-      left: 10px;
-      border-radius: 50%;
-      border-width: 2px 2px 2px 2px;
-      border-style: solid;
-      border-color: white white white transparent;
-      animation: ${spinAnim} 2s linear infinite;
-    }
+    ${(props) =>
+      props.sending
+        ? css`
+            &::before {
+              content: "";
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              top: calc(50% - 8px);
+              left: 10px;
+              border-radius: 50%;
+              border-width: 2px 2px 2px 2px;
+              border-style: solid;
+              border-color: white white white transparent;
+              animation: ${spinAnim} 2s linear infinite;
+            }
+          `
+        : ``}
   }
 
   span {
@@ -136,6 +220,13 @@ const SocialButton = styled.a`
   height: 55px;
   padding-left: 20px;
   cursor: pointer;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    height: 50px;
+    width: 50px;
+    padding-left: 0;
+    margin-left: 0;
+  }
 
   span {
     display: inline-block;
@@ -249,6 +340,10 @@ export const CustomLink = styled.a`
   line-height: 2;
   transition: color 0.15s ease-out 0.1s;
 
+  @media only print {
+    font-size: 12px;
+  }
+
   span {
     color: ${colors.grayDark};
     color: inherit;
@@ -358,7 +453,12 @@ export const PortoButton = styled.a`
   height: 55px;
   display: block;
   cursor: pointer;
+  z-index: 90;
   //transition: transform 0.25s ease-out 0.3s;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    left: 50%;
+  }
 
   i {
     display: block;
@@ -427,4 +527,25 @@ export const PortoButton = styled.a`
       }
     }
   }
+`;
+
+export const Divider = styled.hr`
+  display: block;
+  height: 1px;
+  width: 50%;
+  background-color: #484848;
+  position: relative;
+  border: 0;
+  margin: 0.5em 0 1em;
+
+  @media only print {
+    display: none;
+  }
+`;
+
+export const ButtonWrap = styled.div`
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  display: flex;
+  gap: 0.5em;
 `;

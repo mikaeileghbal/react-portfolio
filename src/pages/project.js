@@ -6,8 +6,10 @@ import styled from "styled-components";
 import { Carousel, Footer, Next, Previous } from "../components";
 import { portfolio } from "../data/portfolio";
 import {
+  ButtonWrap,
   Container,
   CustomLink,
+  Divider,
   PortoButton,
   Section,
   SectionSubTitle,
@@ -22,21 +24,6 @@ import theme from "../styles/theme";
 
 const { colors } = theme;
 
-const ButtonWrap = styled.div`
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-`;
-
-const Divider = styled.hr`
-  display: block;
-  height: 1px;
-  width: 50%;
-  background-color: #484848;
-  position: relative;
-  border: 0;
-  margin: 0.5em 0 1em;
-`;
-
 const CustomLinkProject = styled(CustomLink)`
   //font-size: 18px;
   font-weight: 700;
@@ -44,6 +31,14 @@ const CustomLinkProject = styled(CustomLink)`
 
   &:hover {
     color: ${colors.greenText};
+  }
+
+  @media screen and (max-width: ${theme.breakPoints.lg}px) {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 `;
 
@@ -114,7 +109,7 @@ export default function Project() {
         <Divider />
         <UList>
           <li>
-            The project is online at
+            <span>The project is online at</span>
             <Space>
               <CustomLinkProject href={project.resource?.[0]} target="_blank">
                 {project.resource?.[0].toUpperCase()}

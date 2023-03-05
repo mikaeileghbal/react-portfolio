@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { ContactForm, Next, Previous } from "../components";
@@ -17,6 +18,7 @@ import theme from "../styles/theme";
 
 const ButtonWrap = styled.div`
   display: flex;
+  flex-flow: row wrap;
   gap: 0.5em;
 
   margin: 1em 0 0;
@@ -62,7 +64,13 @@ const StyledGithub = styled(StyledButton)`
 `;
 
 export default function Contact() {
+  const navigate = useNavigate();
   const [show, setShow] = useState(true);
+
+  const gotoUrl = (url) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <Section>
       <Container>
@@ -71,7 +79,9 @@ export default function Contact() {
           If you wanna get in touch, talk to me about a project collaboration or
           just say hi, fill up the awesome form below or send an email to
           <Space>
-            <CustomLinkContact>mikaeileghbal@gmail.com</CustomLinkContact>
+            <CustomLinkContact href="mailto:mikaeileghbal@gmail.com">
+              mikaeileghbal@gmail.com
+            </CustomLinkContact>
           </Space>
           and ~let's talk.
         </Text>
@@ -84,15 +94,27 @@ export default function Contact() {
           and Linkedin.
         </Text>
         <ButtonWrap>
-          <StyledFacebook textColor="white" backColor={theme.colors.facebook}>
+          <StyledFacebook
+            textColor="white"
+            backColor={theme.colors.facebook}
+            onClick={() => gotoUrl("https://facebook.com/mikaeileghbal")}
+          >
             <FaFacebookF size={22} />
             <span>facebook</span>
           </StyledFacebook>
-          <StyledLinkedin textColor="white" backColor={theme.colors.linkedin}>
+          <StyledLinkedin
+            textColor="white"
+            backColor={theme.colors.linkedin}
+            onClick={() => gotoUrl("https://linkedin.com/in/mikaeil-eghbal")}
+          >
             <FaLinkedinIn size={22} />
             <span>linkedin</span>
           </StyledLinkedin>
-          <StyledGithub textColor="white" backColor={theme.colors.github}>
+          <StyledGithub
+            textColor="white"
+            backColor={theme.colors.github}
+            onClick={() => gotoUrl("https://github.com/mikaeileghbal")}
+          >
             <FaGithub size={22} />
             <span>github</span>
           </StyledGithub>

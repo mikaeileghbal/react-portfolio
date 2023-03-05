@@ -14,8 +14,16 @@ const Follow = styled.div`
   left: 0;
   top: calc(50% - 165px / 2);
   width: 55px;
+  z-index: 9;
 
-  //transform: translateY(calc(-50% + 1px));
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    bottom: 35px;
+    width: 100%;
+    height: auto;
+    top: auto;
+    left: 0px;
+    text-align: left;
+  }
 `;
 
 const StyledList = styled.ul`
@@ -25,6 +33,11 @@ const StyledList = styled.ul`
 const StyledItem = styled.li`
   transform: translateX(-20px);
   transition: transform 425ms cubic-bezier(0.05, 0.65, 0.18, 1);
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    display: inline-block;
+    transform: translateX(0);
+  }
 
   button {
     display: flex;
@@ -52,8 +65,8 @@ export default function Social() {
             delay="1.9s"
           >
             <GithubButton
-              href="https://mikaeileghbal.github.com"
-              target="blank"
+              href="https://github.com/mikaeileghbal"
+              target="_blank"
             >
               <FaGithub size={33} />
             </GithubButton>
@@ -68,12 +81,12 @@ export default function Social() {
             delay="2s"
           >
             <LinkedinButton
-              href="https://mikaeileghbal.github.com"
-              target="blank"
+              href="https://linkedin.com/in/mikaeil-eghbal"
+              target="_blank"
               textColor={theme.colors.blueLight}
               backColor={theme.colors.blueDark}
             >
-              <FaLinkedinIn size={28} />
+              <FaLinkedinIn size={33} />
             </LinkedinButton>
           </Animate>
         </StyledItem>
@@ -86,8 +99,8 @@ export default function Social() {
             delay="2.1s"
           >
             <InstagramkButton
-              href="https://mikaeileghbal.github.com"
-              target="blank"
+              href="https://instagram.com/mikaeil.e"
+              target="_blank"
             >
               <FaInstagram size={33} />
             </InstagramkButton>
