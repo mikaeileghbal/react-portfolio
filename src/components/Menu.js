@@ -8,12 +8,17 @@ import Animate from "./Animate";
 const { colors } = theme;
 
 const StyledMenu = styled.header`
-  position: absolute;
-  width: 100%;
-  top: 0;
+  position: fixed;
+  right: 38px;
+  top: 35px;
   display: block;
   z-index: 99;
-  padding: 1em;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    top: auto;
+    right: 10px;
+    bottom: 30px;
+  }
 
   @media only print {
     display: none;
@@ -32,19 +37,19 @@ to{
 `;
 
 const CustomBurger = styled.div`
-  position: fixed;
+  /* position: fixed;
   right: 28px;
-  top: 25px;
+  top: 25px; */
   z-index: 9999;
   text-align: center;
   cursor: pointer;
 
   @media screen and (max-width: ${theme.breakPoints.md}px) {
-    top: calc(100vh - 105px);
-    right: 0px;
+    //top: calc(100vh - 105px);
+    //right: 0px;
     width: 59px;
     height: 59px;
-    background-color: #333;
+    background-color: #111;
     border-radius: 50%;
     padding: 10px;
     box-shadow: 0 0 3px rgb(0, 0, 0, 0.15);

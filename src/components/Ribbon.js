@@ -11,7 +11,7 @@ const StyledRibbon = styled.div`
   top: 0;
   width: 200px;
   height: 200px;
-  z-index: 9;
+  z-index: 20;
 
   @media only print {
     display: none;

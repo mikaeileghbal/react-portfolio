@@ -24,6 +24,7 @@ const theme = {
     xs: 0,
     sm: 600,
     md: 720,
+    mdl: 800,
     ss: 1024,
     lg: 1200,
     xl: 1536,
