@@ -31,7 +31,7 @@ const HeroButton = styled.div`
   margin-top: 20.5vh;
   padding: 1em;
 
-  @media screen and (max-width: ${theme.breakPoints.md}px) {
+  @media screen and (max-width: ${theme.breakPoints.ss}px) {
     display: none;
   }
 `;

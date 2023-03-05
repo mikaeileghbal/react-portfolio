@@ -17,6 +17,15 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 84px 20px;
 
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    padding: 42px 20px;
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: ${theme.breakPoints.ss}px) {
+    max-width: 600px;
+  }
+
   @media only print {
     padding: 1em 2em;
   }
@@ -36,7 +45,12 @@ export const Title = styled.h3`
 export const SectionTitle = styled.h1`
   font-weight: 700;
   font-size: 42px;
+
   margin-bottom: 10px;
+
+  @media screen and (max-width: ${theme.breakPoints.sm}px) {
+    line-height: 1;
+  }
 
   @media only print {
     font-size: 32px;
