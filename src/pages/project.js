@@ -100,8 +100,8 @@ export default function Project() {
         <Divider />
         <TextGroup>
           <UList>
-            {project.tech?.map((item, i) => (
-              <li key={i}>{item}</li>
+            {project.tech?.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </UList>
         </TextGroup>
@@ -109,20 +109,24 @@ export default function Project() {
         <Divider />
         <UList>
           <li>
-            <span>The project is online at</span>
-            <Space>
-              <CustomLinkProject href={project.resource?.[0]} target="_blank">
-                {project.resource?.[0].toUpperCase()}
-              </CustomLinkProject>
-            </Space>
+            <div>
+              <span>The project is online at</span>
+              <Space>
+                <CustomLinkProject href={project.resource?.[0]} target="_blank">
+                  {project.resource?.[0].toUpperCase()}
+                </CustomLinkProject>
+              </Space>
+            </div>
           </li>
           <li>
-            Access the project's source on
-            <Space>
-              <CustomLinkProject href={project.resource?.[1]} target="_blank">
-                GITHUB
-              </CustomLinkProject>
-            </Space>
+            <div>
+              <span>Access the project's source on</span>
+              <Space>
+                <CustomLinkProject href={project.resource?.[1]} target="_blank">
+                  GITHUB
+                </CustomLinkProject>
+              </Space>
+            </div>
           </li>
         </UList>
         {project.id < portfolio.length && (

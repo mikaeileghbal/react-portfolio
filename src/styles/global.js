@@ -141,10 +141,12 @@ export const UList = styled.ul`
     line-height: 2;
     font-size: 16px;
     color: ${colors.grayDark};
-    display: flex;
 
-    @media screen and (max-width: ${theme.breakPoints.lg}px) {
-      flex-direction: column;
+    div {
+      @media screen and (max-width: ${theme.breakPoints.lg}px) {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     @media only print {
