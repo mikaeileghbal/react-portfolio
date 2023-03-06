@@ -9,8 +9,8 @@ const { colors } = theme;
 
 const StyledMenu = styled.header`
   position: fixed;
-  right: 38px;
-  top: 35px;
+  right: 42px;
+  top: 40px;
   display: block;
   z-index: 99;
 
