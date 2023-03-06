@@ -27,7 +27,7 @@ export const Container = styled.div`
   }
 
   @media only print {
-    padding: 1em 2em;
+    padding: 1em;
   }
 `;
 
@@ -73,26 +73,26 @@ export const SectionSubTitle = styled.h2`
 `;
 
 export const SubTitle = styled(SectionSubTitle)`
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.5px;
   margin-top: 22px;
 
   @media only print {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 8px;
     margin-bottom: 8px;
   }
 `;
 
 export const SubTitleMinor = styled(SectionSubTitle)`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: -0.5em;
   letter-spacing: 0;
 
   @media only print {
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 
@@ -448,7 +448,7 @@ export const Dot = styled.span`
 export const PortoButton = styled.a`
   position: fixed;
   top: 30px;
-  left: 90px;
+  left: 45px;
   width: 52px;
   height: 55px;
   display: block;

@@ -22,7 +22,7 @@ const HeroInfo = styled.div`
   padding: 0 1.2em;
 
   @media screen and (max-width: ${theme.breakPoints.sm}px) {
-    margin-top: 3.5em;
+    margin-top: 0em;
   }
 `;
 
