@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { Route, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { CustomRoute, Layout } from "./components";
 import { About, Portfolio, Contact, Resume, Project } from "./pages";
@@ -43,16 +43,16 @@ function App() {
       <TransitionGroup component="main" className="main">
         <CSSTransition timeout={1000} classNames="fade" key={location.pathname}>
           <div>
-            <CustomRoute>
+            <Routes>
               <Route exact path="/" element={<Layout />}>
                 <Route index element={<About />} />
-                <Route exact path="/portfolio" element={<Portfolio />} />
-                <Route exact path="/contact" element={<Contact />} />
-                <Route exact path="/resume" element={<Resume />} />
-                <Route exact path="/portfolio/:title" element={<Project />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/portfolio/:title" element={<Project />} />
               </Route>
               <Route path="*" element={<NotFound404 />} />
-            </CustomRoute>
+            </Routes>
           </div>
         </CSSTransition>
       </TransitionGroup>

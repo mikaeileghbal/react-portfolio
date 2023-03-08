@@ -9,11 +9,10 @@
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
-  perspective: 400px;
+  perspective: 1000px;
 }
 
 .main > div {
-  padding: 5em;
   margin: 0;
   position: absolute;
   height: 100vh;
@@ -22,6 +21,8 @@
   right: 0;
   backface-visibility: hidden;
   background-color: #222733;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .animated {
@@ -189,14 +190,15 @@
 
 .left .fade-exit,
 .right .fade-exit {
-  transform: translate3d(0, 0, 0) rotateY(0) scale(1);
+  transform-origin: 50% 50%;
+  transform: translate3d(0, 0, 0) rotate3d(0, 0, 0);
 }
 
 .left .fade-exit.fade-exit-active {
-  transform: translate3d(-45%, 0, -10px) rotateY(-40deg) scale(0.5);
+  transform: translate3d(-45%, 0, -10px) rotate3d(0, 1, 0, -60deg);
   transition: all 0.6s ease-out 0.4s;
 }
 .right .fade-exit.fade-exit-active {
-  transform: translate3d(45%, 0, -10px) rotateY(40deg) scale(0.5);
+  transform: translate3d(45%, 0, -10px) rotate3d(0, 1, 0, 60deg);
   transition: all 0.6s ease-out 0.4s;
 }
