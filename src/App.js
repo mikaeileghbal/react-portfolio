@@ -26,7 +26,7 @@ function App() {
     setDirection((old) => {
       const prev = old.path;
       const path = location.pathname.split("/").filter((item) => item !== "");
-      if (path.length === 0) path.push("home");
+      if (path.length === 0) path.push("about");
       const newPath = path[path.length - 1];
 
       return {
@@ -41,12 +41,7 @@ function App() {
   return (
     <div className={direction.dir}>
       <TransitionGroup component="main" className="main">
-        <CSSTransition
-          timeout={1000}
-          classNames="fade"
-          key={location.pathname}
-          unmountOnExit={true}
-        >
+        <CSSTransition timeout={1000} classNames="fade" key={location.pathname}>
           <div>
             <CustomRoute>
               <Route exact path="/" element={<Layout />}>
