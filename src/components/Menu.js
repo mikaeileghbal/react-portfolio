@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
@@ -106,15 +106,22 @@ const CustomNav = styled.nav`
   height: 100%;
   transform-origin: top;
   transform: translate3d(0, -100%, 0);
+  opacity: 0;
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
 
   padding: 10% 0;
-  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
+  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s 0.45s;
+
+  a {
+    text-decoration: none;
+  }
 
   &.menu-show {
     transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s;
   }
   &.menu-show a {
     transform: translate3d(0, 0, 0);
@@ -171,34 +178,40 @@ export default function Menu({ show }) {
 
   return (
     <StyledMenu id="page-header" class="top-menu">
-      <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
-        <CustomLinkMenu
-          href="/"
-          active={location.pathname === "/" ? true : false}
-        >
-          <span>about</span>
-        </CustomLinkMenu>
-        <CustomLinkMenu
-          class="top-menu-link"
-          href="/portfolio"
-          active={location.pathname === "/portfolio" ? true : false}
-        >
-          <span>portfolio</span>
-        </CustomLinkMenu>
-        <CustomLinkMenu
-          class="top-menu-link"
-          href="/contact"
-          active={location.pathname === "/contact" ? true : false}
-        >
-          <span>contact</span>
-        </CustomLinkMenu>
-        <CustomLinkMenu
-          class="top-menu-link"
-          href="/resume"
-          active={location.pathname === "/resume" ? true : false}
-        >
-          <span>resume</span>
-        </CustomLinkMenu>
+      <CustomNav
+        id="menu-nav"
+        className={`${showMenu ? "menu-show" : ""}`}
+        onClick={toggleMenu}
+      >
+        <Link to="/">
+          <CustomLinkMenu active={location.pathname === "/" ? true : false}>
+            <span>about</span>
+          </CustomLinkMenu>
+        </Link>
+        <Link to="/portfolio">
+          <CustomLinkMenu
+            class="top-menu-link"
+            active={location.pathname === "/portfolio" ? true : false}
+          >
+            <span>portfolio</span>
+          </CustomLinkMenu>
+        </Link>
+        <Link to="/contact">
+          <CustomLinkMenu
+            class="top-menu-link"
+            active={location.pathname === "/contact" ? true : false}
+          >
+            <span>contact</span>
+          </CustomLinkMenu>
+        </Link>
+        <Link to="/resume">
+          <CustomLinkMenu
+            class="top-menu-link"
+            active={location.pathname === "/resume" ? true : false}
+          >
+            <span>resume</span>
+          </CustomLinkMenu>
+        </Link>
       </CustomNav>
 
       <Animate
