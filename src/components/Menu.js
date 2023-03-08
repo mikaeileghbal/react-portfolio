@@ -106,15 +106,18 @@ const CustomNav = styled.nav`
   height: 100%;
   transform-origin: top;
   transform: translate3d(0, -100%, 0);
+  opacity: 0;
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
 
   padding: 10% 0;
-  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
+  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s 0.45s;
 
   &.menu-show {
     transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s;
   }
   &.menu-show a {
     transform: translate3d(0, 0, 0);
@@ -171,7 +174,11 @@ export default function Menu({ show }) {
 
   return (
     <StyledMenu id="page-header" class="top-menu">
-      <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
+      <CustomNav
+        id="menu-nav"
+        className={`${showMenu ? "menu-show" : ""}`}
+        onClick={toggleMenu}
+      >
         <CustomLinkMenu
           href="/"
           active={location.pathname === "/" ? true : false}
