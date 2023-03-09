@@ -15,7 +15,7 @@ const pages = {
 
 function App() {
   const [direction, setDirection] = useState({
-    path: "home",
+    path: "about",
     dir: "left",
   });
 
@@ -40,10 +40,10 @@ function App() {
 
   return (
     <div className={direction.dir}>
-      <TransitionGroup component="main" className="main">
+      <TransitionGroup component="div" className="main">
         <CSSTransition timeout={1000} classNames="fade" key={location.pathname}>
           <div>
-            <Routes>
+            <Routes location={location}>
               <Route exact path="/" element={<Layout />}>
                 <Route index element={<About />} />
                 <Route path="/portfolio" element={<Portfolio />} />
@@ -51,7 +51,6 @@ function App() {
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/portfolio/:title" element={<Project />} />
               </Route>
-              <Route path="*" element={<NotFound404 />} />
             </Routes>
           </div>
         </CSSTransition>
