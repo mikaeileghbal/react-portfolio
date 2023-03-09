@@ -35,14 +35,20 @@ export default function Footer() {
         <br />
         Feel free to contact me via email at
         <Space>
-          <CustomLinkFooter href="mailto:mikaeileghbal@gmail.com">
+          <CustomLinkFooter
+            to="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "mailto:mikaeileghbal@gmail.com";
+            }}
+          >
             mikaeileghbal@gmail.com
           </CustomLinkFooter>
         </Space>
         <br />
         or drop a line in the form at the
         <Space>
-          <CustomLinkFooter href="/contact">contact page</CustomLinkFooter>
+          <CustomLinkFooter to="/contact">contact page</CustomLinkFooter>
         </Space>
       </FooterText>
     </FooterWrap>
