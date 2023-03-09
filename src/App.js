@@ -2,7 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { CustomRoute, Layout } from "./components";
+import { Layout } from "./components";
 import { About, Portfolio, Contact, Resume, Project } from "./pages";
 import NotFound404 from "./pages/NotFound404";
 
