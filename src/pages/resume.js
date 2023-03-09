@@ -82,10 +82,7 @@ export default function Resume() {
             <UList>
               <li>+989141840126</li>
               <li>
-                <CustomLink
-                  href="mailto:mikaeileghbal@gmail.com"
-                  target="_blank"
-                >
+                <CustomLink href="mailto:mikaeileghbal@gmail.com">
                   mikaeileghbal@gmail.com
                 </CustomLink>
               </li>
@@ -198,9 +195,7 @@ export default function Resume() {
             <Divider />
             <SubTitle>Islamic Azad University - Bonab, Iran</SubTitle>
             <Text>Bachelor's degree, Computer Software Engineering</Text>
-            <SubTitle>
-              Shahid Bahonar University of Kerman - Kerman, Iran
-            </SubTitle>
+            <SubTitle>Shahid Bahonar University - Kerman, Iran</SubTitle>
             <Text>
               Associate's degree, Computer Software Technology/Technicia
             </Text>

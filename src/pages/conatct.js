@@ -64,7 +64,6 @@ const StyledGithub = styled(StyledButton)`
 `;
 
 export default function Contact() {
-  const navigate = useNavigate();
   const [show, setShow] = useState(true);
 
   const gotoUrl = (url) => {
@@ -81,7 +80,13 @@ export default function Contact() {
           <br />
           fill up the awesome form below or send an email to
           <Space>
-            <CustomLinkContact href="mailto:mikaeileghbal@gmail.com">
+            <CustomLinkContact
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "mailto:mikaeileghbal@gmail.com";
+              }}
+            >
               mikaeileghbal@gmail.com
             </CustomLinkContact>
           </Space>
