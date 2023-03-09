@@ -24,7 +24,7 @@ const ButtonWrap = styled.div`
   margin: 1em 0 0;
 `;
 const CustomLinkContact = styled(CustomLink)`
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
 
   &:hover {
@@ -77,7 +77,9 @@ export default function Contact() {
         <SectionTitle style={{ marginTop: "1em" }}>Get in touch</SectionTitle>
         <Text>
           If you wanna get in touch, talk to me about a project collaboration or
-          just say hi, fill up the awesome form below or send an email to
+          just say hi,
+          <br />
+          fill up the awesome form below or send an email to
           <Space>
             <CustomLinkContact href="mailto:mikaeileghbal@gmail.com">
               mikaeileghbal@gmail.com
