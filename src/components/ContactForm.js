@@ -13,7 +13,7 @@ import theme from "../styles/theme";
 import emailjs from "@emailjs/browser";
 
 const CustomForm = styled.form`
-  margin: 2em 0;
+  margin: 1em 0;
   padding: 1em 0;
 `;
 
@@ -116,7 +116,7 @@ export default function ContactForm() {
           placeholder="Message"
           id="message"
           name="message"
-          rows={5}
+          rows={3}
           onChange={handleInputChange}
           autoComplete="off"
         ></CustomTextArea>

@@ -1,3 +1,30 @@
+.root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.main > div {
+  margin: 0;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  backface-visibility: hidden;
+  background-color: #222733;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .animated {
   max-width: 200px;
   opacity: 0;
@@ -133,4 +160,45 @@
     opacity: 0;
     transform: translate3d(100%, 0, 0);
   }
+}
+
+/* Transition group styled */
+
+/* fade left */
+.left .fade-enter,
+.right .fade-enter {
+  z-index: 2;
+}
+.left .fade-exit,
+.right .fade-exit {
+  z-index: 1;
+}
+
+.left .fade-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.right .fade-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.left .fade-enter.fade-enter-active,
+.right .fade-enter.fade-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.6s ease-out 0.4s;
+}
+
+.left .fade-exit,
+.right .fade-exit {
+  transform-origin: 50% 50%;
+  transform: translate3d(0, 0, 0) rotate3d(0, 0, 0);
+}
+
+.left .fade-exit.fade-exit-active {
+  transform: translate3d(-45%, 0, -10px) rotate3d(0, 1, 0, -60deg);
+  transition: all 0.6s ease-out 0.4s;
+}
+.right .fade-exit.fade-exit-active {
+  transform: translate3d(45%, 0, -10px) rotate3d(0, 1, 0, 60deg);
+  transition: all 0.6s ease-out 0.4s;
 }

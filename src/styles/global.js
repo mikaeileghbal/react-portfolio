@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
 import theme from "./theme";
 
@@ -340,7 +341,6 @@ export const CustomLink = styled.a`
   font-size: inherit;
   font-weight: inherit;
   line-height: 2;
-  transition: color 0.15s ease-out 0.1s;
 
   @media only print {
     font-size: 12px;
@@ -352,10 +352,10 @@ export const CustomLink = styled.a`
     display: inline-block;
     width: 100%;
     text-align: center;
+    transition: color 0.15s ease-out 0.1s;
   }
 
   &:hover {
-    color: #999999;
     span {
       color: #999999;
     }

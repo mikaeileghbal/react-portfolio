@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
@@ -106,15 +106,22 @@ const CustomNav = styled.nav`
   height: 100%;
   transform-origin: top;
   transform: translate3d(0, -100%, 0);
+  opacity: 0;
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
 
   padding: 10% 0;
-  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1);
+  transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s 0.45s;
+
+  a {
+    text-decoration: none;
+  }
 
   &.menu-show {
     transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s;
   }
   &.menu-show a {
     transform: translate3d(0, 0, 0);
@@ -145,7 +152,7 @@ const CustomLinkMenu = styled(CustomLink)`
   transition: transform 0.55s cubic-bezier(0, 0.35, 0, 1),
     color 0.15s ease-out 0.1s;
 
-  &:hover {
+  &:hover > span {
     color: #999999;
   }
 
@@ -160,42 +167,58 @@ const CustomLinkMenu = styled(CustomLink)`
 export default function Menu({ show }) {
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = (e) => {
     setShowMenu((prev) => !prev);
   };
 
+  const goToPath = (e, path) => {
+    e.preventDefault();
+    navigate(path);
+  };
   const onAnimationEnd = (e) => {
     e.target.classList.remove("clicked");
   };
 
   return (
     <StyledMenu id="page-header" class="top-menu">
-      <CustomNav id="menu-nav" className={`${showMenu ? "menu-show" : ""}`}>
+      <CustomNav
+        id="menu-nav"
+        className={`${showMenu ? "menu-show" : ""}`}
+        onClick={toggleMenu}
+      >
         <CustomLinkMenu
-          href="/"
           active={location.pathname === "/" ? true : false}
+          href=""
+          onClick={(e) => goToPath(e, "/")}
         >
           <span>about</span>
         </CustomLinkMenu>
+
         <CustomLinkMenu
           class="top-menu-link"
-          href="/portfolio"
           active={location.pathname === "/portfolio" ? true : false}
+          href=""
+          onClick={(e) => goToPath(e, "/portfolio")}
         >
           <span>portfolio</span>
         </CustomLinkMenu>
+
         <CustomLinkMenu
           class="top-menu-link"
-          href="/contact"
           active={location.pathname === "/contact" ? true : false}
+          href=""
+          onClick={(e) => goToPath(e, "/contact")}
         >
           <span>contact</span>
         </CustomLinkMenu>
+
         <CustomLinkMenu
           class="top-menu-link"
-          href="/resume"
           active={location.pathname === "/resume" ? true : false}
+          href=""
+          onClick={(e) => goToPath(e, "/resume")}
         >
           <span>resume</span>
         </CustomLinkMenu>
