@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useDirection } from "../providers/DirectionProvider";
 import theme from "../styles/theme";
 import Animate from "./Animate";
 
@@ -141,6 +142,8 @@ const ArrowPrev = styled(Arrow)`
 `;
 
 export default function Next({ to, children, show }) {
+  const { setDirection } = useDirection();
+
   return (
     <PageControl>
       <Animate
@@ -150,7 +153,7 @@ export default function Next({ to, children, show }) {
         classname="next"
         delay="1.4s"
       >
-        <StyledLink to={to}>
+        <StyledLink to={to} onClick={() => setDirection("left")}>
           <span>{children}</span>
           <Arrow></Arrow>
         </StyledLink>
@@ -160,6 +163,7 @@ export default function Next({ to, children, show }) {
 }
 
 export function Previous({ to, children, show }) {
+  const { setDirection } = useDirection();
   return (
     <PageControlPrev>
       <Animate
@@ -169,7 +173,7 @@ export function Previous({ to, children, show }) {
         classname="next"
         delay="1.6s"
       >
-        <StyledLinkPrev to={to}>
+        <StyledLinkPrev to={to} onClick={() => setDirection("right")}>
           <ArrowPrev></ArrowPrev>
           <span>{children}</span>
         </StyledLinkPrev>

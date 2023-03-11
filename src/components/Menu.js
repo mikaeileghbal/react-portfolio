@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import { useDirection } from "../providers/DirectionProvider";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
 import Animate from "./Animate";
@@ -26,13 +27,13 @@ const StyledMenu = styled.header`
 `;
 
 const burgerRotate = keyframes`
-from{
+0%{
   
-  transform: rotate(180deg);
 }
-to{
 
-  transform:rotate(0deg);
+100%{
+
+  transform: translate(0, 0) scale(1) rotate(45deg);
 }
 `;
 
@@ -43,6 +44,7 @@ const CustomBurger = styled.div`
   z-index: 9999;
   text-align: center;
   cursor: pointer;
+  user-select: none;
 
   @media screen and (max-width: ${theme.breakPoints.md}px) {
     //top: calc(100vh - 105px);
@@ -53,13 +55,14 @@ const CustomBurger = styled.div`
     border-radius: 50%;
     padding: 10px;
     box-shadow: 0 0 3px rgb(0, 0, 0, 0.15);
+    user-select: none;
   }
 
   &.clicked {
-    animation-name: ${burgerRotate};
+    /* animation-name: ${burgerRotate};
     animation-duration: 0.3s;
     animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
   }
 
   span {
@@ -164,8 +167,18 @@ const CustomLinkMenu = styled(CustomLink)`
   }
 `;
 
+const pages = {
+  "/": 0,
+  "/portfolio": 1,
+  "/contact": 2,
+  "/resume": 3,
+};
+
 export default function Menu({ show }) {
+  const { setDirection } = useDirection();
+  const { activeLink, setActiveLink } = useDirection(0);
   const [showMenu, setShowMenu] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -173,8 +186,15 @@ export default function Menu({ show }) {
     setShowMenu((prev) => !prev);
   };
 
-  const goToPath = (e, path) => {
+  const goToPath = (e, path, index) => {
     e.preventDefault();
+
+    if (index >= activeLink) {
+      setDirection("left");
+    } else {
+      setDirection("right");
+    }
+    setActiveLink(index);
     navigate(path);
   };
   const onAnimationEnd = (e) => {
@@ -191,7 +211,7 @@ export default function Menu({ show }) {
         <CustomLinkMenu
           active={location.pathname === "/" ? true : false}
           href=""
-          onClick={(e) => goToPath(e, "/")}
+          onClick={(e) => goToPath(e, "/", 0)}
         >
           <span>about</span>
         </CustomLinkMenu>
@@ -200,7 +220,7 @@ export default function Menu({ show }) {
           class="top-menu-link"
           active={location.pathname === "/portfolio" ? true : false}
           href=""
-          onClick={(e) => goToPath(e, "/portfolio")}
+          onClick={(e) => goToPath(e, "/portfolio", 1)}
         >
           <span>portfolio</span>
         </CustomLinkMenu>
@@ -209,7 +229,7 @@ export default function Menu({ show }) {
           class="top-menu-link"
           active={location.pathname === "/contact" ? true : false}
           href=""
-          onClick={(e) => goToPath(e, "/contact")}
+          onClick={(e) => goToPath(e, "/contact", 2)}
         >
           <span>contact</span>
         </CustomLinkMenu>
@@ -218,7 +238,7 @@ export default function Menu({ show }) {
           class="top-menu-link"
           active={location.pathname === "/resume" ? true : false}
           href=""
-          onClick={(e) => goToPath(e, "/resume")}
+          onClick={(e) => goToPath(e, "/resume", 3)}
         >
           <span>resume</span>
         </CustomLinkMenu>
