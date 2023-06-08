@@ -115,6 +115,11 @@ const CustomNav = styled.nav`
 
   a {
     text-decoration: none;
+
+    @media screen and (max-width: ${theme.breakPoints.md}px) {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
   }
 
   &.menu-show {
