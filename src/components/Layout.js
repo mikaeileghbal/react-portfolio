@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import Menu from "./Menu";
-
 import Ribbon from "./Ribbon";
-import { CSSTransition } from "react-transition-group";
 
 export default function Layout() {
   const [show, setShow] = useState(true);

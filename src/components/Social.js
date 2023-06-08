@@ -23,7 +23,6 @@ const Follow = styled.div`
     top: auto;
     left: 0px;
     text-align: left;
-    background-color: red;
   }
 `;
 

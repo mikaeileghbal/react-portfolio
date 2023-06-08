@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { useDirection } from "../providers/DirectionProvider";
 import { CustomLink } from "../styles/global";
 import theme from "../styles/theme";
-import Animate from "./Animate";
 
 const { colors } = theme;
 
@@ -43,7 +42,6 @@ const CustomBurger = styled.div`
   z-index: 9999;
   text-align: center;
   cursor: pointer;
-  background-color: green;
 
   @media screen and (max-width: ${theme.breakPoints.md}px) {
     bottom: 30px;
