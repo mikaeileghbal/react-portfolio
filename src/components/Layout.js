@@ -4,6 +4,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 
 import Ribbon from "./Ribbon";
+import { CSSTransition } from "react-transition-group";
 
 export default function Layout() {
   const [show, setShow] = useState(true);
@@ -20,6 +21,7 @@ export default function Layout() {
   return (
     <>
       {/* <Header /> */}
+
       <Menu show={show} />
       <Ribbon show={show} />
       <main>

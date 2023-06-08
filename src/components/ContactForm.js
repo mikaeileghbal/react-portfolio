@@ -13,7 +13,7 @@ import theme from "../styles/theme";
 import emailjs from "@emailjs/browser";
 
 const CustomForm = styled.form`
-  margin: 1em 0;
+  margin: 2em 0;
   padding: 1em 0;
 `;
 

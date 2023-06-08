@@ -23,6 +23,7 @@ const Follow = styled.div`
     top: auto;
     left: 0px;
     text-align: left;
+    background-color: red;
   }
 `;
 
@@ -86,7 +87,7 @@ export default function Social() {
               textColor={theme.colors.blueLight}
               backColor={theme.colors.blueDark}
             >
-              <FaLinkedinIn size={33} />
+              <FaLinkedinIn size={28} />
             </LinkedinButton>
           </Animate>
         </StyledItem>

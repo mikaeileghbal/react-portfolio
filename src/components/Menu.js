@@ -32,21 +32,22 @@ const burgerRotate = keyframes`
 }
 
 100%{
-
   transform: translate(0, 0) scale(1) rotate(45deg);
 }
 `;
 
 const CustomBurger = styled.div`
-  /* position: fixed;
-  right: 28px;
-  top: 25px; */
+  position: fixed;
+  right: 40px;
+  top: 40px;
   z-index: 9999;
   text-align: center;
   cursor: pointer;
-  user-select: none;
 
   @media screen and (max-width: ${theme.breakPoints.md}px) {
+    right: 10px;
+    top: auto;
+    bottom: 35px;
     //top: calc(100vh - 105px);
     //right: 0px;
     width: 59px;
@@ -55,7 +56,6 @@ const CustomBurger = styled.div`
     border-radius: 50%;
     padding: 10px;
     box-shadow: 0 0 3px rgb(0, 0, 0, 0.15);
-    user-select: none;
   }
 
   &.clicked {
@@ -106,14 +106,13 @@ const CustomNav = styled.nav`
   display: block;
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transform-origin: top;
   transform: translate3d(0, -100%, 0);
   opacity: 0;
   left: 0;
   top: 0;
   background-color: ${colors.blueMenu}; //rgb(51, 51, 51);
-
   padding: 10% 0;
   transition: transform 0.45s cubic-bezier(0.45, 0, 0, 1), opacity 0s 0.45s;
 
@@ -244,23 +243,23 @@ export default function Menu({ show }) {
         </CustomLinkMenu>
       </CustomNav>
 
-      <Animate
+      {/* <Animate
         show={show}
         enter="enterNext"
         exit="exitNext"
         classname="menu"
         delay="1.6s"
+      > */}
+      <CustomBurger
+        className={`${showMenu ? "open clicked" : "clicked"}`}
+        onClick={toggleMenu}
+        onAnimationEnd={onAnimationEnd}
       >
-        <CustomBurger
-          className={`${showMenu ? "open clicked" : "clicked"}`}
-          onClick={toggleMenu}
-          onAnimationEnd={onAnimationEnd}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </CustomBurger>
-      </Animate>
+        <span></span>
+        <span></span>
+        <span></span>
+      </CustomBurger>
+      {/* </Animate> */}
     </StyledMenu>
   );
 }
