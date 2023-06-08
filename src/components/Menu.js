@@ -43,13 +43,12 @@ const CustomBurger = styled.div`
   z-index: 9999;
   text-align: center;
   cursor: pointer;
+  background-color: green;
 
   @media screen and (max-width: ${theme.breakPoints.md}px) {
+    bottom: 30px;
     right: 10px;
     top: auto;
-    bottom: 35px;
-    //top: calc(100vh - 105px);
-    //right: 0px;
     width: 59px;
     height: 59px;
     background-color: #111;

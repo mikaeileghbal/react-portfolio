@@ -29,6 +29,11 @@ const Follow = styled.div`
 
 const StyledList = styled.ul`
   list-style-type: none;
+  display: block;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    display: flex;
+  }
 `;
 
 const StyledItem = styled.li`
