@@ -97,8 +97,8 @@ export default function Contact() {
 
         <SubTitle>Let's get social</SubTitle>
         <Text>
-          Follow my online fan page on Facebook and profiles on Twitter, GitHub
-          and Linkedin.
+          Follow my online fan page on Facebook and profiles on Linkedin and
+          GitHub.
         </Text>
         <ButtonWrap>
           <StyledFacebook

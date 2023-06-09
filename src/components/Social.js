@@ -28,6 +28,11 @@ const Follow = styled.div`
 
 const StyledList = styled.ul`
   list-style-type: none;
+  display: block;
+
+  @media screen and (max-width: ${theme.breakPoints.md}px) {
+    display: flex;
+  }
 `;
 
 const StyledItem = styled.li`
@@ -86,7 +91,7 @@ export default function Social() {
               textColor={theme.colors.blueLight}
               backColor={theme.colors.blueDark}
             >
-              <FaLinkedinIn size={33} />
+              <FaLinkedinIn size={28} />
             </LinkedinButton>
           </Animate>
         </StyledItem>
