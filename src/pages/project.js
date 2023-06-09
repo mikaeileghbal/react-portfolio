@@ -108,16 +108,21 @@ export default function Project() {
         <SectionSubTitle>Resources</SectionSubTitle>
         <Divider />
         <UList>
-          <li>
-            <div>
-              <span>The project is online at</span>
-              <Space>
-                <CustomLinkProject href={project.resource?.[0]} target="_blank">
-                  {project.resource?.[0].toUpperCase()}
-                </CustomLinkProject>
-              </Space>
-            </div>
-          </li>
+          {project.resource?.[0] !== "undefined" ? (
+            <li>
+              <div>
+                <span>The project is online at</span>
+                <Space>
+                  <CustomLinkProject
+                    href={project.resource?.[0]}
+                    target="_blank"
+                  >
+                    {project.resource?.[0].toUpperCase()}
+                  </CustomLinkProject>
+                </Space>
+              </div>
+            </li>
+          ) : null}
           <li>
             <div>
               <span>Access the project's source on</span>

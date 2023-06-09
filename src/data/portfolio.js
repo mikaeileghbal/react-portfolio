@@ -38,10 +38,7 @@ const portfolio = [
       "MaterialUI",
       "RESTFull API",
     ],
-    resource: [
-      "https://mikaeileghbal.github.io/movies",
-      "https://github.com/mikaeileghbal/movies",
-    ],
+    resource: ["undefined", "https://github.com/mikaeileghbal/movies"],
     tags: [
       "html",
       "css",
@@ -81,10 +78,7 @@ const portfolio = [
       "Mongoose",
       "RESTFull API",
     ],
-    resource: [
-      "https://fixer.vercel.com",
-      "https://github.com/mikaeileghbal/fixer",
-    ],
+    resource: ["undefined", "https://github.com/mikaeileghbal/fixer"],
     tags: [
       "html",
       "css",
@@ -123,10 +117,7 @@ const portfolio = [
       "React Router",
       "Redux",
     ],
-    resource: [
-      "https://mikaeileghbal.github.io/music-store",
-      "https://github.com/mikaeileghbal/music-store",
-    ],
+    resource: ["undefined", "https://github.com/mikaeileghbal/music-store"],
     tags: [
       "html",
       "css",
@@ -160,7 +151,7 @@ const portfolio = [
       "React-Chartjs-2",
     ],
     resource: [
-      "https://mikaeileghbal.github.io/githubuserprofile",
+      "undefined",
       "https://github.com/mikaeileghbal/github-user-profile",
     ],
     tags: ["html", "css", "javascript", "reactjs", "restapi", "chartjs"],
@@ -194,10 +185,7 @@ const portfolio = [
       "Node.js",
       "Express",
     ],
-    resource: [
-      "https://react-mysql.vercel.com",
-      "https://github.com/mikaeileghbal/react-mysql",
-    ],
+    resource: ["undefined", "https://github.com/mikaeileghbal/react-mysql"],
     tags: [
       "html",
       "css",
@@ -229,10 +217,7 @@ const portfolio = [
       "formvalidate-4.png",
     ],
     tech: ["HTML5", "CSS3", "JavaScript"],
-    resource: [
-      "https://mikaeileghbal.github.io/form-validation",
-      "https://github.com/mikaeileghbal/form-validation",
-    ],
+    resource: ["undefined", "https://github.com/mikaeileghbal/form-validation"],
     tags: ["html", "css", "javascript"],
   },
   {
