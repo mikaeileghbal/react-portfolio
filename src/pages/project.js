@@ -64,6 +64,7 @@ export default function Project() {
             textColor="white"
             backColor={theme.colors.green}
             style={{ padding: "0.8em 1.5em" }}
+            disabled
           >
             <GoLinkExternal size={22} />
             <span>visit the website</span>

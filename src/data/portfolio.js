@@ -26,9 +26,16 @@ const portfolio = [
       "Web application created with React.js React-Router and Material UI.",
     description: [
       "Fetching movies data from REST API and show in categories.",
-      "Material UI is used to style the application. Customized styles and theme for light and dark mode.",
+      "Material UI is used to style the application. Infinite loading technic is used to load more items as the user scrolls down the page. Image lazy loading is used to lazy load images so the user experience is enhanced. User can search for movie title, artist name and more.",
     ],
-    images: ["movies-1.png", "movies-1.png", "movies-1.png", "movies-1.png"],
+    images: [
+      "movies.png",
+      "movies-1.png",
+      "movies-2.png",
+      "movies-3.png",
+      "movies-4.png",
+      "movies-5.png",
+    ],
     tech: [
       "HTML5",
       "CSS3",
