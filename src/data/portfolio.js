@@ -21,6 +21,39 @@ const tags = [
 const portfolio = [
   {
     id: "1",
+    title: "movies",
+    brief:
+      "Web application created with React.js React-Router and Material UI.",
+    description: [
+      "Fetching movies data from REST API and show in categories.",
+      "Material UI is used to style the application. Customized styles and theme for light and dark mode.",
+    ],
+    images: ["movies-1.png", "movies-1.png", "movies-1.png", "movies-1.png"],
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "React Router",
+      "MaterialUI",
+      "RESTFull API",
+    ],
+    resource: [
+      "https://mikaeileghbal.github.io/movies",
+      "https://github.com/mikaeileghbal/movies",
+    ],
+    tags: [
+      "html",
+      "css",
+      "javascript",
+      "reactjs",
+      "react router",
+      "material ui",
+      "restapi",
+    ],
+  },
+  {
+    id: "2",
     title: "fixer",
     brief:
       "Web application created with next.js. demonstrates CRUD operations on a MongoDB database with Mongoose. It includes authentication with next-auth",
@@ -64,7 +97,7 @@ const portfolio = [
     ],
   },
   {
-    id: "2",
+    id: "3",
     title: "music store",
     brief:
       "Online store created with react.js and redux. lots of reusable components such as Cart, Basket view, Side menu, Carousel and ... are created. Redux is used to state management.",
@@ -105,7 +138,7 @@ const portfolio = [
     ],
   },
   {
-    id: "3",
+    id: "4",
     title: "github user profile",
     brief: "Github user profile call github api to get user information.",
     description: [
@@ -133,7 +166,7 @@ const portfolio = [
     tags: ["html", "css", "javascript", "reactjs", "restapi", "chartjs"],
   },
   {
-    id: "4",
+    id: "5",
     title: "react mysql",
     brief:
       "Web application created with react.js and MySql database. Demonstrates how to Create, Retrive, Update and delete from a MySQL database.",
@@ -181,7 +214,7 @@ const portfolio = [
     ],
   },
   {
-    id: "5",
+    id: "6",
     title: "form validation",
     brief:
       "Web application created with vanilla javascript. demonstrates custom validating a form inputs.",
@@ -203,7 +236,7 @@ const portfolio = [
     tags: ["html", "css", "javascript"],
   },
   {
-    id: "6",
+    id: "7",
     title: "personal portfolio",
     brief:
       "Web application created with React.js. Based on caferati.me portfolio design.",
@@ -224,37 +257,6 @@ const portfolio = [
       "https://github.com/mikaeileghbal/react-portfolio",
     ],
     tags: ["html", "css", "javascript", "reactjs", "react router"],
-  },
-  {
-    id: "7",
-    title: "movies",
-    brief:
-      "Web application created with React.js React-Router and Material UI.",
-    description: [
-      "Fetching movies data from REST API and show in categories.",
-      "Material UI is used to style the application. Customized styles and theme for light and dark mode.",
-    ],
-    images: ["movies-1.png", "movies-1.png", "movies-1.png", "movies-1.png"],
-    tech: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "React.js",
-      "React Router",
-      "MaterialUI",
-    ],
-    resource: [
-      "https://mikaeileghbal.github.io/movies",
-      "https://github.com/mikaeileghbal/movies",
-    ],
-    tags: [
-      "html",
-      "css",
-      "javascript",
-      "reactjs",
-      "react router",
-      "material ui",
-    ],
   },
 ];
 

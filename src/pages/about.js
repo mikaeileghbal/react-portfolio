@@ -86,11 +86,11 @@ const Blink = styled.span`
 const parafs = [
   { text: "Hello, my name is Mikaeil Eghbal.", index: 1 },
   {
-    text: "I am a web developer and javascript specialist focused on the frontend.",
+    text: "I am a web developer and JavaScript specialist focused on the frontend.",
     index: 34,
   },
   {
-    text: "Send me a message using contact form or socila links available on the contact page.",
+    text: "Send me a message using the contact form or social links available on the contact page.",
     index: 105,
   },
   {

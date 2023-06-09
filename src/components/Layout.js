@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import Menu from "./Menu";
-
 import Ribbon from "./Ribbon";
 
 export default function Layout() {
@@ -20,6 +19,7 @@ export default function Layout() {
   return (
     <>
       {/* <Header /> */}
+
       <Menu show={show} />
       <Ribbon show={show} />
       <main>
