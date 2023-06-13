@@ -38,6 +38,7 @@ const TagList = styled.ul`
 const ItemTagList = styled(TagList)`
   row-gap: 0.5em;
   justify-content: center;
+  user-select: none;
 
   @media screen and (max-width: ${theme.breakPoints.ss}px) {
     display: none;
@@ -90,6 +91,7 @@ const PortoItem = styled.figure`
     .item__tag {
       transform: translate3d(0, 0, 0);
       opacity: 1;
+
       transition: opacity 0.1s ease-out,
         transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5);
 
@@ -248,6 +250,8 @@ const PortoItem = styled.figure`
 
   .item__tag {
     opacity: 0;
+    cursor: default;
+    pointer-events: none;
     transform: translate3d(0, -10px, 0);
   }
 `;

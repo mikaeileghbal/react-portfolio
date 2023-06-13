@@ -35,7 +35,7 @@ export default function Footer() {
         Feel free to contact me via email at
         <Space>
           <CustomLinkFooter
-            to="#"
+            href="#"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = "mailto:mikaeileghbal@gmail.com";
