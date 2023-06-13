@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, CustomLink, Space, Text } from "../styles/global";
-import theme from "../styles/theme";
+import { CustomLink, Space, Text } from "../styles/global";
 
 const FooterWrap = styled.div`
   text-align: center;
@@ -48,7 +47,7 @@ export default function Footer() {
         <br />
         or drop a line in the form at the
         <Space>
-          <CustomLinkFooter to="/contact">contact page</CustomLinkFooter>
+          <CustomLinkFooter href="/contact">contact page</CustomLinkFooter>
         </Space>
       </FooterText>
     </FooterWrap>
